@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180404 16:21:02.709" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/WorkspaceRobot/SmokeTest_TB/SMT-TB.robot" id="s1" name="SMT-TB">
+<test id="s1-t1" name="Login_valid">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:09.553" starttime="20180404 16:21:02.922"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180404 16:21:11.555" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180404 16:21:11.555" starttime="20180404 16:21:09.554"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:11.588" starttime="20180404 16:21:11.556"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180404 16:21:11.589" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180404 16:21:14.717" starttime="20180404 16:21:11.589"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:16.784" starttime="20180404 16:21:14.717"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180404 16:21:16.785" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180404 16:21:17.992" starttime="20180404 16:21:16.784"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=et_email</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20180404 16:21:17.994" level="INFO">Typing text 'hendy.satriawan@gmail.com' into text field 'id=et_email'</msg>
+<status status="PASS" endtime="20180404 16:21:24.243" starttime="20180404 16:21:17.993"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=et_password</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180404 16:21:24.244" level="INFO">Typing password into text field 'id=et_password'</msg>
+<status status="PASS" endtime="20180404 16:21:29.629" starttime="20180404 16:21:24.244"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=btn_login</arg>
+</arguments>
+<msg timestamp="20180404 16:21:29.629" level="INFO">Clicking element 'id=btn_login'.</msg>
+<status status="PASS" endtime="20180404 16:21:30.687" starttime="20180404 16:21:29.629"></status>
+</kw>
+<doc>Try to login using valid member</doc>
+<status status="PASS" endtime="20180404 16:21:30.687" critical="yes" starttime="20180404 16:21:02.922"></status>
+</test>
+<test id="s1-t2" name="Pilih Program Hamil">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Pilih program hamil untuk new member (belum input anak/kehamilan)</arg>
+</arguments>
+<msg timestamp="20180404 16:21:30.688" level="INFO">Pilih program hamil untuk new member (belum input anak/kehamilan)</msg>
+<status status="PASS" endtime="20180404 16:21:30.688" starttime="20180404 16:21:30.688"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/imageView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:33.954" starttime="20180404 16:21:30.688"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/btn_negative</arg>
+</arguments>
+<msg timestamp="20180404 16:21:33.955" level="INFO">Clicking element 'com.temanbumil.android:id/btn_negative'.</msg>
+<status status="PASS" endtime="20180404 16:21:35.976" starttime="20180404 16:21:33.955"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/tv_q_main</arg>
+<arg>Silakan pilih fitur yang Mums inginkan</arg>
+</arguments>
+<msg timestamp="20180404 16:21:35.977" level="INFO">Verifying element 'com.temanbumil.android:id/tv_q_main' contains exactly text 'Silakan pilih fitur yang Mums inginkan'.</msg>
+<status status="PASS" endtime="20180404 16:21:36.300" starttime="20180404 16:21:35.977"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='PROGRAM HAMIL']</arg>
+</arguments>
+<msg timestamp="20180404 16:21:36.300" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='PROGRAM HAMIL']'.</msg>
+<status status="PASS" endtime="20180404 16:21:37.655" starttime="20180404 16:21:36.300"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/tvDescription</arg>
+<arg>Apakah Mums yakin ingin menggunakan fitur Program Hamil?</arg>
+</arguments>
+<msg timestamp="20180404 16:21:37.656" level="INFO">Verifying element 'com.temanbumil.android:id/tvDescription' contains exactly text 'Apakah Mums yakin ingin menggunakan fitur Program Hamil?'.</msg>
+<status status="PASS" endtime="20180404 16:21:38.201" starttime="20180404 16:21:37.655"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/txt_negative</arg>
+</arguments>
+<msg timestamp="20180404 16:21:38.202" level="INFO">Clicking element 'com.temanbumil.android:id/txt_negative'.</msg>
+<status status="PASS" endtime="20180404 16:21:41.394" starttime="20180404 16:21:38.202"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/tv_q_main</arg>
+<arg>Silakan pilih fitur yang Mums inginkan</arg>
+</arguments>
+<msg timestamp="20180404 16:21:41.394" level="INFO">Verifying element 'com.temanbumil.android:id/tv_q_main' contains exactly text 'Silakan pilih fitur yang Mums inginkan'.</msg>
+<status status="PASS" endtime="20180404 16:21:41.511" starttime="20180404 16:21:41.394"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='PROGRAM HAMIL']</arg>
+</arguments>
+<msg timestamp="20180404 16:21:41.511" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='PROGRAM HAMIL']'.</msg>
+<status status="PASS" endtime="20180404 16:21:42.290" starttime="20180404 16:21:41.511"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/tvDescription</arg>
+<arg>Apakah Mums yakin ingin menggunakan fitur Program Hamil?</arg>
+</arguments>
+<msg timestamp="20180404 16:21:42.291" level="INFO">Verifying element 'com.temanbumil.android:id/tvDescription' contains exactly text 'Apakah Mums yakin ingin menggunakan fitur Program Hamil?'.</msg>
+<status status="PASS" endtime="20180404 16:21:42.813" starttime="20180404 16:21:42.291"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.temanbumil.android:id/txt_positive</arg>
+</arguments>
+<msg timestamp="20180404 16:21:42.813" level="INFO">Clicking element 'com.temanbumil.android:id/txt_positive'.</msg>
+<status status="PASS" endtime="20180404 16:21:43.903" starttime="20180404 16:21:42.813"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=tv_title</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:47.914" starttime="20180404 16:21:43.903"></status>
+</kw>
+<kw name="Element Name Should Be" library="AppiumLibrary">
+<arguments>
+<arg>id=tv_title</arg>
+<arg>Teman Bumil</arg>
+</arguments>
+<msg timestamp="20180404 16:21:48.520" level="INFO">Element 'id=tv_title' name is 'Teman Bumil' </msg>
+<status status="PASS" endtime="20180404 16:21:48.520" starttime="20180404 16:21:47.915"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180404 16:21:50.191" starttime="20180404 16:21:48.521"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<msg timestamp="20180404 16:21:50.192" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='GOT IT']'.</msg>
+<status status="PASS" endtime="20180404 16:21:50.834" starttime="20180404 16:21:50.192"></status>
+</kw>
+<status status="PASS" endtime="20180404 16:21:50.835" critical="yes" starttime="20180404 16:21:30.687"></status>
+</test>
+<test id="s1-t3" name="Pilih Artikel">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Pilih artikel 1 &amp; tap untuk masuk ke page Artikel</arg>
+</arguments>
+<msg timestamp="20180404 16:21:50.837" level="INFO">Pilih artikel 1 &amp; tap untuk masuk ke page Artikel</msg>
+<status status="PASS" endtime="20180404 16:21:50.837" starttime="20180404 16:21:50.836"></status>
+</kw>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>538</arg>
+<arg>484</arg>
+</arguments>
+<msg timestamp="20180404 16:21:50.837" level="INFO">Pressing at (538, 484).</msg>
+<status status="PASS" endtime="20180404 16:21:51.099" starttime="20180404 16:21:50.837"></status>
+</kw>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>70</arg>
+<arg>155</arg>
+</arguments>
+<msg timestamp="20180404 16:21:51.100" level="INFO">Pressing at (70, 155).</msg>
+<status status="PASS" endtime="20180404 16:21:51.193" starttime="20180404 16:21:51.099"></status>
+</kw>
+<status status="PASS" endtime="20180404 16:21:51.193" critical="yes" starttime="20180404 16:21:50.835"></status>
+</test>
+<status status="PASS" endtime="20180404 16:21:51.195" starttime="20180404 16:21:02.712"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SMT-TB" pass="3">SMT-TB</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

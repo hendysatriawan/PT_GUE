@@ -102,7 +102,6 @@ Hapus Data anak
     Hapus data
     Hapus data
     Hapus data
-
     # #Loop Hapus Data (untuk menghapus seluruh data berulang-ulang)
     # :For  ${COUNT}  IN RANGE  0 42
     # \   ${CEK}  Wait Until Element Is Visible    ${APP}:id/tv_baby_name

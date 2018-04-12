@@ -15,7 +15,7 @@ ${APP_ACTIVITY}    com.temanbumil.android.authentication.AuthenticationActivity
 ${APP_ACTIVITY_SPLASH}  com.temanbumil.android.splash.SplashActivity
 ${APP_ACTIVITY_HOME}  com.temanbumil.android.home.HomeActivity
 #data login
-${USERNAME}   ben1@yopmail.com
+${USERNAME}   ben3@yopmail.com
 ${PASSWORD}    12345678
 ${PROFILE_NAME}   Aquila Majid
 #data register
@@ -65,7 +65,7 @@ ${X}    52
 ${Y}    53
 ${Z}    54
 #nama Anak
-${BabyW1}   BayiW1ac
+${BabyW1}   testnewW1
 
 #waktu
 ${time_sec}   60s
@@ -87,6 +87,20 @@ Klik Back
 coachmark handle
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='GOT IT']  ${time_sec}
   Click Element    xpath=//android.widget.Button[@text='GOT IT']
+Masuk ke profile
+    Log    masuk ke halaman profile
+    Wait Until Element Is Visible    id=btn_navigation    ${time_sec}
+    Click Element    id=btn_navigation
+    Wait Until Element Is Visible    id=tv_nav_profile    ${time_sec}
+    Click Element    id=tv_nav_profile
+Ubah jadi sudah lahir
+    Log    Ubah fetus menjadi sudah melahirkan
+    Wait Until Element Is Visible    ${APP}:id/tv_baby_name   100s
+    Scroll    xpath=//android.widget.TextView[@text='Sedang Hamil']    xpath=//android.widget.Button[@text='${BabyW1}']
+    Sleep    1s
+    Click Element    id=tv_baby_name
+    Wait Until Element Is Visible    ${APP}:id/sudahLahir   100s
+
 *** Test Cases ***
 Login_valid
     [Documentation]    Try to login using valid member
@@ -113,58 +127,69 @@ Login_valid
     # Click Element    xpath=//android.widget.Button[@text='GOT IT']
 
 Tambah anak Week 1
-    [Documentation]    Tambahkan anak untuk mendapatkan push notif
-    #Buka menu
-    Wait Until Element Is Visible    id=btn_navigation    ${time_sec}
-    Click Element    id=btn_navigation
-    coachmark handle      #hanya digunakan diawal saja
-    #pilih tambah Anak
-    Wait Until Element Is Visible    id=tv_nav_profile    ${time_sec}
-    Element Name Should Be    id=tv_nav_profile    ${PROFILE_NAME}
-    Click Element    id=tv_nav_child
-    Sleep    1s
-    Swipe    547    490    547    98
-    Wait Until Element Is Visible    id=btn_add_child   ${time_sec}
-    Element Name Should Be    id=btn_add_child    Tambah Anak
-    Click Element    id=btn_add_child
-    #input nama Anak
-    Wait Until Element Is Visible    id=et_child_name   ${time_sec}
-    Input Text    id=et_child_name    ${BabyW1}
-    #input tanggal langsung dengan long press
-    Wait Until Element Is Visible    android:id/pickers   ${time_sec}
-    Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[1]/android.widget.EditText
-    Sleep    1s
-    #Tanggal
-    Press Keycode    ${0}
-    Press Keycode    ${2}
-    Klik Enter
-    Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.EditText
-    Sleep    1s
-    #Bulan
-    Press Keycode    ${A}
-    Press Keycode    ${P}
-    Press Keycode    ${R}
-    Klik Enter
-    Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[3]/android.widget.EditText
-    Sleep    1s
-    #Tahun
-    Press Keycode    ${2}
-    Press Keycode    ${0}
-    Press Keycode    ${1}
-    Press Keycode    ${8}
-    Klik Enter
-    Sleep    2s
-    # pilih jenis kelamin
-    Click Element    ${APP}:id/sp_gender
-    Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]  2s
-    Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]
-    Sleep    2s
-    Click Element    id=btn_save
-    # #swipe & tunggu Notifications
-    # Swipe Notifications
-    # Sleep    ${time_min}
-    # #capture notifikasi yang muncul
-    # Capture Page Screenshot   filename=${BabyW1}.png
-    # Klik Back
-    coachmark handle      #hanya digunakan 1x diawal saja
-    Close Application
+        [Documentation]    Tambahkan anak untuk mendapatkan push notif
+        #Buka menu
+        Wait Until Element Is Visible    id=btn_navigation    ${time_sec}
+        Click Element    id=btn_navigation
+        coachmark handle      #hanya digunakan diawal saja
+        #pilih tambah Anak
+        Wait Until Element Is Visible    id=tv_nav_profile    ${time_sec}
+        #Element Name Should Be    id=tv_nav_profile    ${PROFILE_NAME}
+        # Click Element    id=tv_nav_child
+        # Sleep    1s
+        # Swipe    547    440    547    98
+        # Wait Until Element Is Visible    id=btn_add_child   ${time_sec}
+        # #Element Name Should Be    id=btn_add_child    Tambah Anak      #didisable bila menggunakan emulator
+        # Click Element    id=btn_add_child
+        # #input nama Anak
+        # Wait Until Element Is Visible    id=et_child_name   ${time_sec}
+        # Input Text    id=et_child_name    ${BabyW1}
+        # #input tanggal langsung dengan long press
+        # Wait Until Element Is Visible    android:id/pickers   ${time_sec}
+        # #input tahun
+        # Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[3]/android.widget.EditText
+        # Sleep    1s
+        # Press Keycode    ${2}
+        # Press Keycode    ${0}
+        # Press Keycode    ${1}
+        # Press Keycode    ${8}
+        # Klik Enter
+        # #input bulan
+        # Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.EditText
+        # Sleep    1s
+        # Press Keycode    ${A}
+        # Press Keycode    ${P}
+        # Press Keycode    ${R}
+        # Klik Enter
+        # #input tanggal
+        # Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[1]/android.widget.EditText
+        # Sleep    1s
+        # Press Keycode    ${0}
+        # Press Keycode    ${4}
+        # Klik Enter
+        # Sleep    2s
+        # # pilih jenis kelamin
+        # Click Element    ${APP}:id/sp_gender
+        # Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]  2s
+        # Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]
+        # Sleep    2s
+        # Click Element    id=btn_save
+        # Wait Until Element Is Visible    id=btn_navigation    ${time_sec}
+        # #swipe & tunggu Notifications
+        # Swipe Notifications
+        # Sleep    ${time_min}
+        # #capture notifikasi yang muncul
+        # Capture Page Screenshot   filename=${BabyW1}.png
+        # Klik Back
+        #coachmark handle      #hanya digunakan 1x diawal saja
+        #Masuk ke profile
+        Wait Until Element Is Visible    id=btn_navigation    ${time_sec}
+        Click Element    id=btn_navigation
+        Wait Until Element Is Visible    id=tv_nav_profile    ${time_sec}
+        Click Element    id=tv_nav_profile
+        #Ubah jadi sudah lahir
+        Wait Until Element Is Visible    ${APP}:id/tv_baby_name   100s
+
+        Click Element    id=tv_baby_name
+        Wait Until Element Is Visible    ${APP}:id/sudahLahir   100sClick Element    ${APP}:id/btn_actionbar_back
+        Sleep    ${time_min}

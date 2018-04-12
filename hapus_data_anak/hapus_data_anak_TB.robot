@@ -15,9 +15,9 @@ ${APP_ACTIVITY}    com.temanbumil.android.authentication.AuthenticationActivity
 ${APP_ACTIVITY_SPLASH}  com.temanbumil.android.splash.SplashActivity
 ${APP_ACTIVITY_HOME}  com.temanbumil.android.home.HomeActivity
 #data login
-${USERNAME}   ben1@yopmail.com
+${USERNAME}   ben3@yopmail.com
 ${PASSWORD}    12345678
-${PROFILE_NAME}   Aquila Majid
+${PROFILE_NAME}   Ben ben
 
 *** Keywords ***
 Delete Baby
@@ -26,6 +26,7 @@ Delete Baby
   Click Element                   ${APP}:id/delete
 Hapus data
   Wait Until Element Is Visible    ${APP}:id/tv_baby_name   100s
+  Sleep    1s
   Click Element    id=tv_baby_name
   Wait Until Element Is Visible    ${APP}:id/delete   100s
   Click Element    ${APP}:id/delete
@@ -63,10 +64,80 @@ Hapus Data anak
     Wait Until Element Is Visible    xpath=//android.widget.Button[@text='GOT IT']  10s
     Click Element    xpath=//android.widget.Button[@text='GOT IT']
     Wait Until Element Is Visible    id=tv_nav_profile  100s
-    Element Name Should Be    id=tv_nav_profile    ${PROFILE_NAME}
+    #Element Name Should Be    id=tv_nav_profile    ${PROFILE_NAME}
     Click Element    id=tv_nav_profile
     Wait Until Element Is Visible    ${APP}:id/tv_title   100s
     # Hapus Data (1 data)
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
+    Hapus data
     Hapus data
     Hapus data
     Hapus data

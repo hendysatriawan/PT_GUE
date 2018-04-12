@@ -18,13 +18,18 @@ ${APP_ACTIVITY_HOME}  com.temanbumil.android.home.HomeActivity
 ${USERNAME}   hendy.satriawan@gmail.com
 ${PASSWORD}    123456
 ${PROFILE_NAME}   hendy satriawan
-#data register
+#data register valid
+${FIRST_NAME}   ani
+${LAST_NAME}    sutes
+${EMAIL_USER}   anisutes1@yopmail.com
+${PASSWORD_USER}    12345678
+
 ${FIRST_NAME}   ani
 ${LAST_NAME}    sutes
 ${EMAIL_USER}   anisutes1@yopmail.com
 ${PASSWORD_USER}    12345678
 *** Test Cases ***
-# Register
+# Register valid
 #     [Documentation]    Try to login using valid member
 #     Open Application    ${REMOTE_URL}    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION_EMULATOR}    deviceName=${DEVICE_NAME_EMULATOR}    app=${APP}    appPackage=${APP_PACKAGE}   appActivity=${APP_ACTIVITY_SPLASH}
 #     Sleep    2s

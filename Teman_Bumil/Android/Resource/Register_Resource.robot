@@ -2,6 +2,7 @@
 Library    AppiumLibrary
 Library    BuiltIn
 Resource    ../Resource/Capability_Device_Resource.robot
+Resource    ../Resource/Permission_Resource.robot
 *** Variables ***
 #Data valid
 ${NAMA_DEPAN}   yuni
@@ -14,15 +15,18 @@ ${EMAIL_INVALID_1}    yun@yopmail
 ${EMAIL_INVALID_2}    yunyopmail.com
 ${EMAIL_ALREADY}      ben1@yopmail.com
 ${PASS_INVALID}   12345
+#data facebook
+${USERNAME_FB}  hendy_satriawan@rocketmail.com
+${PASSWORD_FB}  123456
+
 
 *** Keywords ***
-Register Valid
+Register Valid  #tanpa Verifikasi
   Buka apps temanbumil emulator
   #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-  Click Element    com.android.packageinstaller:id/permission_allow_button
+  Permission_Phone
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -47,8 +51,7 @@ Register Email Sudah Terdaftar
   #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-  Click Element    com.android.packageinstaller:id/permission_allow_button
+  Permission_Phone
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -73,8 +76,7 @@ Register Email Tidak Valid 1
   #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-  Click Element    com.android.packageinstaller:id/permission_allow_button
+  Permission_Phone
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -99,8 +101,7 @@ Register Email Tidak Valid 2
     #Buka apps temanbumil real device
     Sleep    2s
     #permission handle
-    Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-    Click Element    com.android.packageinstaller:id/permission_allow_button
+    Permission_Phone
     #skip splash screen
     Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
     Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -125,8 +126,7 @@ Register Password Tidak Valid
   #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-  Click Element    com.android.packageinstaller:id/permission_allow_button
+  Permission_Phone
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -151,8 +151,7 @@ Register Tidak Pilih Setuju
   #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Wait Until Element Is Visible    com.android.packageinstaller:id/permission_message  2s
-  Click Element    com.android.packageinstaller:id/permission_allow_button
+  Permission_Phone
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -171,3 +170,25 @@ Register Tidak Pilih Setuju
   #cek masuk ke halaman verifikasi
   Wait Until Element Is Visible    ${APP}:id/snackbar_text    5s
   Element Text Should Be    ${APP}:id/snackbar_text    Silakan setujui syarat dan ketentuan
+
+Register Via Facebook
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
+  Sleep    2s
+  #permission handle
+  Permission_Phone
+  #skip splash screen
+  Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
+  Click Element    xpath=//android.widget.Button[@text='SKIP']
+  #Wait Apps Open & Open Register Page
+  Wait Until Element Is Visible    id=text
+  Click Element    xpath=//android.widget.TextView[@text='REGISTER']
+  Element Name Should Be    id=btn_Register    REGISTER
+  #Login Via Facebook
+  Swipe    658    1258    728    615
+  Click Element    ${APP}:id/btn_facebook
+  Wait Activity    com.facebook.FacebookActivity    10s
+  Wait Until Element Is Visible    xpath://android.webkit.WebView[@index='0']    100s
+  #input data login Facebook
+  Input Text    xpath://android.widget.EditText[@content-desc="Email atau Telepon"]   ${USERNAME_FB}
+  Input Password    //android.webkit.WebView[@content-desc="Masuk Facebook | Facebook"]/android.view.View[3]/android.view.View[3]/android.widget.EditText[2]    ${PASSWORD_FB}

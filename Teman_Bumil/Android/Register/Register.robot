@@ -35,3 +35,6 @@ Register Not Click Agreement
   Register Tidak Pilih Setuju
   Capture Page Screenshot   filename=Test Register tidak setuju ketentuan.png
   Close Application
+Register Via Facebook
+  Log     Test Register Via Facebook
+  Register Via Facebook

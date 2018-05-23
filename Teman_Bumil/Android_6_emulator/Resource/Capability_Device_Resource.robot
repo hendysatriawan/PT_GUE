@@ -4,7 +4,7 @@ ${PLATFORM_NAME}    Android
 ${PLATFORM_VERSION_EMULATOR}    6.0
 ${PLATFORM_VERSION_REAL}       7.1.1
 ${DEVICE_NAME_EMULATOR}    192.168.56.101:5555
-${DEVICE_NAME_REAL}      49ffe4aa  #192.168.90.202:5555          
+${DEVICE_NAME_REAL}      192.168.90.202:5555    #49ffe4aa
 ${APP}            com.temanbumil.android
 ${APP_PACKAGE}    com.temanbumil.android
 ${APP_ACTIVITY}    com.temanbumil.android.authentication.AuthenticationActivity
@@ -52,6 +52,9 @@ ${W}    51
 ${X}    52
 ${Y}    53
 ${Z}    54
+${swipe}    Swipe    335    1000    335    250
+${cekartikel}   Page Should Contain Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
+
 *** Keywords ***
 Buka apps temanbumil real device
   Open Application    ${REMOTE_URL}    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION_REAL}    deviceName=${DEVICE_NAME_REAL}    app=${APP}    appPackage=${APP_PACKAGE}

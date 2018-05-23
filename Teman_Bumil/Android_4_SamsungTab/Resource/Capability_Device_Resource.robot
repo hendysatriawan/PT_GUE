@@ -2,9 +2,9 @@
 ${REMOTE_URL}     http://localhost:4723/wd/hub
 ${PLATFORM_NAME}    Android
 ${PLATFORM_VERSION_EMULATOR}    6.0
-${PLATFORM_VERSION_REAL}       7.1.1
+${PLATFORM_VERSION_REAL}       4.2.2
 ${DEVICE_NAME_EMULATOR}    192.168.56.101:5555
-${DEVICE_NAME_REAL}      49ffe4aa  #192.168.90.202:5555          
+${DEVICE_NAME_REAL}        41037a02e6a64095
 ${APP}            com.temanbumil.android
 ${APP_PACKAGE}    com.temanbumil.android
 ${APP_ACTIVITY}    com.temanbumil.android.authentication.AuthenticationActivity

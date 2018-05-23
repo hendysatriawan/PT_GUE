@@ -22,7 +22,7 @@ Register Valid  #tanpa Verifikasi
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    ${APP}:id/btn_next
@@ -65,7 +65,7 @@ Register Email Sudah Terdaftar
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -107,7 +107,7 @@ Register Email Tidak Valid 1
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -148,7 +148,7 @@ Register Email Tidak Valid 2
     Buka apps temanbumil real device
     Sleep    2s
     #permission handle
-    Permission_Phone
+    #Permission_Phone     #-- tidak digunakan di android 4
     #skip splash screen
     Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
     Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -188,7 +188,7 @@ Register Password Tidak Valid
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -229,7 +229,7 @@ Register Tidak Pilih Setuju
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -270,7 +270,7 @@ Register Via Facebook
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -290,7 +290,7 @@ Register Via Google
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -308,7 +308,7 @@ Register No Input Mandatory field
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    ${APP}:id/btn_next
@@ -342,11 +342,12 @@ Masuk Register Via Login
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
   #pilih rgister link
+  Wait Until Page Contains Element    ${APP}:id/tv_register   10s
   Click Element    ${APP}:id/tv_register
   Wait Until Element Is Visible    ${APP}:id/tv_tos   100s
   Element Text Should Be    ${APP}:id/tv_tos    Saya setuju dengan Syarat dan Ketentuan

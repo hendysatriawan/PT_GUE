@@ -19,8 +19,8 @@ ${PASSWORD_NEW}   1234567
 ${PASSWORD_CONFIRM}     1234567
 *** Keywords ***
 Login Valid
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -40,10 +40,12 @@ Login Valid
   Hide Keyboard
   Wait Until Element Is Visible    ${APP}:id/btn_login    100s
   Click Element    ${APP}:id/btn_login
+  Wait Until Page Does Not Contain Element    ${APP}:id/btn_login
+  Page Should Not Contain Element    ${APP}:id/btn_login
 
 Login Invalid Email
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -67,8 +69,8 @@ Login Invalid Email
   Element Text Should Be    ${APP}:id/snackbar_text    Email tidak ditemukan, periksa kembali penulisan email Anda
 
 Login Invalid Password
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -92,8 +94,8 @@ Login Invalid Password
   Element Text Should Be    ${APP}:id/snackbar_text    Login gagal. Silakan periksa password kamu!
 
 Login Via Register
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -111,8 +113,8 @@ Login Via Register
   Element Text Should Be    ${APP}:id/title_lupasandi    Lupa sandi?
 
 Lupa Password Valid Email
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -155,8 +157,8 @@ Lupa Password Valid Email
   Element Should Be Visible    ${APP}:id/btn_actionbar_notification
 
 Lupa Password Invalid Email
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone

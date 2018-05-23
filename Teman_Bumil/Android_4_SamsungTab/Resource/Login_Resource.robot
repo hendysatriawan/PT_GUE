@@ -23,7 +23,7 @@ Login Valid
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    ${APP}:id/btn_next
@@ -46,7 +46,7 @@ Login Invalid Email
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    ${APP}:id/btn_next
@@ -71,7 +71,7 @@ Login Invalid Password
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    ${APP}:id/btn_next
@@ -96,7 +96,7 @@ Login Via Register
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -115,7 +115,7 @@ Lupa Password Valid Email
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']
@@ -159,7 +159,7 @@ Lupa Password Invalid Email
   Buka apps temanbumil real device
   Sleep    2s
   #permission handle
-  Permission_Phone
+  #Permission_Phone     #-- tidak digunakan di android 4
   #skip splash screen
   Wait Until Element Is Visible    xpath=//android.widget.Button[@text='SKIP']  100s
   Click Element    xpath=//android.widget.Button[@text='SKIP']

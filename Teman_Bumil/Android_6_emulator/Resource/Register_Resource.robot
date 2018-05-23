@@ -18,8 +18,8 @@ ${PASS_INVALID}   12345
 
 *** Keywords ***
 Register Valid  #tanpa Verifikasi
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -38,31 +38,28 @@ Register Valid  #tanpa Verifikasi
   Input Text    ${APP}:id/et_first_name    ${NAMA_DEPAN}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_last_name    100s
   Tap    id=et_last_name
   Input Text    id=et_last_name    ${NAMA_BELAKANG}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_email    100s
   Tap    id=et_email
   Input Text    id=et_email    ${EMAIL_VALID}
   Hide Keyboard
   Sleep    2s
   Swipe    358    680    358    310
-  Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
+  Sleep    4s
   Tap    ${APP}:id/pv_pwd
   Input Text    ${APP}:id/pv_pwd    ${PASS_VALID}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=cb_tos    100s
   Click Element    id=cb_tos
   Click Element    id=btn_Register
   #cek masuk ke halaman verifikasi
   Wait Until Element Is Visible    ${APP}:id/btn_verify    100s
 
 Register Email Sudah Terdaftar
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -79,32 +76,28 @@ Register Email Sudah Terdaftar
   Input Text    ${APP}:id/et_first_name    ${NAMA_DEPAN}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_last_name    100s
   Tap    id=et_last_name
   Input Text    id=et_last_name    ${NAMA_BELAKANG}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_email    100s
   Tap    id=et_email
   Input Text    id=et_email    ${EMAIL_ALREADY}
   Hide Keyboard
   Sleep    2s
   Swipe    358    680    358    310
-  Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
+  Sleep    4s
   Tap    ${APP}:id/pv_pwd
   Input Text    ${APP}:id/pv_pwd    ${PASS_VALID}
   Hide Keyboard
   Sleep    2s
-
-  Wait Until Element Is Visible    id=cb_tos    100s
   Click Element    id=cb_tos
   Click Element    id=btn_Register
   Wait Until Element Is Visible    ${APP}:id/snackbar_text    100s
   Element Text Should Be    ${APP}:id/snackbar_text    Email anda sudah terdaftar, silakan login
 
 Register Email Tidak Valid 1
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -121,18 +114,15 @@ Register Email Tidak Valid 1
   Input Text    ${APP}:id/et_first_name    ${NAMA_DEPAN}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_last_name    100s
   Tap    id=et_last_name
   Input Text    id=et_last_name    ${NAMA_BELAKANG}
   Hide Keyboard
   Sleep    2s
-  Wait Until Element Is Visible    id=et_email    100s
   Tap    id=et_email
   Input Text    id=et_email    ${EMAIL_INVALID_1}
   Hide Keyboard
   Swipe    358    680    358    310
-  Sleep    2s
-  Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
+  Sleep    5s
   Tap    ${APP}:id/pv_pwd
   Input Text    ${APP}:id/pv_pwd    ${PASS_VALID}
   Hide Keyboard
@@ -144,8 +134,8 @@ Register Email Tidak Valid 1
   Element Text Should Be    ${APP}:id/snackbar_text    The Email field must contain a valid email address.
 
 Register Email Tidak Valid 2
-    #Buka apps temanbumil emulator
-    Buka apps temanbumil real device
+    Buka apps temanbumil emulator
+    #Buka apps temanbumil real device
     Sleep    2s
     #permission handle
     Permission_Phone
@@ -173,7 +163,7 @@ Register Email Tidak Valid 2
     Hide Keyboard
     Sleep    2s
     Swipe    358    680    358    310
-    Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
+    Sleep    4s
     Tap    ${APP}:id/pv_pwd
     Input Text    ${APP}:id/pv_pwd    ${PASS_VALID}
     Hide Keyboard
@@ -184,8 +174,8 @@ Register Email Tidak Valid 2
 
 
 Register Password Tidak Valid
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -212,7 +202,7 @@ Register Password Tidak Valid
   Input Text    id=et_email    ${EMAIL_VALID}
   Hide Keyboard
   Swipe    358    680    358    310
-  Sleep    2s
+  Sleep    4s
   Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
   Tap    ${APP}:id/pv_pwd
   Input Text    ${APP}:id/pv_pwd    ${PASS_INVALID}
@@ -225,8 +215,8 @@ Register Password Tidak Valid
   Element Text Should Be    ${APP}:id/textinput_error    Minimal 6 huruf
 
 Register Tidak Pilih Setuju
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -253,7 +243,7 @@ Register Tidak Pilih Setuju
   Input Text    id=et_email    ${EMAIL_VALID_2}
   Hide Keyboard
   Swipe    358    680    358    310
-  Sleep    2s
+  Sleep    4s
   Wait Until Element Is Visible    ${APP}:id/pv_pwd    100s
   Tap    ${APP}:id/pv_pwd
   Input Text    ${APP}:id/pv_pwd    ${PASS_VALID}
@@ -266,8 +256,8 @@ Register Tidak Pilih Setuju
   Element Text Should Be    ${APP}:id/snackbar_text    Silakan setujui syarat dan ketentuan
 
 Register Via Facebook
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -286,8 +276,8 @@ Register Via Facebook
   Wait Until Page Does Not Contain Element    android:id/progress   100s
 
 Register Via Google
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -304,8 +294,8 @@ Register Via Google
   Click Element    ${APP}:id/btn_google
 
 Register No Input Mandatory field
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone
@@ -338,8 +328,8 @@ Register No Input Mandatory field
   Click Element    id=btn_Register
 
 Masuk Register Via Login
-  #Buka apps temanbumil emulator
-  Buka apps temanbumil real device
+  Buka apps temanbumil emulator
+  #Buka apps temanbumil real device
   Sleep    2s
   #permission handle
   Permission_Phone

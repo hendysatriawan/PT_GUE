@@ -134,15 +134,23 @@ Homepage Program Hamil Artikel Slider 1
   Wait Until Element Is Visible    ${APP}:id/tv_title   100s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
   #Scroll artikel sampai bawah (sampai dapat artikel berikutnya)
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
-  Swipe    335    1160    335    250
+
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+  # Swipe    335    1160    335    250
+
+
+  Run Keyword If    '${cekartikel}'=='FALSE'    ${swipe}
+  ...   ELSE IF     '${cekartikel}'=='FALSE'    ${swipe}
+  ...   ELSE IF     '${cekartikel}'=='FALSE'    ${swipe}
+  ...   ELSE IF     '${cekartikel}'=='FALSE'    ${swipe}    
+
   Sleep    2s
   Element Should Be Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView

@@ -1,0 +1,2101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180612 18:06:22.382" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_6_emulator/SmokeTest/smoketest.robot" id="s1" name="Smoketest">
+<test id="s1-t1" name="1.Masuk Register Via Login">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Masuk halaman Register dengan memilih link daftar disini pada halaman login dan buka halaman syrat &amp; ketentuan</arg>
+</arguments>
+<msg timestamp="20180612 18:06:22.794" level="INFO">Masuk halaman Register dengan memilih link daftar disini pada halaman login dan buka halaman syrat &amp; ketentuan</msg>
+<status status="PASS" endtime="20180612 18:06:22.794" starttime="20180612 18:06:22.793"></status>
+</kw>
+<kw name="Masuk Register Via Login" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:31.478" starttime="20180612 18:06:22.795"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:06:31.478" starttime="20180612 18:06:22.794"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:06:33.482" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:06:33.482" starttime="20180612 18:06:31.478"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:33.548" starttime="20180612 18:06:33.483"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180612 18:06:33.549" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180612 18:06:36.686" starttime="20180612 18:06:33.548"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:06:36.686" starttime="20180612 18:06:33.482"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:38.451" starttime="20180612 18:06:36.686"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180612 18:06:38.452" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180612 18:06:40.021" starttime="20180612 18:06:38.452"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/tv_register</arg>
+</arguments>
+<msg timestamp="20180612 18:06:40.022" level="INFO">Clicking element 'com.temanbumil.android:id/tv_register'.</msg>
+<status status="PASS" endtime="20180612 18:06:40.882" starttime="20180612 18:06:40.021"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_tos</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:41.734" starttime="20180612 18:06:40.883"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_tos</arg>
+<arg>Saya setuju dengan Syarat dan Ketentuan</arg>
+</arguments>
+<msg timestamp="20180612 18:06:41.735" level="INFO">Verifying element 'com.temanbumil.android:id/tv_tos' contains exactly text 'Saya setuju dengan Syarat dan Ketentuan'.</msg>
+<status status="PASS" endtime="20180612 18:06:41.897" starttime="20180612 18:06:41.735"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:06:41.897" starttime="20180612 18:06:22.794"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/tv_tos</arg>
+</arguments>
+<msg timestamp="20180612 18:06:41.898" level="INFO">Clicking element 'com.temanbumil.android:id/tv_tos'.</msg>
+<status status="PASS" endtime="20180612 18:06:43.991" starttime="20180612 18:06:41.897"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[@text='Syarat &amp; Ketentuan']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:45.435" starttime="20180612 18:06:43.992"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Masuk Register Via Login &amp; syarat ketentuan.png</arg>
+</arguments>
+<msg timestamp="20180612 18:06:47.814" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Masuk%20Register%20Via%20Login%20%26%20syarat%20ketentuan.png"&gt;&lt;img src="Masuk%20Register%20Via%20Login%20%26%20syarat%20ketentuan.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180612 18:06:47.815" starttime="20180612 18:06:45.435"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180612 18:06:49.515" starttime="20180612 18:06:47.815"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:06:49.515" critical="yes" starttime="20180612 18:06:22.793"></status>
+</test>
+<test id="s1-t2" name="3.Register Email Already">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan Email sudah terdaftar</arg>
+</arguments>
+<msg timestamp="20180612 18:06:49.517" level="INFO">Test Register dengan Email sudah terdaftar</msg>
+<status status="PASS" endtime="20180612 18:06:49.517" starttime="20180612 18:06:49.517"></status>
+</kw>
+<kw name="Register Email Sudah Terdaftar" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:56.200" starttime="20180612 18:06:49.518"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:06:56.200" starttime="20180612 18:06:49.517"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:06:58.202" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:06:58.202" starttime="20180612 18:06:56.201"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:06:58.242" starttime="20180612 18:06:58.203"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180612 18:06:58.243" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180612 18:07:01.369" starttime="20180612 18:06:58.242"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:07:01.370" starttime="20180612 18:06:58.203"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:03.430" starttime="20180612 18:07:01.370"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180612 18:07:03.430" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180612 18:07:04.266" starttime="20180612 18:07:03.430"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=text</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:05.375" starttime="20180612 18:07:04.267"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[@text='REGISTER']</arg>
+</arguments>
+<msg timestamp="20180612 18:07:05.376" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='REGISTER']'.</msg>
+<status status="PASS" endtime="20180612 18:07:05.713" starttime="20180612 18:07:05.375"></status>
+</kw>
+<kw name="Element Name Should Be" library="AppiumLibrary">
+<arguments>
+<arg>id=btn_Register</arg>
+<arg>REGISTER</arg>
+</arguments>
+<msg timestamp="20180612 18:07:06.703" level="INFO">Element 'id=btn_Register' name is 'REGISTER' </msg>
+<status status="PASS" endtime="20180612 18:07:06.703" starttime="20180612 18:07:05.713"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/et_first_name</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:06.832" starttime="20180612 18:07:06.703"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_first_name</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:10.116" starttime="20180612 18:07:06.832"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_first_name</arg>
+<arg>${NAMA_DEPAN}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:10.117" level="INFO">Typing text 'yuni' into text field 'com.temanbumil.android:id/et_first_name'</msg>
+<status status="PASS" endtime="20180612 18:07:14.873" starttime="20180612 18:07:10.116"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180612 18:07:16.432" starttime="20180612 18:07:14.873"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:18.433" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:18.434" starttime="20180612 18:07:16.432"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>id=et_last_name</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:18.604" starttime="20180612 18:07:18.434"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=et_last_name</arg>
+<arg>${NAMA_BELAKANG}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:18.605" level="INFO">Typing text 'sinta' into text field 'id=et_last_name'</msg>
+<status status="PASS" endtime="20180612 18:07:24.657" starttime="20180612 18:07:18.604"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180612 18:07:25.223" starttime="20180612 18:07:24.657"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:27.224" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:27.225" starttime="20180612 18:07:25.224"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>id=et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:30.427" starttime="20180612 18:07:27.225"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=et_email</arg>
+<arg>${EMAIL_ALREADY}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:30.427" level="INFO">Typing text 'ben1@yopmail.com' into text field 'id=et_email'</msg>
+<status status="PASS" endtime="20180612 18:07:36.793" starttime="20180612 18:07:30.427"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:38.953" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180612 18:07:38.953" starttime="20180612 18:07:36.941"></status>
+</kw>
+<msg timestamp="20180612 18:07:38.957" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Soft keyboard not present, cannot hide keyboard
+</msg>
+<status status="FAIL" endtime="20180612 18:07:38.957" starttime="20180612 18:07:36.793"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:38.957" starttime="20180612 18:06:49.517"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:38.958" critical="yes" starttime="20180612 18:06:49.516">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Soft keyboard not present, cannot hide keyboard
+</status>
+</test>
+<test id="s1-t3" name="4.Register Email Invalid 1">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan Email tidak valid 1 (tanpa .com)</arg>
+</arguments>
+<msg timestamp="20180612 18:07:38.959" level="INFO">Test Register dengan Email tidak valid 1 (tanpa .com)</msg>
+<status status="PASS" endtime="20180612 18:07:38.959" starttime="20180612 18:07:38.959"></status>
+</kw>
+<kw name="Register Email Tidak Valid 1" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180612 18:07:49.343" starttime="20180612 18:07:38.960"></status>
+</kw>
+<status status="PASS" endtime="20180612 18:07:49.344" starttime="20180612 18:07:38.960"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.345" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:51.345" starttime="20180612 18:07:49.344"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.357" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.357" starttime="20180612 18:07:51.348"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.357" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.360" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.360" starttime="20180612 18:07:51.346"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.360" starttime="20180612 18:07:51.345"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.360" starttime="20180612 18:07:38.959"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.361" critical="yes" starttime="20180612 18:07:38.958">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t4" name="5.Register Email Invalid 2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan Email tidak valid 2 (tanpa @)</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.362" level="INFO">Test Register dengan Email tidak valid 2 (tanpa @)</msg>
+<status status="PASS" endtime="20180612 18:07:51.362" starttime="20180612 18:07:51.362"></status>
+</kw>
+<kw name="Register Email Tidak Valid 2" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.365" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.370" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.370" starttime="20180612 18:07:51.367"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.370" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.371" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.371" starttime="20180612 18:07:51.363"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.371" starttime="20180612 18:07:51.363"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.372" starttime="20180612 18:07:51.363"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.372" critical="yes" starttime="20180612 18:07:51.361">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t5" name="6.Register Password Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan Password tidak Valid</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.373" level="INFO">Test Register dengan Password tidak Valid</msg>
+<status status="PASS" endtime="20180612 18:07:51.373" starttime="20180612 18:07:51.373"></status>
+</kw>
+<kw name="Register Password Tidak Valid" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.375" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.380" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.380" starttime="20180612 18:07:51.377"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.380" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.381" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.381" starttime="20180612 18:07:51.374"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.381" starttime="20180612 18:07:51.373"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.381" starttime="20180612 18:07:51.373"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.381" critical="yes" starttime="20180612 18:07:51.372">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t6" name="7.Register Not Click Agreement">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register tanpa pilih setuju ketentuan</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.382" level="INFO">Test Register tanpa pilih setuju ketentuan</msg>
+<status status="PASS" endtime="20180612 18:07:51.382" starttime="20180612 18:07:51.382"></status>
+</kw>
+<kw name="Register Tidak Pilih Setuju" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.385" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.390" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.390" starttime="20180612 18:07:51.387"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.390" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.391" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.391" starttime="20180612 18:07:51.383"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.391" starttime="20180612 18:07:51.383"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.391" starttime="20180612 18:07:51.383"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.391" critical="yes" starttime="20180612 18:07:51.382">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t7" name="8.Register No Input Mandatory Field">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan tidak mengisi salah satu field yang mandatory</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.395" level="INFO">Test Register dengan tidak mengisi salah satu field yang mandatory</msg>
+<status status="PASS" endtime="20180612 18:07:51.396" starttime="20180612 18:07:51.394"></status>
+</kw>
+<kw name="Register No Input Mandatory field" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.398" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.403" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.404" starttime="20180612 18:07:51.400"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.404" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.404" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.405" starttime="20180612 18:07:51.396"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.405" starttime="20180612 18:07:51.396"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.405" starttime="20180612 18:07:51.396"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.405" critical="yes" starttime="20180612 18:07:51.393">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t8" name="1.Login Data Valid">
+<kw name="Set Tags" library="BuiltIn">
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.406" level="INFO">Set tag 'Test Login dengan data valid (user baru register)'.</msg>
+<status status="PASS" endtime="20180612 18:07:51.406" starttime="20180612 18:07:51.406"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.407" level="INFO">Test Login dengan data valid (user baru register)</msg>
+<status status="PASS" endtime="20180612 18:07:51.407" starttime="20180612 18:07:51.407"></status>
+</kw>
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.410" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.414" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.415" starttime="20180612 18:07:51.412"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.415" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.415" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.415" starttime="20180612 18:07:51.408"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.415" starttime="20180612 18:07:51.407"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.416" starttime="20180612 18:07:51.407"></status>
+</kw>
+<tags>
+<tag>Test Login dengan data valid (user baru register)</tag>
+</tags>
+<status status="FAIL" endtime="20180612 18:07:51.416" critical="yes" starttime="20180612 18:07:51.406">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t9" name="2.Login Data Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Email yang belum terdaftar</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.417" level="INFO">Test Login dengan Email yang belum terdaftar</msg>
+<status status="PASS" endtime="20180612 18:07:51.417" starttime="20180612 18:07:51.417"></status>
+</kw>
+<kw name="Login Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.421" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.426" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.426" starttime="20180612 18:07:51.423"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.426" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.426" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.427" starttime="20180612 18:07:51.418"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.427" starttime="20180612 18:07:51.417"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.427" starttime="20180612 18:07:51.417"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.427" critical="yes" starttime="20180612 18:07:51.416">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t10" name="3.Login Data Password Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Password yang salah</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.428" level="INFO">Test Login dengan Password yang salah</msg>
+<status status="PASS" endtime="20180612 18:07:51.428" starttime="20180612 18:07:51.428"></status>
+</kw>
+<kw name="Login Invalid Password" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.431" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.435" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.435" starttime="20180612 18:07:51.432"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.435" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.436" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.436" starttime="20180612 18:07:51.429"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.436" starttime="20180612 18:07:51.429"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.436" starttime="20180612 18:07:51.428"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.437" critical="yes" starttime="20180612 18:07:51.428">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t11" name="4.Lupa Password Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Lupa Password dengan menggunakan email yang tidak Terdaftar</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.438" level="INFO">Test Lupa Password dengan menggunakan email yang tidak Terdaftar</msg>
+<status status="PASS" endtime="20180612 18:07:51.438" starttime="20180612 18:07:51.437"></status>
+</kw>
+<kw name="Lupa Password Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.441" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.450" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.450" starttime="20180612 18:07:51.445"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.450" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.451" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.451" starttime="20180612 18:07:51.438"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.451" starttime="20180612 18:07:51.438"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.451" starttime="20180612 18:07:51.438"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.452" critical="yes" starttime="20180612 18:07:51.437">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t12" name="1.Program Hamil Homepage">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.455" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.461" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.461" starttime="20180612 18:07:51.458"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.461" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.462" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.462" starttime="20180612 18:07:51.453"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.462" starttime="20180612 18:07:51.453"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.462" starttime="20180612 18:07:51.453"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.462" critical="yes" starttime="20180612 18:07:51.452">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t13" name="1A.Program Hamil Artikel Slider 1">
+<kw name="Homepage Program Hamil Artikel Slider 1" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]</arg>
+</arguments>
+<msg timestamp="20180612 18:07:51.464" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.467" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.468" starttime="20180612 18:07:51.465"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.468" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.469" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.469" starttime="20180612 18:07:51.464"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.470" starttime="20180612 18:07:51.463"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.470" critical="yes" starttime="20180612 18:07:51.463">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t14" name="Kembali ke Homepage Dari Artikel Slider">
+<status status="FAIL" endtime="20180612 18:07:51.471" critical="yes" starttime="20180612 18:07:51.470">Test case contains no keywords.</status>
+</test>
+<test id="s1-t15" name="1B.Program Hamil Artikel Slider 2">
+<kw name="Homepage Program Hamil Artikel Slider 2" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>610</arg>
+<arg>330</arg>
+<arg>45</arg>
+<arg>330</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.476" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.476" starttime="20180612 18:07:51.473"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.477" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.483" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.483" starttime="20180612 18:07:51.472"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.484" starttime="20180612 18:07:51.472"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.484" critical="yes" starttime="20180612 18:07:51.471">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t16" name="1C.Program Hamil Checklist">
+<kw name="Homepage Program Hamil Checklist" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>320</arg>
+<arg>1180</arg>
+<arg>320</arg>
+<arg>860</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.492" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.492" starttime="20180612 18:07:51.487"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.492" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.493" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.493" starttime="20180612 18:07:51.485"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.493" starttime="20180612 18:07:51.485"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.494" critical="yes" starttime="20180612 18:07:51.484">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t17" name="1D.Program Hamil Tips">
+<kw name="Homepage Program Hamil Tips" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>320</arg>
+<arg>1200</arg>
+<arg>320</arg>
+<arg>605</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:51.499" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.499" starttime="20180612 18:07:51.496"></status>
+</kw>
+<msg timestamp="20180612 18:07:51.499" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.500" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:51.500" starttime="20180612 18:07:51.495"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.500" starttime="20180612 18:07:51.494"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:51.500" critical="yes" starttime="20180612 18:07:51.494">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t18" name="1E.Program Hamil Tips Slide">
+<kw name="Homepage Program Hamil Tips Slide" library="Homepage_Resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.503" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:53.503" starttime="20180612 18:07:51.502"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>560</arg>
+<arg>1150</arg>
+<arg>28</arg>
+<arg>1190</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.508" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.508" starttime="20180612 18:07:53.504"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.508" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.508" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.508" starttime="20180612 18:07:53.503"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.509" starttime="20180612 18:07:51.501"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.509" critical="yes" starttime="20180612 18:07:51.501">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t19" name="1F.Program Hamil Artikel Homepage">
+<kw name="Homepage Program Hamil Artikel" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/title_tips</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.515" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.515" starttime="20180612 18:07:53.511"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.515" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.515" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.515" starttime="20180612 18:07:53.510"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.516" starttime="20180612 18:07:53.510"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.516" critical="yes" starttime="20180612 18:07:53.509">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t20" name="1G.Program Hamil Checklist Notifikasi">
+<kw name="Homepage Progam Hamil Checklist Notifikasi" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_notification</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.521" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.521" starttime="20180612 18:07:53.518"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.521" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.522" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.522" starttime="20180612 18:07:53.517"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.522" starttime="20180612 18:07:53.516"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.522" critical="yes" starttime="20180612 18:07:53.516">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t21" name="1H.Hapus Data Program Hamil">
+<kw name="Hapus Data Program Hamil With Coachmark" library="Profile_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.523" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.527" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.527" starttime="20180612 18:07:53.524"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.527" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.528" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.528" starttime="20180612 18:07:53.523"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.528" starttime="20180612 18:07:53.523"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.528" critical="yes" starttime="20180612 18:07:53.522">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t22" name="2.Program Hamil Homepage Ubah Status Hamil">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.531" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.535" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.535" starttime="20180612 18:07:53.533"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.535" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.536" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.536" starttime="20180612 18:07:53.529"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.536" starttime="20180612 18:07:53.529"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.537" starttime="20180612 18:07:53.529"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.537" critical="yes" starttime="20180612 18:07:53.528">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t23" name="3.Program Hamil Drawer Menu">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.540" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.553" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.554" starttime="20180612 18:07:53.543"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.554" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.555" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.555" starttime="20180612 18:07:53.538"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.555" starttime="20180612 18:07:53.538"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.555" starttime="20180612 18:07:53.538"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.556" critical="yes" starttime="20180612 18:07:53.537">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t24" name="A.Program Hamil Menu Checklist">
+<kw name="Program Hamil Menu Checklist" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.558" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.563" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.563" starttime="20180612 18:07:53.559"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.563" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.564" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.564" starttime="20180612 18:07:53.557"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.564" starttime="20180612 18:07:53.557"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.564" critical="yes" starttime="20180612 18:07:53.556">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t25" name="B.Program Hamil Menu Agenda">
+<kw name="Program Hamil Menu Agenda" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.566" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.570" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.570" starttime="20180612 18:07:53.567"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.570" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.571" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.571" starttime="20180612 18:07:53.565"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.571" starttime="20180612 18:07:53.565"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.571" critical="yes" starttime="20180612 18:07:53.565">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t26" name="C.Program Hamil Menu Album">
+<kw name="Program Hamil Menu Album" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.573" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.577" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.577" starttime="20180612 18:07:53.574"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.577" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.578" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.578" starttime="20180612 18:07:53.573"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.578" starttime="20180612 18:07:53.573"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.578" critical="yes" starttime="20180612 18:07:53.572">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t27" name="D.Program Hamil Menu Artikel">
+<kw name="Program Hamil Menu Artikel" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.579" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.583" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.583" starttime="20180612 18:07:53.580"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.583" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.584" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.584" starttime="20180612 18:07:53.579"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.584" starttime="20180612 18:07:53.579"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.585" critical="yes" starttime="20180612 18:07:53.578">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t28" name="E.Program Hamil Menu Tips">
+<kw name="Program Hamil Menu Tips" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.586" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.591" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.591" starttime="20180612 18:07:53.587"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.591" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.592" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.592" starttime="20180612 18:07:53.586"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.592" starttime="20180612 18:07:53.585"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.592" critical="yes" starttime="20180612 18:07:53.585">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t29" name="F.Hapus Data Program Hamil">
+<kw name="Hapus Data Program Hamil Without Coachmark" library="Profile_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.594" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.600" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.600" starttime="20180612 18:07:53.595"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.600" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.601" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.601" starttime="20180612 18:07:53.594"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.601" starttime="20180612 18:07:53.593"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.601" critical="yes" starttime="20180612 18:07:53.593">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t30" name="4.Question Kehamilan No -- homepage">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.606" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.610" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.610" starttime="20180612 18:07:53.608"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.611" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.611" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.611" starttime="20180612 18:07:53.603"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.612" starttime="20180612 18:07:53.602"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.612" starttime="20180612 18:07:53.602"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.612" critical="yes" starttime="20180612 18:07:53.602">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t31" name="A.Sedang Hamil Checklist Notifikasi">
+<kw name="Homepage Sedang Hamil Checklist Notifikasi" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_notification</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.617" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.617" starttime="20180612 18:07:53.614"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.617" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.618" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.618" starttime="20180612 18:07:53.613"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.618" starttime="20180612 18:07:53.613"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.618" critical="yes" starttime="20180612 18:07:53.612">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t32" name="B.Sedang Hamil Info Baby - Image Fetus">
+<kw name="Homepage Sedang Hamil Image Fetus" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/img_fetus</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.620" level="INFO">Clicking element 'com.temanbumil.android:id/img_fetus'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.623" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.623" starttime="20180612 18:07:53.621"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.623" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.624" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.624" starttime="20180612 18:07:53.620"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.624" starttime="20180612 18:07:53.619"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.625" critical="yes" starttime="20180612 18:07:53.619">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t33" name="C.Sedang Hamil Info baby">
+<kw name="Homepage Sedang Hamil Info Baby" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/txt_info</arg>
+</arguments>
+<msg timestamp="20180612 18:07:53.626" level="INFO">Clicking element 'com.temanbumil.android:id/txt_info'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.629" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.630" starttime="20180612 18:07:53.627"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.630" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.630" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.630" starttime="20180612 18:07:53.626"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.631" starttime="20180612 18:07:53.625"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.631" critical="yes" starttime="20180612 18:07:53.625">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t34" name="D.Sedang Hamil Bayi Ideal">
+<kw name="Homepage Sedang Hamil Bayi Ideal" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>330</arg>
+<arg>1200</arg>
+<arg>330</arg>
+<arg>750</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.636" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.636" starttime="20180612 18:07:53.633"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.636" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.637" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.637" starttime="20180612 18:07:53.632"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.637" starttime="20180612 18:07:53.632"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.637" critical="yes" starttime="20180612 18:07:53.631">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t35" name="E.Sedang Hamil Info Mums">
+<kw name="Homepage Sedang Hamil info Mums" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>330</arg>
+<arg>1200</arg>
+<arg>330</arg>
+<arg>300</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.644" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.644" starttime="20180612 18:07:53.641"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.644" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.645" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.645" starttime="20180612 18:07:53.639"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.645" starttime="20180612 18:07:53.638"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.645" critical="yes" starttime="20180612 18:07:53.638">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t36" name="F.Sedang Hamil Checklist">
+<kw name="Homepage Sedang Hamil Checklist" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>330</arg>
+<arg>1200</arg>
+<arg>330</arg>
+<arg>300</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.651" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.651" starttime="20180612 18:07:53.648"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.651" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.652" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.652" starttime="20180612 18:07:53.647"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.653" starttime="20180612 18:07:53.646"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.653" critical="yes" starttime="20180612 18:07:53.646">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t37" name="G.Sedang Hamil Tips">
+<kw name="Homepage Sedang Hamil Tips" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>330</arg>
+<arg>1200</arg>
+<arg>330</arg>
+<arg>480</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:53.659" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.659" starttime="20180612 18:07:53.656"></status>
+</kw>
+<msg timestamp="20180612 18:07:53.659" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.660" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:53.660" starttime="20180612 18:07:53.655"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.660" starttime="20180612 18:07:53.654"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:53.660" critical="yes" starttime="20180612 18:07:53.653">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t38" name="H.Sedang Hamil Tips Slide">
+<kw name="Homepage Sedang Hamil Tips Slide" library="Homepage_Resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.662" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:55.662" starttime="20180612 18:07:53.661"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>670</arg>
+<arg>1140</arg>
+<arg>70</arg>
+<arg>1140</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.667" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.667" starttime="20180612 18:07:55.664"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.667" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.667" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.667" starttime="20180612 18:07:55.662"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.668" starttime="20180612 18:07:53.661"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.668" critical="yes" starttime="20180612 18:07:53.660">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t39" name="I.Sedang Hamil Artikel">
+<kw name="Homepage Sedang Hamil Artikel" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/title_tips</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.673" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.673" starttime="20180612 18:07:55.670"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.673" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.674" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.674" starttime="20180612 18:07:55.669"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.674" starttime="20180612 18:07:55.669"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.675" critical="yes" starttime="20180612 18:07:55.668">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t40" name="J.Hapus Data Kehamilan">
+<kw name="Hapus Data Kehamilan With Coachmark" library="Profile_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.676" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.680" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.680" starttime="20180612 18:07:55.677"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.681" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.681" starttime="20180612 18:07:55.676"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.681" starttime="20180612 18:07:55.675"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.681" critical="yes" starttime="20180612 18:07:55.675">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t41" name="5.Question Kehamilan Yes -- drawer menu">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.684" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.689" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.689" starttime="20180612 18:07:55.686"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.689" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.689" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.690" starttime="20180612 18:07:55.682"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.690" starttime="20180612 18:07:55.682"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.690" starttime="20180612 18:07:55.682"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.690" critical="yes" starttime="20180612 18:07:55.681">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t42" name="A.Sedang Hamil Menu Checklist">
+<kw name="Sedang Hamil Menu Checklist" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.691" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.695" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.695" starttime="20180612 18:07:55.692"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.695" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.696" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.696" starttime="20180612 18:07:55.691"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.696" starttime="20180612 18:07:55.691"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.696" critical="yes" starttime="20180612 18:07:55.690">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t43" name="B.Sedang Hamil Menu Agenda">
+<kw name="Sedang Hamil Menu Agenda" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.697" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.701" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.702" starttime="20180612 18:07:55.698"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.702" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.703" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.703" starttime="20180612 18:07:55.697"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.703" starttime="20180612 18:07:55.697"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.703" critical="yes" starttime="20180612 18:07:55.696">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t44" name="C.Sedang Hamil Menu Grafik Mums">
+<kw name="Sedang Hamil Menu Grafik Mums" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.705" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.710" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.710" starttime="20180612 18:07:55.706"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.710" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.711" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.711" starttime="20180612 18:07:55.705"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.711" starttime="20180612 18:07:55.704"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.711" critical="yes" starttime="20180612 18:07:55.703">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t45" name="D.Sedang Hamil Menu Grafik Anak">
+<kw name="Sedang Hamil Menu Grafik Anak" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.713" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.716" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.716" starttime="20180612 18:07:55.714"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.716" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.717" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.717" starttime="20180612 18:07:55.713"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.717" starttime="20180612 18:07:55.712"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.718" critical="yes" starttime="20180612 18:07:55.712">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t46" name="E.Sedang Hamil Menu ALbum">
+<kw name="Sedang Hamil Menu Album" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.719" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.723" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.723" starttime="20180612 18:07:55.720"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.723" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.725" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.725" starttime="20180612 18:07:55.719"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.725" starttime="20180612 18:07:55.719"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.726" critical="yes" starttime="20180612 18:07:55.718">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t47" name="F.Sedang Hamil Menu Artikel">
+<kw name="Sedang Hamil Menu Artikel" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.728" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.731" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.732" starttime="20180612 18:07:55.729"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.732" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.732" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.732" starttime="20180612 18:07:55.727"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.733" starttime="20180612 18:07:55.727"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.733" critical="yes" starttime="20180612 18:07:55.726">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t48" name="G.Sedang Hamil Menu Tips">
+<kw name="Sedang Hamil Menu Tips" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.734" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.738" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.738" starttime="20180612 18:07:55.735"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.738" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.739" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.739" starttime="20180612 18:07:55.734"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.739" starttime="20180612 18:07:55.734"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.739" critical="yes" starttime="20180612 18:07:55.733">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t49" name="H.Hapus Data Kehamilan">
+<kw name="Hapus Data Kehamilan Without Coachmark" library="Profile_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.741" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.747" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.747" starttime="20180612 18:07:55.743"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.747" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.748" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.749" starttime="20180612 18:07:55.741"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.749" starttime="20180612 18:07:55.740"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.749" critical="yes" starttime="20180612 18:07:55.740">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t50" name="6.Question Tumbuh Kembang Homepage">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.754" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.761" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.761" starttime="20180612 18:07:55.757"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.761" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.762" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.762" starttime="20180612 18:07:55.752"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.763" starttime="20180612 18:07:55.751"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.763" starttime="20180612 18:07:55.750"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.763" critical="yes" starttime="20180612 18:07:55.749">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t51" name="A.Tumbuh Kembang Checklist Notifikasi">
+<kw name="Homepage Tumbuh Kembang Checklist Notifikasi" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_notification</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.768" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.768" starttime="20180612 18:07:55.765"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.768" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.769" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.769" starttime="20180612 18:07:55.764"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.769" starttime="20180612 18:07:55.764"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.770" critical="yes" starttime="20180612 18:07:55.763">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t52" name="B.Tumbuh Kembang Add Album">
+<kw name="Homepage Tumbuh Kembang Add Album" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btnAddAlbum</arg>
+</arguments>
+<msg timestamp="20180612 18:07:55.771" level="INFO">Clicking element 'com.temanbumil.android:id/btnAddAlbum'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.775" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.775" starttime="20180612 18:07:55.772"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.775" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.776" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.776" starttime="20180612 18:07:55.771"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.776" starttime="20180612 18:07:55.771"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.777" critical="yes" starttime="20180612 18:07:55.770">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t53" name="C.Tumbuh Kembang Info Baby">
+<kw name="Homepage Tumbuh Kembang Info Baby" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>320</arg>
+<arg>1180</arg>
+<arg>320</arg>
+<arg>1000</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.781" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.782" starttime="20180612 18:07:55.779"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.782" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.782" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.782" starttime="20180612 18:07:55.778"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.782" starttime="20180612 18:07:55.778"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.783" critical="yes" starttime="20180612 18:07:55.777">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t54" name="D.Tumbuh Kembang Checklist">
+<kw name="Homepage Tumbuh Kembang Checklist" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>320</arg>
+<arg>1180</arg>
+<arg>320</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.788" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.788" starttime="20180612 18:07:55.785"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.788" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.789" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.789" starttime="20180612 18:07:55.784"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.789" starttime="20180612 18:07:55.783"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.789" critical="yes" starttime="20180612 18:07:55.783">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t55" name="E.Tumbuh Kembang Tips">
+<kw name="Homepage Tumbuh Kembang Tips" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>330</arg>
+<arg>1200</arg>
+<arg>330</arg>
+<arg>560</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:55.796" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.796" starttime="20180612 18:07:55.792"></status>
+</kw>
+<msg timestamp="20180612 18:07:55.796" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.797" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:55.797" starttime="20180612 18:07:55.791"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.797" starttime="20180612 18:07:55.790"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:55.797" critical="yes" starttime="20180612 18:07:55.790">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t56" name="F.Tumbuh Kenbang Tips Slide">
+<kw name="Homepage Tumbuh Kembang Tips Slide" library="Homepage_Resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.799" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180612 18:07:57.799" starttime="20180612 18:07:55.798"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>320</arg>
+<arg>1180</arg>
+<arg>320</arg>
+<arg>980</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.804" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.804" starttime="20180612 18:07:57.801"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.804" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.805" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.805" starttime="20180612 18:07:57.799"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.805" starttime="20180612 18:07:55.798"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.806" critical="yes" starttime="20180612 18:07:55.798">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t57" name="G.Tumbuh Kembang Artikel">
+<kw name="Homepage Tumbuh Kembang Artikel" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/title_tips</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.812" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.812" starttime="20180612 18:07:57.808"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.812" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.813" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.813" starttime="20180612 18:07:57.807"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.813" starttime="20180612 18:07:57.807"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.813" critical="yes" starttime="20180612 18:07:57.806">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t58" name="H.Tumbuh Kembang Add Record">
+<kw name="Homepage Tumbuh Kembang Add Record" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btnAddRecord</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.815" level="INFO">Clicking element 'com.temanbumil.android:id/btnAddRecord'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.818" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.818" starttime="20180612 18:07:57.816"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.818" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.819" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.819" starttime="20180612 18:07:57.814"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.819" starttime="20180612 18:07:57.814"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.819" critical="yes" starttime="20180612 18:07:57.814">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t59" name="I.Hapus Data Tumbuh Kembang">
+<kw name="Hapus Data Tumbuh Kembang With Coachmark" library="Profile_Resource">
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.825" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.825" starttime="20180612 18:07:57.822"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.825" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.826" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.826" starttime="20180612 18:07:57.821"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.826" starttime="20180612 18:07:57.820"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.826" critical="yes" starttime="20180612 18:07:57.820">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t60" name="j.Ubah Pengaturan Artikel">
+<kw name="Ubah Artikel Tumbuh Kembang Without Choose Theme" library="Profile_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_content</arg>
+<arg>100s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.831" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.831" starttime="20180612 18:07:57.829"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.831" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.832" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.832" starttime="20180612 18:07:57.827"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.832" starttime="20180612 18:07:57.827"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.832" critical="yes" starttime="20180612 18:07:57.827">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t61" name="7.Tumbuh Kembang Drawer Menu">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.836" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.842" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.843" starttime="20180612 18:07:57.838"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.843" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.843" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.844" starttime="20180612 18:07:57.834"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.844" starttime="20180612 18:07:57.834"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.844" starttime="20180612 18:07:57.833"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.844" critical="yes" starttime="20180612 18:07:57.833">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t62" name="A.Tumbuh Kembang Menu Checklist">
+<kw name="Tumbuh Kembang Menu Checklist" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.846" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.851" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.851" starttime="20180612 18:07:57.848"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.851" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.852" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.852" starttime="20180612 18:07:57.846"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.852" starttime="20180612 18:07:57.845"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.853" critical="yes" starttime="20180612 18:07:57.845">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t63" name="B.Tumbuh Kembang Menu Agenda">
+<kw name="Tumbuh Kembang Menu Agenda" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.855" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.859" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.859" starttime="20180612 18:07:57.856"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.859" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.860" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.860" starttime="20180612 18:07:57.854"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.860" starttime="20180612 18:07:57.854"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.860" critical="yes" starttime="20180612 18:07:57.853">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t64" name="C.Tumbuh Kembang Menu Album">
+<kw name="Tumbuh Kembang Menu Album" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.862" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.865" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.865" starttime="20180612 18:07:57.863"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.866" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.866" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.866" starttime="20180612 18:07:57.862"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.866" starttime="20180612 18:07:57.861"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.867" critical="yes" starttime="20180612 18:07:57.861">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t65" name="D.Tumbuh Kembang Menu Artikel">
+<kw name="Tumbuh Kembang Menu Artikel" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.868" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.871" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.872" starttime="20180612 18:07:57.869"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.872" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.872" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.872" starttime="20180612 18:07:57.868"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.873" starttime="20180612 18:07:57.867"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.873" critical="yes" starttime="20180612 18:07:57.867">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t66" name="E.Tumbuh Kembang Menu Tips">
+<kw name="Tumbuh Kembang Menu Tips" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.874" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.877" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.878" starttime="20180612 18:07:57.875"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.878" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.878" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.878" starttime="20180612 18:07:57.874"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.878" starttime="20180612 18:07:57.874"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.879" critical="yes" starttime="20180612 18:07:57.873">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t67" name="F.Tumbuh Kembang Menu Grafik Data Janin Terakhir">
+<kw name="Tumbuh Kembang Grafik Data Terakhir Janin" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.880" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.884" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.884" starttime="20180612 18:07:57.881"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.884" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.885" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.885" starttime="20180612 18:07:57.880"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.886" starttime="20180612 18:07:57.880"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.886" critical="yes" starttime="20180612 18:07:57.879">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t68" name="G.Tumbuh Kembang Menu Grafik Anak">
+<kw name="Tumbuh Kembang Menu Grafik Anak" library="DrawerMenu_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.888" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.892" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.892" starttime="20180612 18:07:57.889"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.892" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.893" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.893" starttime="20180612 18:07:57.888"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.893" starttime="20180612 18:07:57.888"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.893" critical="yes" starttime="20180612 18:07:57.886">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t69" name="H.Hapus Data Tumbuh Kembang">
+<kw name="Hapus Data Tumbuh Kembang Without Coachmark" library="Profile_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_navigation</arg>
+</arguments>
+<msg timestamp="20180612 18:07:57.894" level="INFO">Clicking element 'com.temanbumil.android:id/btn_navigation'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.898" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.898" starttime="20180612 18:07:57.895"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.898" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.899" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.899" starttime="20180612 18:07:57.894"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.899" starttime="20180612 18:07:57.894"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.899" critical="yes" starttime="20180612 18:07:57.893">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t70" name="I.Ubah Pengaturan Artikel">
+<kw name="Ubah Artikel Tumbuh Kembang Without Choose Theme" library="Profile_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_content</arg>
+<arg>100s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180612 18:07:57.905" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.905" starttime="20180612 18:07:57.902"></status>
+</kw>
+<msg timestamp="20180612 18:07:57.906" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.906" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180612 18:07:57.906" starttime="20180612 18:07:57.900"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.907" starttime="20180612 18:07:57.900"></status>
+</kw>
+<status status="FAIL" endtime="20180612 18:07:57.907" critical="yes" starttime="20180612 18:07:57.900">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<status status="FAIL" endtime="20180612 18:07:57.916" starttime="20180612 18:06:22.386"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="69" pass="1">Critical Tests</stat>
+<stat fail="69" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">Test Login dengan data valid (user baru register)</stat>
+</tag>
+<suite>
+<stat fail="69" id="s1" name="Smoketest" pass="1">Smoketest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180612 18:07:51.357" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.370" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.380" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.390" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.404" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.415" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.426" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.435" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.450" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.461" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.468" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.477" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.492" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:51.499" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.508" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.515" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.521" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.527" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.535" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.554" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.563" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.570" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.577" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.583" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.591" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.600" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.611" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.617" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.623" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.630" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.636" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.644" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.651" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:53.659" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.667" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.673" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.689" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.695" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.702" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.710" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.716" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.723" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.732" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.738" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.747" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.761" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.768" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.775" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.782" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.788" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:55.796" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.804" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.812" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.818" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.825" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.831" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.843" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.851" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.859" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.866" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.872" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.878" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.884" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.892" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.898" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180612 18:07:57.906" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+</errors>
+</robot>

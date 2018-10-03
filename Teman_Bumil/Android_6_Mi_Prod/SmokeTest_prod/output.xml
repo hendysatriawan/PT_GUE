@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181001 14:46:09.154" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_6_Mi_Prod/SmokeTest_prod/smoketest.robot" id="s1" name="Smoketest">
+<test id="s1-t1" name="3.Register Email Already">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register dengan Email sudah terdaftar</arg>
+</arguments>
+<msg timestamp="20181001 14:46:11.644" level="INFO">Test Register dengan Email sudah terdaftar</msg>
+<status status="PASS" endtime="20181001 14:46:11.644" starttime="20181001 14:46:11.644"></status>
+</kw>
+<kw name="Register Email Sudah Terdaftar" library="Register_Resource">
+<kw name="Buka apps temanbumil real device" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_REAL}</arg>
+<arg>deviceName=${DEVICE_NAME_REAL}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+<arg>noReset=False</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181001 14:46:12.394" level="FAIL">No application is open</msg>
+<status status="FAIL" endtime="20181001 14:46:12.394" starttime="20181001 14:46:12.391"></status>
+</kw>
+<msg timestamp="20181001 14:46:12.394" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20181001 14:46:12.395" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 6.0.1. The following are available: 192.168.90.235:5555 (7.1.1)
+</msg>
+<status status="FAIL" endtime="20181001 14:46:12.395" starttime="20181001 14:46:11.645"></status>
+</kw>
+<status status="FAIL" endtime="20181001 14:46:12.395" starttime="20181001 14:46:11.645"></status>
+</kw>
+<status status="FAIL" endtime="20181001 14:46:12.395" starttime="20181001 14:46:11.645"></status>
+</kw>
+<status status="FAIL" endtime="20181001 14:46:12.396" critical="yes" starttime="20181001 14:46:11.644">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 6.0.1. The following are available: 192.168.90.235:5555 (7.1.1)
+</status>
+</test>
+<status status="FAIL" endtime="20181001 14:46:12.396" starttime="20181001 14:46:09.157"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Smoketest" pass="0">Smoketest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181001 14:46:12.394" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

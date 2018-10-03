@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180417 11:16:33.591" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android/Register/register.robot" id="s1" name="Register">
+<test id="s1-t1" name="Register Via Google">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Register Via Google</arg>
+</arguments>
+<msg timestamp="20180417 11:16:33.808" level="INFO">Test Register Via Google</msg>
+<status status="PASS" endtime="20180417 11:16:33.808" starttime="20180417 11:16:33.807"></status>
+</kw>
+<kw name="Register Via Google" library="Register_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:16:40.753" starttime="20180417 11:16:33.808"></status>
+</kw>
+<status status="PASS" endtime="20180417 11:16:40.754" starttime="20180417 11:16:33.808"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180417 11:16:42.754" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180417 11:16:42.755" starttime="20180417 11:16:40.754"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:16:42.790" starttime="20180417 11:16:42.755"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180417 11:16:42.790" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180417 11:16:45.920" starttime="20180417 11:16:42.790"></status>
+</kw>
+<status status="PASS" endtime="20180417 11:16:45.921" starttime="20180417 11:16:42.755"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:16:48.042" starttime="20180417 11:16:45.921"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180417 11:16:48.043" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180417 11:16:49.837" starttime="20180417 11:16:48.042"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=text</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:16:51.030" starttime="20180417 11:16:49.837"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[@text='REGISTER']</arg>
+</arguments>
+<msg timestamp="20180417 11:16:51.031" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='REGISTER']'.</msg>
+<status status="PASS" endtime="20180417 11:16:53.855" starttime="20180417 11:16:51.031"></status>
+</kw>
+<kw name="Element Name Should Be" library="AppiumLibrary">
+<arguments>
+<arg>id=btn_Register</arg>
+<arg>REGISTER</arg>
+</arguments>
+<msg timestamp="20180417 11:16:54.944" level="INFO">Element 'id=btn_Register' name is 'REGISTER' </msg>
+<status status="PASS" endtime="20180417 11:16:54.944" starttime="20180417 11:16:53.855"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>658</arg>
+<arg>1258</arg>
+<arg>728</arg>
+<arg>615</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:16:55.471" starttime="20180417 11:16:54.944"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_google</arg>
+</arguments>
+<msg timestamp="20180417 11:16:55.472" level="INFO">Clicking element 'com.temanbumil.android:id/btn_google'.</msg>
+<status status="PASS" endtime="20180417 11:16:57.817" starttime="20180417 11:16:55.472"></status>
+</kw>
+<status status="PASS" endtime="20180417 11:16:57.817" starttime="20180417 11:16:33.808"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.google.android.gms:id/title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180417 11:17:10.557" starttime="20180417 11:16:57.818"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Test Register Via Google.png</arg>
+</arguments>
+<msg timestamp="20180417 11:17:12.853" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Test%20Register%20Via%20Google.png"&gt;&lt;img src="Test%20Register%20Via%20Google.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180417 11:17:12.853" starttime="20180417 11:17:10.557"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180417 11:17:15.483" starttime="20180417 11:17:12.853"></status>
+</kw>
+<status status="PASS" endtime="20180417 11:17:15.484" critical="yes" starttime="20180417 11:16:33.807"></status>
+</test>
+<status status="PASS" endtime="20180417 11:17:15.485" starttime="20180417 11:16:33.593"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Register" pass="1">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

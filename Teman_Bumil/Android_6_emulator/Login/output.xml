@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180710 10:44:32.693" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_6_emulator/Login/login.robot" id="s1" name="Login">
+<test id="s1-t1" name="1.Login Data Valid">
+<kw name="Set Tags" library="BuiltIn">
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180710 10:44:34.287" level="INFO">Set tag 'Test Login dengan data valid (user baru register)'.</msg>
+<status status="PASS" endtime="20180710 10:44:34.287" starttime="20180710 10:44:34.286"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180710 10:44:34.287" level="INFO">Test Login dengan data valid (user baru register)</msg>
+<status status="PASS" endtime="20180710 10:44:34.287" starttime="20180710 10:44:34.287"></status>
+</kw>
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:44:46.076" starttime="20180710 10:44:34.288"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:44:46.076" starttime="20180710 10:44:34.288"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180710 10:44:48.079" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180710 10:44:48.079" starttime="20180710 10:44:46.076"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:44:48.229" starttime="20180710 10:44:48.080"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180710 10:44:48.230" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180710 10:44:51.378" starttime="20180710 10:44:48.230"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:44:51.379" starttime="20180710 10:44:48.079"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:44:52.995" starttime="20180710 10:44:51.379"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_next</arg>
+</arguments>
+<msg timestamp="20180710 10:44:52.996" level="INFO">Clicking element 'com.temanbumil.android:id/btn_next'.</msg>
+<status status="PASS" endtime="20180710 10:44:53.209" starttime="20180710 10:44:52.996"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_skip</arg>
+</arguments>
+<msg timestamp="20180710 10:44:53.210" level="INFO">Clicking element 'com.temanbumil.android:id/btn_skip'.</msg>
+<status status="PASS" endtime="20180710 10:44:57.296" starttime="20180710 10:44:53.209"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:44:57.993" starttime="20180710 10:44:57.296"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:01.150" starttime="20180710 10:44:57.993"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:45:01.150" level="INFO">Typing text 'aniula@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180710 10:45:06.827" starttime="20180710 10:45:01.150"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:45:08.316" starttime="20180710 10:45:06.827"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:08.381" starttime="20180710 10:45:08.316"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:08.622" starttime="20180710 10:45:08.381"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>${PASSWORD_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:45:08.622" level="INFO">Typing password into text field 'com.temanbumil.android:id/et_password'</msg>
+<status status="PASS" endtime="20180710 10:45:14.267" starttime="20180710 10:45:08.622"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:45:15.851" starttime="20180710 10:45:14.268"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:16.213" starttime="20180710 10:45:15.852"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<msg timestamp="20180710 10:45:16.214" level="INFO">Clicking element 'com.temanbumil.android:id/btn_login'.</msg>
+<status status="PASS" endtime="20180710 10:45:16.526" starttime="20180710 10:45:16.213"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:22.367" starttime="20180710 10:45:16.526"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page not contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<msg timestamp="20180710 10:45:22.438" level="INFO">Current page not contains element 'com.temanbumil.android:id/btn_login'.</msg>
+<status status="PASS" endtime="20180710 10:45:22.439" starttime="20180710 10:45:22.368"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:45:22.439" starttime="20180710 10:44:34.287"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Login Valid.png</arg>
+</arguments>
+<msg timestamp="20180710 10:45:24.778" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Login%20Valid.png"&gt;&lt;img src="Login%20Valid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180710 10:45:24.779" starttime="20180710 10:45:22.439"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180710 10:45:27.108" starttime="20180710 10:45:24.779"></status>
+</kw>
+<tags>
+<tag>Test Login dengan data valid (user baru register)</tag>
+</tags>
+<status status="PASS" endtime="20180710 10:45:27.108" critical="yes" starttime="20180710 10:44:34.286"></status>
+</test>
+<test id="s1-t2" name="2.Login Data Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Email yang belum terdaftar</arg>
+</arguments>
+<msg timestamp="20180710 10:45:27.109" level="INFO">Test Login dengan Email yang belum terdaftar</msg>
+<status status="PASS" endtime="20180710 10:45:27.109" starttime="20180710 10:45:27.109"></status>
+</kw>
+<kw name="Login Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:36.131" starttime="20180710 10:45:27.110"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:45:36.131" starttime="20180710 10:45:27.110"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180710 10:45:38.132" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180710 10:45:38.133" starttime="20180710 10:45:36.132"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:38.166" starttime="20180710 10:45:38.133"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180710 10:45:38.167" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180710 10:45:41.336" starttime="20180710 10:45:38.166"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:45:41.336" starttime="20180710 10:45:38.133"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:42.511" starttime="20180710 10:45:41.337"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_next</arg>
+</arguments>
+<msg timestamp="20180710 10:45:42.512" level="INFO">Clicking element 'com.temanbumil.android:id/btn_next'.</msg>
+<status status="PASS" endtime="20180710 10:45:42.869" starttime="20180710 10:45:42.512"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_skip</arg>
+</arguments>
+<msg timestamp="20180710 10:45:42.869" level="INFO">Clicking element 'com.temanbumil.android:id/btn_skip'.</msg>
+<status status="PASS" endtime="20180710 10:45:45.301" starttime="20180710 10:45:42.869"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:46.049" starttime="20180710 10:45:45.302"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:49.430" starttime="20180710 10:45:46.049"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_LOGIN_INVALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:45:49.431" level="INFO">Typing text 'aniula2@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180710 10:45:54.652" starttime="20180710 10:45:49.431"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:45:56.210" starttime="20180710 10:45:54.653"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:56.291" starttime="20180710 10:45:56.210"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:45:56.449" starttime="20180710 10:45:56.291"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>${PASSWORD_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:45:56.450" level="INFO">Typing password into text field 'com.temanbumil.android:id/et_password'</msg>
+<status status="PASS" endtime="20180710 10:46:01.767" starttime="20180710 10:45:56.450"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:46:03.320" starttime="20180710 10:46:01.768"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:03.380" starttime="20180710 10:46:03.320"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<msg timestamp="20180710 10:46:03.381" level="INFO">Clicking element 'com.temanbumil.android:id/btn_login'.</msg>
+<status status="PASS" endtime="20180710 10:46:03.591" starttime="20180710 10:46:03.381"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:04.951" starttime="20180710 10:46:03.591"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>Email tidak ditemukan, periksa kembali penulisan email Anda</arg>
+</arguments>
+<msg timestamp="20180710 10:46:04.952" level="INFO">Verifying element 'com.temanbumil.android:id/snackbar_text' contains exactly text 'Email tidak ditemukan, periksa kembali penulisan email Anda'.</msg>
+<status status="PASS" endtime="20180710 10:46:05.453" starttime="20180710 10:46:04.952"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:05.453" starttime="20180710 10:45:27.109"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Login Data Email Invalid.png</arg>
+</arguments>
+<msg timestamp="20180710 10:46:08.413" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Login%20Data%20Email%20Invalid.png"&gt;&lt;img src="Login%20Data%20Email%20Invalid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180710 10:46:08.414" starttime="20180710 10:46:05.454"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180710 10:46:10.784" starttime="20180710 10:46:08.414"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:10.785" critical="yes" starttime="20180710 10:45:27.108"></status>
+</test>
+<test id="s1-t3" name="3.Login Data Password Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Password yang salah</arg>
+</arguments>
+<msg timestamp="20180710 10:46:10.786" level="INFO">Test Login dengan Password yang salah</msg>
+<status status="PASS" endtime="20180710 10:46:10.786" starttime="20180710 10:46:10.786"></status>
+</kw>
+<kw name="Login Invalid Password" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:19.515" starttime="20180710 10:46:10.787"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:19.516" starttime="20180710 10:46:10.786"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180710 10:46:21.518" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180710 10:46:21.518" starttime="20180710 10:46:19.516"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:21.551" starttime="20180710 10:46:21.519"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180710 10:46:21.552" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180710 10:46:24.696" starttime="20180710 10:46:21.551"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:24.697" starttime="20180710 10:46:21.519"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:26.220" starttime="20180710 10:46:24.697"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_next</arg>
+</arguments>
+<msg timestamp="20180710 10:46:26.221" level="INFO">Clicking element 'com.temanbumil.android:id/btn_next'.</msg>
+<status status="PASS" endtime="20180710 10:46:26.609" starttime="20180710 10:46:26.221"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_skip</arg>
+</arguments>
+<msg timestamp="20180710 10:46:26.609" level="INFO">Clicking element 'com.temanbumil.android:id/btn_skip'.</msg>
+<status status="PASS" endtime="20180710 10:46:29.134" starttime="20180710 10:46:26.609"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:29.809" starttime="20180710 10:46:29.134"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:33.447" starttime="20180710 10:46:29.809"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:46:33.448" level="INFO">Typing text 'aniula@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180710 10:46:38.503" starttime="20180710 10:46:33.447"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:46:39.996" starttime="20180710 10:46:38.503"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:40.061" starttime="20180710 10:46:39.997"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:40.217" starttime="20180710 10:46:40.061"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>${PASSWORD_LOGIN_INVALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:46:40.218" level="INFO">Typing password into text field 'com.temanbumil.android:id/et_password'</msg>
+<status status="PASS" endtime="20180710 10:46:45.578" starttime="20180710 10:46:40.217"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:46:47.294" starttime="20180710 10:46:45.579"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:47.341" starttime="20180710 10:46:47.294"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<msg timestamp="20180710 10:46:47.341" level="INFO">Clicking element 'com.temanbumil.android:id/btn_login'.</msg>
+<status status="PASS" endtime="20180710 10:46:47.522" starttime="20180710 10:46:47.341"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:46:49.161" starttime="20180710 10:46:47.522"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>Login gagal. Silakan periksa password kamu!</arg>
+</arguments>
+<msg timestamp="20180710 10:46:49.161" level="INFO">Verifying element 'com.temanbumil.android:id/snackbar_text' contains exactly text 'Login gagal. Silakan periksa password kamu!'.</msg>
+<status status="PASS" endtime="20180710 10:46:49.320" starttime="20180710 10:46:49.161"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:49.320" starttime="20180710 10:46:10.786"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Login Data Password Invalid.png</arg>
+</arguments>
+<msg timestamp="20180710 10:46:52.197" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Login%20Data%20Password%20Invalid.png"&gt;&lt;img src="Login%20Data%20Password%20Invalid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180710 10:46:52.197" starttime="20180710 10:46:49.321"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180710 10:46:54.602" starttime="20180710 10:46:52.197"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:46:54.603" critical="yes" starttime="20180710 10:46:10.785"></status>
+</test>
+<test id="s1-t4" name="4.Lupa Password Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Lupa Password dengan menggunakan email yang tidak Terdaftar</arg>
+</arguments>
+<msg timestamp="20180710 10:46:54.605" level="INFO">Test Lupa Password dengan menggunakan email yang tidak Terdaftar</msg>
+<status status="PASS" endtime="20180710 10:46:54.605" starttime="20180710 10:46:54.605"></status>
+</kw>
+<kw name="Lupa Password Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:03.387" starttime="20180710 10:46:54.606"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:03.387" starttime="20180710 10:46:54.606"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180710 10:47:05.389" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180710 10:47:05.389" starttime="20180710 10:47:03.388"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:05.440" starttime="20180710 10:47:05.390"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180710 10:47:05.440" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180710 10:47:08.590" starttime="20180710 10:47:05.440"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:08.590" starttime="20180710 10:47:05.390"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:10.064" starttime="20180710 10:47:08.590"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180710 10:47:10.064" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180710 10:47:11.873" starttime="20180710 10:47:10.064"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/title_lupasandi</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:12.589" starttime="20180710 10:47:11.873"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/title_lupasandi</arg>
+</arguments>
+<msg timestamp="20180710 10:47:12.589" level="INFO">Clicking element 'com.temanbumil.android:id/title_lupasandi'.</msg>
+<status status="PASS" endtime="20180710 10:47:14.268" starttime="20180710 10:47:12.589"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/title_forgot</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:14.692" starttime="20180710 10:47:14.268"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/title_forgot</arg>
+<arg>Forgot Password</arg>
+</arguments>
+<msg timestamp="20180710 10:47:14.693" level="INFO">Verifying element 'com.temanbumil.android:id/title_forgot' contains exactly text 'Forgot Password'.</msg>
+<status status="PASS" endtime="20180710 10:47:14.932" starttime="20180710 10:47:14.692"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:18.321" starttime="20180710 10:47:14.933"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_FORGOT_INVALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:47:18.321" level="INFO">Typing text 'aniula2@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180710 10:47:23.350" starttime="20180710 10:47:18.321"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:47:24.855" starttime="20180710 10:47:23.351"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_reset</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:24.915" starttime="20180710 10:47:24.855"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_reset</arg>
+</arguments>
+<msg timestamp="20180710 10:47:24.916" level="INFO">Clicking element 'com.temanbumil.android:id/btn_reset'.</msg>
+<status status="PASS" endtime="20180710 10:47:25.147" starttime="20180710 10:47:24.915"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:26.667" starttime="20180710 10:47:25.147"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/snackbar_text</arg>
+<arg>Permintaan tidak ditemukan, silakan periksa kembali.</arg>
+</arguments>
+<msg timestamp="20180710 10:47:26.668" level="INFO">Verifying element 'com.temanbumil.android:id/snackbar_text' contains exactly text 'Permintaan tidak ditemukan, silakan periksa kembali.'.</msg>
+<status status="PASS" endtime="20180710 10:47:26.756" starttime="20180710 10:47:26.667"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:26.756" starttime="20180710 10:46:54.606"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Lupa Password Data Email Invalid.png</arg>
+</arguments>
+<msg timestamp="20180710 10:47:29.994" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Lupa%20Password%20Data%20Email%20Invalid.png"&gt;&lt;img src="Lupa%20Password%20Data%20Email%20Invalid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180710 10:47:29.994" starttime="20180710 10:47:26.756"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180710 10:47:32.279" starttime="20180710 10:47:29.995"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:32.279" critical="yes" starttime="20180710 10:46:54.604"></status>
+</test>
+<test id="s1-t5" name="5.Lupa Password Email Valid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Lupa Password dengan menggunakan email yang terdaftar</arg>
+</arguments>
+<msg timestamp="20180710 10:47:32.281" level="INFO">Test Lupa Password dengan menggunakan email yang terdaftar</msg>
+<status status="PASS" endtime="20180710 10:47:32.281" starttime="20180710 10:47:32.281"></status>
+</kw>
+<kw name="Lupa Password Valid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:41.502" starttime="20180710 10:47:32.282"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:41.503" starttime="20180710 10:47:32.281"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180710 10:47:43.505" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180710 10:47:43.505" starttime="20180710 10:47:41.503"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:43.542" starttime="20180710 10:47:43.506"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180710 10:47:43.542" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180710 10:47:46.690" starttime="20180710 10:47:43.542"></status>
+</kw>
+<status status="PASS" endtime="20180710 10:47:46.690" starttime="20180710 10:47:43.506"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:47.884" starttime="20180710 10:47:46.690"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+</arguments>
+<msg timestamp="20180710 10:47:47.884" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='SKIP']'.</msg>
+<status status="PASS" endtime="20180710 10:47:51.070" starttime="20180710 10:47:47.884"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/title_lupasandi</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:51.946" starttime="20180710 10:47:51.071"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/title_lupasandi</arg>
+</arguments>
+<msg timestamp="20180710 10:47:51.947" level="INFO">Clicking element 'com.temanbumil.android:id/title_lupasandi'.</msg>
+<status status="PASS" endtime="20180710 10:47:53.246" starttime="20180710 10:47:51.946"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/title_forgot</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:53.512" starttime="20180710 10:47:53.246"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/title_forgot</arg>
+<arg>Forgot Password</arg>
+</arguments>
+<msg timestamp="20180710 10:47:53.513" level="INFO">Verifying element 'com.temanbumil.android:id/title_forgot' contains exactly text 'Forgot Password'.</msg>
+<status status="PASS" endtime="20180710 10:47:53.604" starttime="20180710 10:47:53.512"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:47:57.015" starttime="20180710 10:47:53.604"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_FORGOT_VALID}</arg>
+</arguments>
+<msg timestamp="20180710 10:47:57.015" level="INFO">Typing text 'aniula@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180710 10:48:01.902" starttime="20180710 10:47:57.015"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20180710 10:48:03.402" starttime="20180710 10:48:01.902"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_reset</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:48:03.437" starttime="20180710 10:48:03.403"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_reset</arg>
+</arguments>
+<msg timestamp="20180710 10:48:03.439" level="INFO">Clicking element 'com.temanbumil.android:id/btn_reset'.</msg>
+<status status="PASS" endtime="20180710 10:48:03.613" starttime="20180710 10:48:03.438"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_verify</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180710 10:48:06.290" starttime="20180710 10:48:03.614"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<msg timestamp="20180710 10:49:47.170" level="INFO">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;hierarchy rotation="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="" instance="1"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="com.temanbumil.android:id/action_bar_root" instance="1"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="android:id/content" instance="2"&gt;&lt;android.view.ViewGroup index="0" text="" class="android.view.ViewGroup" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="com.temanbumil.android:id/cl" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="" instance="3"&gt;&lt;android.widget.ScrollView index="0" text="" class="android.widget.ScrollView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1197]" resource-id="" instance="2"&gt;&lt;android.widget.RelativeLayout NAF="true" index="0" text="" class="android.widget.RelativeLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][230,303]" resource-id="com.temanbumil.android:id/btn_back" instance="0"&gt;&lt;android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][230,303]" resource-id="" instance="0"/&gt;&lt;/android.widget.RelativeLayout&gt;&lt;android.widget.TextView index="1" text="Verifikasi Email" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,303][1080,395]" resource-id="" instance="0"/&gt;&lt;android.widget.TextView index="2" text="Kami mengirimkan kode verifikasi ke alamat email yang telah Mums gunakan untuk membuat akun" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,395][1080,602]" resource-id="" instance="1"/&gt;&lt;android.widget.LinearLayout index="3" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,602][1080,897]" resource-id="" instance="3"&gt;&lt;android.widget.EditText index="0" text="" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[281,647][343,852]" resource-id="com.temanbumil.android:id/et_verify_code_1" instance="0"/&gt;&lt;android.widget.EditText index="1" text="" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[433,647][495,852]" resource-id="com.temanbumil.android:id/et_verify_code_2" instance="1"/&gt;&lt;android.widget.EditText index="2" text="" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[585,647][647,852]" resource-id="com.temanbumil.android:id/et_verify_code_3" instance="2"/&gt;&lt;android.widget.EditText index="3" text="" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[737,647][799,852]" resource-id="com.temanbumil.android:id/et_verify_code_4" instance="3"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.widget.Button index="4" text="Verifikasi Akun" class="android.widget.Button" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="false" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,942][1035,1086]" resource-id="com.temanbumil.android:id/btn_verify" instance="0"/&gt;&lt;android.widget.TextView index="5" text="Tidak menerima email. Kirim ulang kode" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[0,1086][1080,1197]" resource-id="com.temanbumil.android:id/tv_resend" instance="2"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.ScrollView&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.view.ViewGroup&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.view.View index="1" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,72]" resource-id="android:id/statusBarBackground" instance="0"/&gt;&lt;android.view.View index="2" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1776][1080,1920]" resource-id="android:id/navigationBarBackground" instance="1"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180710 10:49:51.016" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180710 10:49:51.017" starttime="20180710 10:49:47.172"></status>
+</kw>
+<msg timestamp="20180710 10:49:51.017" level="FAIL">Element locator 'com.temanbumil.android:id/tv_title' did not match any elements after 1 minute 40 seconds</msg>
+<status status="FAIL" endtime="20180710 10:49:51.017" starttime="20180710 10:48:06.290"></status>
+</kw>
+<status status="FAIL" endtime="20180710 10:49:51.018" starttime="20180710 10:47:32.281"></status>
+</kw>
+<status status="FAIL" endtime="20180710 10:49:51.018" critical="yes" starttime="20180710 10:47:32.280">Element locator 'com.temanbumil.android:id/tv_title' did not match any elements after 1 minute 40 seconds</status>
+</test>
+<status status="FAIL" endtime="20180710 10:49:51.021" starttime="20180710 10:44:32.696"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="4">Critical Tests</stat>
+<stat fail="1" pass="4">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Test Login dengan data valid (user baru register)</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Login" pass="4">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180427 15:48:56.880" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android/Login/login.robot" id="s1" name="Login">
+<test id="s1-t1" name="1.Login Data Valid">
+<kw name="Set Tags" library="BuiltIn">
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180427 15:48:57.131" level="INFO">Set tag 'Test Login dengan data valid (user baru register)'.</msg>
+<status status="PASS" endtime="20180427 15:48:57.131" starttime="20180427 15:48:57.131"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan data valid (user baru register)</arg>
+</arguments>
+<msg timestamp="20180427 15:48:57.132" level="INFO">Test Login dengan data valid (user baru register)</msg>
+<status status="PASS" endtime="20180427 15:48:57.132" starttime="20180427 15:48:57.132"></status>
+</kw>
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180427 15:49:04.575" starttime="20180427 15:48:57.134"></status>
+</kw>
+<status status="PASS" endtime="20180427 15:49:04.576" starttime="20180427 15:48:57.134"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180427 15:49:06.585" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180427 15:49:06.585" starttime="20180427 15:49:04.577"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<msg timestamp="20180427 15:50:47.126" level="INFO">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;hierarchy rotation="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="" instance="1"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="com.temanbumil.android:id/action_bar_root" instance="1"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="android:id/content" instance="2"&gt;&lt;android.view.ViewGroup index="0" text="" class="android.view.ViewGroup" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]" resource-id="com.temanbumil.android:id/cl" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="" instance="3"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,1776]" resource-id="" instance="2"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,240]" resource-id="com.temanbumil.android:id/tabHost" instance="0"&gt;&lt;android.widget.HorizontalScrollView index="0" text="" class="android.widget.HorizontalScrollView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,240]" resource-id="" instance="0"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][1080,240]" resource-id="" instance="3"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][540,240]" resource-id="" instance="4"&gt;&lt;android.widget.TextView index="0" text="LOGIN" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][540,240]" resource-id="com.temanbumil.android:id/text" instance="0"/&gt;&lt;android.view.ViewGroup index="1" text="" class="android.view.ViewGroup" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,72][540,240]" resource-id="com.temanbumil.android:id/reveal" instance="1"/&gt;&lt;android.widget.ImageView index="2" text="" class="android.widget.ImageView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,234][540,240]" resource-id="com.temanbumil.android:id/selector" instance="0"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.FrameLayout index="1" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,72][1080,240]" resource-id="" instance="5"&gt;&lt;android.widget.TextView index="0" text="REGISTER" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,72][1080,240]" resource-id="com.temanbumil.android:id/text" instance="1"/&gt;&lt;android.view.ViewGroup index="1" text="" class="android.view.ViewGroup" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,72][1080,240]" resource-id="com.temanbumil.android:id/reveal" instance="2"/&gt;&lt;android.widget.ImageView index="2" text="" class="android.widget.ImageView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,234][1080,240]" resource-id="com.temanbumil.android:id/selector" instance="1"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.HorizontalScrollView&gt;&lt;/android.widget.RelativeLayout&gt;&lt;android.support.v4.view.ViewPager index="1" text="" class="android.support.v4.view.ViewPager" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="true" long-clickable="false" password="false" selected="false" bounds="[0,240][1080,1776]" resource-id="com.temanbumil.android:id/pager" instance="0"&gt;&lt;android.view.ViewGroup index="0" text="" class="android.view.ViewGroup" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,240][1080,1776]" resource-id="com.temanbumil.android:id/cl" instance="3"&gt;&lt;android.widget.ScrollView index="0" text="" class="android.widget.ScrollView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,240][1080,1776]" resource-id="" instance="0"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,285][1035,1647]" resource-id="" instance="1"&gt;&lt;android.widget.TextView index="0" text="Welcome!" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,285][1035,352]" resource-id="com.temanbumil.android:id/title_login" instance="2"/&gt;&lt;TextInputLayout index="1" text="Email" class="TextInputLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,397][1035,650]" resource-id="com.temanbumil.android:id/til_email" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,430][1035,568]" resource-id="" instance="6"&gt;&lt;android.widget.EditText index="0" text="aniula@gmail.com" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[45,430][1035,568]" resource-id="com.temanbumil.android:id/et_email" instance="0"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,568][1035,650]" resource-id="" instance="4"/&gt;&lt;/TextInputLayout&gt;&lt;TextInputLayout index="2" text="Password" class="TextInputLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,650][1035,909]" resource-id="com.temanbumil.android:id/til_pwd" instance="1"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,683][1035,827]" resource-id="" instance="7"&gt;&lt;android.widget.EditText NAF="true" index="0" text="" class="android.widget.EditText" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="true" password="true" selected="false" bounds="[45,683][1035,827]" resource-id="com.temanbumil.android:id/et_password" instance="1"/&gt;&lt;android.widget.ImageButton index="1" text="" class="android.widget.ImageButton" package="com.temanbumil.android" content-desc="Toggle password visibility" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[891,683][1035,827]" resource-id="com.temanbumil.android:id/text_input_password_toggle" instance="0"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,827][1035,909]" resource-id="" instance="5"/&gt;&lt;/TextInputLayout&gt;&lt;android.widget.TextView index="3" text="Lupa sandi?" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[358,909][721,1036]" resource-id="com.temanbumil.android:id/title_lupasandi" instance="3"/&gt;&lt;android.widget.Button index="4" text="LOGIN" class="android.widget.Button" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1081][1035,1225]" resource-id="com.temanbumil.android:id/btn_login" instance="0"/&gt;&lt;android.widget.LinearLayout index="5" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1270][1035,1321]" resource-id="com.temanbumil.android:id/title" instance="6"&gt;&lt;android.view.View index="0" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1294][342,1297]" resource-id="" instance="0"/&gt;&lt;android.widget.TextView index="1" text="Atau daftar melalui" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[342,1270][738,1321]" resource-id="" instance="4"/&gt;&lt;android.view.View index="2" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[738,1294][1035,1297]" resource-id="" instance="1"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.widget.LinearLayout index="6" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1366][1035,1516]" resource-id="com.temanbumil.android:id/ly_button" instance="7"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1366][540,1516]" resource-id="" instance="8"&gt;&lt;android.widget.ImageView NAF="true" index="0" text="" class="android.widget.ImageView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[96,1366][516,1516]" resource-id="com.temanbumil.android:id/btn_facebook" instance="2"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,1366][1035,1516]" resource-id="" instance="9"&gt;&lt;android.widget.ImageView NAF="true" index="0" text="" class="android.widget.ImageView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[564,1366][984,1516]" resource-id="com.temanbumil.android:id/btn_google" instance="3"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.widget.RelativeLayout index="7" text="" class="android.widget.RelativeLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[45,1561][1035,1647]" resource-id="" instance="2"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[152,1561][928,1647]" resource-id="" instance="10"&gt;&lt;android.widget.TextView index="0" text="Belum memiliki akun?" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[152,1575][611,1634]" resource-id="" instance="5"/&gt;&lt;android.widget.TextView index="1" text="Daftar di sini" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[617,1561][928,1647]" resource-id="com.temanbumil.android:id/tv_register" instance="6"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.ScrollView&gt;&lt;/android.view.ViewGroup&gt;&lt;/android.support.v4.view.ViewPager&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.FrameLayout index="1" text="" class="android.widget.FrameLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1627][1080,1776]" resource-id="" instance="8"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[36,1627][1044,1776]" resource-id="" instance="11"&gt;&lt;android.widget.TextView index="0" text="Harap diisi" class="android.widget.TextView" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[36,1627][1044,1776]" resource-id="com.temanbumil.android:id/snackbar_text" instance="7"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.view.ViewGroup&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.view.View index="1" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,72]" resource-id="android:id/statusBarBackground" instance="2"/&gt;&lt;android.view.View index="2" text="" class="android.view.View" package="com.temanbumil.android" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1776][1080,1920]" resource-id="android:id/navigationBarBackground" instance="3"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180427 15:50:48.960" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180427 15:50:48.961" starttime="20180427 15:50:47.127"></status>
+</kw>
+<msg timestamp="20180427 15:50:48.961" level="FAIL">Element locator 'com.android.packageinstaller:id/permission_message' did not match any elements after 1 minute 40 seconds</msg>
+<status status="FAIL" endtime="20180427 15:50:48.961" starttime="20180427 15:49:06.586"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:50:48.961" starttime="20180427 15:49:06.586"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:50:48.962" starttime="20180427 15:48:57.133"></status>
+</kw>
+<tags>
+<tag>Test Login dengan data valid (user baru register)</tag>
+</tags>
+<status status="FAIL" endtime="20180427 15:50:48.962" critical="yes" starttime="20180427 15:48:57.130">Element locator 'com.android.packageinstaller:id/permission_message' did not match any elements after 1 minute 40 seconds</status>
+</test>
+<test id="s1-t2" name="2.Login Data Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Email yang belum terdaftar</arg>
+</arguments>
+<msg timestamp="20180427 15:50:48.963" level="INFO">Test Login dengan Email yang belum terdaftar</msg>
+<status status="PASS" endtime="20180427 15:50:48.964" starttime="20180427 15:50:48.963"></status>
+</kw>
+<kw name="Login Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180427 15:50:57.850" starttime="20180427 15:50:48.965"></status>
+</kw>
+<status status="PASS" endtime="20180427 15:50:57.850" starttime="20180427 15:50:48.964"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180427 15:50:59.852" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180427 15:50:59.852" starttime="20180427 15:50:57.850"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>100s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180427 15:51:04.025" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.025" starttime="20180427 15:51:04.017"></status>
+</kw>
+<msg timestamp="20180427 15:51:04.025" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.027" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.027" starttime="20180427 15:50:59.853"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.027" starttime="20180427 15:50:59.853"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.028" starttime="20180427 15:50:48.964"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.028" critical="yes" starttime="20180427 15:50:48.962">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t3" name="3.Login Data Password Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Login dengan Password yang salah</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.029" level="INFO">Test Login dengan Password yang salah</msg>
+<status status="PASS" endtime="20180427 15:51:04.029" starttime="20180427 15:51:04.029"></status>
+</kw>
+<kw name="Login Invalid Password" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.033" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180427 15:51:04.040" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.040" starttime="20180427 15:51:04.035"></status>
+</kw>
+<msg timestamp="20180427 15:51:04.040" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.042" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.042" starttime="20180427 15:51:04.030"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.042" starttime="20180427 15:51:04.030"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.043" starttime="20180427 15:51:04.029"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.043" critical="yes" starttime="20180427 15:51:04.028">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t4" name="4.Lupa Password Email Invalid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Lupa Password dengan menggunakan email yang tidak Terdaftar</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.044" level="INFO">Test Lupa Password dengan menggunakan email yang tidak Terdaftar</msg>
+<status status="PASS" endtime="20180427 15:51:04.044" starttime="20180427 15:51:04.044"></status>
+</kw>
+<kw name="Lupa Password Invalid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.048" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180427 15:51:04.053" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.053" starttime="20180427 15:51:04.050"></status>
+</kw>
+<msg timestamp="20180427 15:51:04.053" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.054" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.054" starttime="20180427 15:51:04.045"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.054" starttime="20180427 15:51:04.045"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.054" starttime="20180427 15:51:04.044"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.054" critical="yes" starttime="20180427 15:51:04.043">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<test id="s1-t5" name="5.Lupa Password Email Valid">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Lupa Password dengan menggunakan email yang terdaftar</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.055" level="INFO">Test Lupa Password dengan menggunakan email yang terdaftar</msg>
+<status status="PASS" endtime="20180427 15:51:04.055" starttime="20180427 15:51:04.055"></status>
+</kw>
+<kw name="Lupa Password Valid Email" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<msg timestamp="20180427 15:51:04.058" level="INFO">Could not get IP address for host: localhost</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180427 15:51:04.063" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.063" starttime="20180427 15:51:04.060"></status>
+</kw>
+<msg timestamp="20180427 15:51:04.064" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.064" level="FAIL">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<status status="FAIL" endtime="20180427 15:51:04.064" starttime="20180427 15:51:04.056"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.065" starttime="20180427 15:51:04.056"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.065" starttime="20180427 15:51:04.055"></status>
+</kw>
+<status status="FAIL" endtime="20180427 15:51:04.065" critical="yes" starttime="20180427 15:51:04.055">URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</status>
+</test>
+<status status="FAIL" endtime="20180427 15:51:04.067" starttime="20180427 15:48:56.884"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="5" pass="0">Critical Tests</stat>
+<stat fail="5" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">Test Login dengan data valid (user baru register)</stat>
+</tag>
+<suite>
+<stat fail="5" id="s1" name="Login" pass="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180427 15:51:04.025" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.040" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.053" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+<msg timestamp="20180427 15:51:04.064" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: URLError: &lt;urlopen error [Errno 61] Connection refused&gt;</msg>
+</errors>
+</robot>

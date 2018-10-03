@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181003 10:27:27.414" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_7_J5_Prod/SmokeTest_prod/smoketest.robot" id="s1" name="Smoketest">
+<test id="s1-t1" name="16.Program Hamil Homepage">
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil real device" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_REAL}</arg>
+<arg>deviceName=${DEVICE_NAME_REAL}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+<arg>noReset=False</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:27:52.462" starttime="20181003 10:27:27.869"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:27:52.462" starttime="20181003 10:27:27.869"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.Button[contains(@resource-id,'com.android.packageinstaller:id/permission_allow_button')]</arg>
+</arguments>
+<assign>
+<var>${Permission_Phone}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.android.packageinstaller:id/permission_allow_button')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:27:53.339" starttime="20181003 10:27:52.463"></status>
+</kw>
+<msg timestamp="20181003 10:27:53.339" level="INFO">${Permission_Phone} = True</msg>
+<status status="PASS" endtime="20181003 10:27:53.340" starttime="20181003 10:27:52.463"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Permission_Phone}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.Button[contains(@resource-id,'com.android.packageinstaller:id/permission_allow_button')]</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Permission sudah di setujui</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.android.packageinstaller:id/permission_allow_button')]</arg>
+</arguments>
+<msg timestamp="20181003 10:27:53.340" level="INFO">Clicking element '//android.widget.Button[contains(@resource-id,'com.android.packageinstaller:id/permission_allow_button')]'.</msg>
+<status status="PASS" endtime="20181003 10:27:56.837" starttime="20181003 10:27:53.340"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:27:56.837" starttime="20181003 10:27:53.340"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:27:56.837" starttime="20181003 10:27:52.462"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.Button[contains(@resource-id,'android:id/button2')]</arg>
+</arguments>
+<assign>
+<var>${force}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'android:id/button2')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181003 10:28:03.425" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181003 10:28:03.426" starttime="20181003 10:28:01.968"></status>
+</kw>
+<msg timestamp="20181003 10:28:03.426" level="FAIL">Element '//android.widget.Button[contains(@resource-id,'android:id/button2')]' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20181003 10:28:03.426" starttime="20181003 10:27:56.838"></status>
+</kw>
+<msg timestamp="20181003 10:28:03.426" level="INFO">${force} = False</msg>
+<status status="PASS" endtime="20181003 10:28:03.426" starttime="20181003 10:27:56.838"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${force}</arg>
+<arg>Force_Update</arg>
+<arg>ELSE</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_skip')]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_skip')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:03.677" starttime="20181003 10:28:03.427"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:03.677" starttime="20181003 10:28:03.426"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_skip')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:03.980" starttime="20181003 10:28:03.677"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_next')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:03.980" level="INFO">Clicking element '//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_next')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:04.390" starttime="20181003 10:28:03.980"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_skip')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:04.391" level="INFO">Clicking element '//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_skip')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:06.612" starttime="20181003 10:28:04.391"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:07.542" starttime="20181003 10:28:06.612"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_email')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:11.270" starttime="20181003 10:28:07.542"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_email')]</arg>
+<arg>${EMAIL_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20181003 10:28:11.271" level="INFO">Typing text 'aniula@yopmail.com' into text field '//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_email')]'</msg>
+<status status="PASS" endtime="20181003 10:28:17.863" starttime="20181003 10:28:11.270"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20181003 10:28:19.644" starttime="20181003 10:28:17.863"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_password')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:20.283" starttime="20181003 10:28:19.644"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_password')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:20.896" starttime="20181003 10:28:20.283"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_password')]</arg>
+<arg>${PASSWORD_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20181003 10:28:20.897" level="INFO">Typing password into text field '//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_password')]'</msg>
+<status status="PASS" endtime="20181003 10:28:26.116" starttime="20181003 10:28:20.896"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20181003 10:28:27.801" starttime="20181003 10:28:26.116"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181003 10:28:28.803" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181003 10:28:28.803" starttime="20181003 10:28:27.801"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:29.140" starttime="20181003 10:28:28.803"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:29.140" level="INFO">Clicking element '//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:29.714" starttime="20181003 10:28:29.140"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:34.807" starttime="20181003 10:28:29.715"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page not contains `locator` element.</doc>
+<arguments>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:35.379" level="INFO">Current page not contains element '//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_login')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:35.379" starttime="20181003 10:28:34.807"></status>
+</kw>
+<kw name="Promo_handle" library="Login_Resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/LL')]</arg>
+</arguments>
+<assign>
+<var>${cekpromo}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/LL')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181003 10:28:41.942" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181003 10:28:41.942" starttime="20181003 10:28:40.452"></status>
+</kw>
+<msg timestamp="20181003 10:28:41.943" level="FAIL">Element '//android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/LL')]' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20181003 10:28:41.943" starttime="20181003 10:28:35.380"></status>
+</kw>
+<msg timestamp="20181003 10:28:41.943" level="INFO">${cekpromo} = False</msg>
+<status status="PASS" endtime="20181003 10:28:41.943" starttime="20181003 10:28:35.380"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${cekpromo}' == 'False'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:42.439" starttime="20181003 10:28:41.943"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:42.439" starttime="20181003 10:28:41.943"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${cekpromo}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Tidak ada Promo</arg>
+<arg>ELSE IF</arg>
+<arg>'${cekpromo}' == 'True'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btnSubmit')]</arg>
+<arg>AND</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btnSubmit')][@text='SIMPAN']</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/close')]</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Promo muncul namun di close</arg>
+<arg>AND</arg>
+<arg>Press Keycode</arg>
+<arg>3</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<arg>AND</arg>
+<arg>Press Keycode</arg>
+<arg>187</arg>
+<arg>AND</arg>
+<arg>Press Keycode</arg>
+<arg>187</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Tidak ada Promo</arg>
+</arguments>
+<msg timestamp="20181003 10:28:42.440" level="INFO">Tidak ada Promo</msg>
+<status status="PASS" endtime="20181003 10:28:42.440" starttime="20181003 10:28:42.440"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:42.440" starttime="20181003 10:28:42.439"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:42.440" starttime="20181003 10:28:35.379"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:42.440" starttime="20181003 10:27:27.869"></status>
+</kw>
+<kw name="Coachmark Got It" library="Coachmark_Splash_Resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>20s</arg>
+</arguments>
+<assign>
+<var>${cekmark}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:42.743" starttime="20181003 10:28:42.441"></status>
+</kw>
+<msg timestamp="20181003 10:28:42.743" level="INFO">${cekmark} = True</msg>
+<status status="PASS" endtime="20181003 10:28:42.743" starttime="20181003 10:28:42.441"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${cekmark}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Tidak ada Coachmark</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<msg timestamp="20181003 10:28:42.744" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='GOT IT']'.</msg>
+<status status="PASS" endtime="20181003 10:28:43.784" starttime="20181003 10:28:42.744"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:43.784" starttime="20181003 10:28:42.743"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:43.784" starttime="20181003 10:28:42.441"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:43.784" critical="yes" starttime="20181003 10:27:27.868"></status>
+</test>
+<test id="s1-t2" name="28i.Resep New Born">
+<kw name="Resep" library="DrawerMenu_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:44.311" starttime="20181003 10:28:43.786"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:44.311" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:45.067" starttime="20181003 10:28:44.311"></status>
+</kw>
+<kw name="Coachmark Got It" library="Coachmark_Splash_Resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>20s</arg>
+</arguments>
+<assign>
+<var>${cekmark}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:45.739" starttime="20181003 10:28:45.069"></status>
+</kw>
+<msg timestamp="20181003 10:28:45.739" level="INFO">${cekmark} = True</msg>
+<status status="PASS" endtime="20181003 10:28:45.739" starttime="20181003 10:28:45.068"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${cekmark}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Tidak ada Coachmark</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<msg timestamp="20181003 10:28:45.740" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='GOT IT']'.</msg>
+<status status="PASS" endtime="20181003 10:28:46.885" starttime="20181003 10:28:45.739"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:46.885" starttime="20181003 10:28:45.739"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:28:46.885" starttime="20181003 10:28:45.068"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_receipt')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:47.688" starttime="20181003 10:28:46.885"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_receipt')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:47.689" level="INFO">Clicking element '//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_receipt')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:48.587" starttime="20181003 10:28:47.689"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:51.109" starttime="20181003 10:28:48.587"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:51.664" starttime="20181003 10:28:51.109"></status>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']</arg>
+</arguments>
+<msg timestamp="20181003 10:28:51.814" level="INFO">Current page contains element '//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']'.</msg>
+<status status="PASS" endtime="20181003 10:28:51.814" starttime="20181003 10:28:51.664"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_filter')]</arg>
+</arguments>
+<msg timestamp="20181003 10:28:51.815" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_filter')]'.</msg>
+<status status="PASS" endtime="20181003 10:28:52.414" starttime="20181003 10:28:51.815"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Filter Resep']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:53.070" starttime="20181003 10:28:52.414"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}']</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:28:53.433" starttime="20181003 10:28:53.070"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}']</arg>
+</arguments>
+<msg timestamp="20181003 10:28:53.434" level="INFO">Clicking element '//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='8-10 Bulan']'.</msg>
+<status status="PASS" endtime="20181003 10:28:53.859" starttime="20181003 10:28:53.434"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}'][@checked='False']</arg>
+</arguments>
+<assign>
+<var>${sudahchecklist}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}'][@checked='False']</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181003 10:29:00.378" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181003 10:29:00.379" starttime="20181003 10:28:59.137"></status>
+</kw>
+<msg timestamp="20181003 10:29:00.379" level="FAIL">Element '//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='8-10 Bulan'][@checked='False']' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20181003 10:29:00.379" starttime="20181003 10:28:53.859"></status>
+</kw>
+<msg timestamp="20181003 10:29:00.379" level="INFO">${sudahchecklist} = False</msg>
+<status status="PASS" endtime="20181003 10:29:00.379" starttime="20181003 10:28:53.859"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${sudahchecklist}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}']</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:00.380" starttime="20181003 10:29:00.379"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:29:00.380" starttime="20181003 10:28:43.786"></status>
+</kw>
+<kw name="Kembali ke Resep Dari Filter" library="DrawerMenu_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:00.914" starttime="20181003 10:29:00.380"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]</arg>
+</arguments>
+<msg timestamp="20181003 10:29:00.914" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]'.</msg>
+<status status="PASS" endtime="20181003 10:29:01.442" starttime="20181003 10:29:00.914"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:03.229" starttime="20181003 10:29:01.443"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:03.951" starttime="20181003 10:29:03.230"></status>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']</arg>
+</arguments>
+<msg timestamp="20181003 10:29:04.127" level="INFO">Current page contains element '//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']'.</msg>
+<status status="PASS" endtime="20181003 10:29:04.127" starttime="20181003 10:29:03.951"></status>
+</kw>
+<kw name="Convert To Uppercase" library="String">
+<doc>Converts string to uppercase.</doc>
+<arguments>
+<arg>${filterresep}</arg>
+</arguments>
+<assign>
+<var>${filterresepUP}</var>
+</assign>
+<msg timestamp="20181003 10:29:04.128" level="INFO">${filterresepUP} = 8-10 BULAN</msg>
+<status status="PASS" endtime="20181003 10:29:04.128" starttime="20181003 10:29:04.128"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_category')][@text='${filterresepUP}']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:04.543" starttime="20181003 10:29:04.128"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:29:04.543" starttime="20181003 10:29:00.380"></status>
+</kw>
+<kw name="Search Resep" library="DrawerMenu_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_search')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:05.032" starttime="20181003 10:29:04.544"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_search')]</arg>
+</arguments>
+<msg timestamp="20181003 10:29:05.032" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_search')]'.</msg>
+<status status="PASS" endtime="20181003 10:29:05.995" starttime="20181003 10:29:05.032"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/etBasic')]</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:07.025" starttime="20181003 10:29:05.996"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_close')]</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:07.139" starttime="20181003 10:29:07.025"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/etBasic')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:10.638" starttime="20181003 10:29:07.139"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/etBasic')]</arg>
+<arg>${cariresep}</arg>
+</arguments>
+<msg timestamp="20181003 10:29:10.639" level="INFO">Typing text 'Sosis Gulung Mi' into text field '//android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/etBasic')]'</msg>
+<status status="PASS" endtime="20181003 10:29:17.799" starttime="20181003 10:29:10.639"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>x=665</arg>
+<arg>y=1216</arg>
+</arguments>
+<msg timestamp="20181003 10:29:17.800" level="INFO">Clicking on a point (665,1216).</msg>
+<status status="PASS" endtime="20181003 10:29:18.235" starttime="20181003 10:29:17.799"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='${cariresep}']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:19.313" starttime="20181003 10:29:18.236"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='${cariresep}']</arg>
+</arguments>
+<msg timestamp="20181003 10:29:19.314" level="INFO">Clicking element '//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Sosis Gulung Mi']'.</msg>
+<status status="PASS" endtime="20181003 10:29:21.256" starttime="20181003 10:29:19.314"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='${cariresep}']</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:23.927" starttime="20181003 10:29:21.257"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:24.230" starttime="20181003 10:29:23.928"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ScrollView[contains(@resource-id,'com.temanbumil.android:id/nestedScrollView')]</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:24.418" starttime="20181003 10:29:24.231"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:29:24.418" starttime="20181003 10:29:04.543"></status>
+</kw>
+<kw name="Kembali ke Resep Dari Search" library="DrawerMenu_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:24.626" starttime="20181003 10:29:24.418"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]</arg>
+</arguments>
+<msg timestamp="20181003 10:29:24.626" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]'.</msg>
+<status status="PASS" endtime="20181003 10:29:29.228" starttime="20181003 10:29:24.626"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_close')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:29.361" starttime="20181003 10:29:29.229"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_close')]</arg>
+</arguments>
+<msg timestamp="20181003 10:29:29.361" level="INFO">Clicking element '//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_close')]'.</msg>
+<status status="PASS" endtime="20181003 10:29:30.739" starttime="20181003 10:29:29.361"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:35.283" starttime="20181003 10:29:30.739"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20181003 10:29:35.879" starttime="20181003 10:29:35.284"></status>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']</arg>
+</arguments>
+<msg timestamp="20181003 10:29:36.162" level="INFO">Current page contains element '//android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']'.</msg>
+<status status="PASS" endtime="20181003 10:29:36.163" starttime="20181003 10:29:35.879"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:29:36.163" starttime="20181003 10:29:24.418"></status>
+</kw>
+<status status="PASS" endtime="20181003 10:29:36.163" critical="yes" starttime="20181003 10:28:43.785"></status>
+</test>
+<status status="PASS" endtime="20181003 10:29:36.164" starttime="20181003 10:27:27.417"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Smoketest" pass="2">Smoketest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

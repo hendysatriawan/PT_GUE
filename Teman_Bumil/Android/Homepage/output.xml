@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180424 14:39:18.702" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android/Homepage/homepage.robot" id="s1" name="Homepage">
+<test id="s1-t1" name="Homepage Program Hamil Artikel">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Lakukan Login dan pilih question program hamil, lalu buka artikel yang di homepage</arg>
+</arguments>
+<msg timestamp="20180424 14:39:18.968" level="INFO">Lakukan Login dan pilih question program hamil, lalu buka artikel yang di homepage</msg>
+<status status="PASS" endtime="20180424 14:39:18.968" starttime="20180424 14:39:18.967"></status>
+</kw>
+<kw name="Login Valid" library="Login_Resource">
+<kw name="Buka apps temanbumil emulator" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_EMULATOR}</arg>
+<arg>deviceName=${DEVICE_NAME_EMULATOR}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:25.185" starttime="20180424 14:39:18.969"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:39:25.186" starttime="20180424 14:39:18.968"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:39:27.187" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:39:27.187" starttime="20180424 14:39:25.186"></status>
+</kw>
+<kw name="Permission_Phone" library="Permission_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_message</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:27.245" starttime="20180424 14:39:27.188"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.packageinstaller:id/permission_allow_button</arg>
+</arguments>
+<msg timestamp="20180424 14:39:27.246" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" endtime="20180424 14:39:33.841" starttime="20180424 14:39:27.246"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:39:33.841" starttime="20180424 14:39:27.188"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='SKIP']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:34.941" starttime="20180424 14:39:33.841"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_next</arg>
+</arguments>
+<msg timestamp="20180424 14:39:34.941" level="INFO">Clicking element 'com.temanbumil.android:id/btn_next'.</msg>
+<status status="PASS" endtime="20180424 14:39:35.144" starttime="20180424 14:39:34.941"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_skip</arg>
+</arguments>
+<msg timestamp="20180424 14:39:35.145" level="INFO">Clicking element 'com.temanbumil.android:id/btn_skip'.</msg>
+<status status="PASS" endtime="20180424 14:39:37.989" starttime="20180424 14:39:35.144"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:39.362" starttime="20180424 14:39:37.990"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_email</arg>
+<arg>${EMAIL_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180424 14:39:39.362" level="INFO">Typing text 'aniula@yopmail.com' into text field 'com.temanbumil.android:id/et_email'</msg>
+<status status="PASS" endtime="20180424 14:39:47.000" starttime="20180424 14:39:39.362"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/et_password</arg>
+<arg>${PASSWORD_LOGIN_VALID}</arg>
+</arguments>
+<msg timestamp="20180424 14:39:47.001" level="INFO">Typing password into text field 'com.temanbumil.android:id/et_password'</msg>
+<status status="PASS" endtime="20180424 14:39:52.534" starttime="20180424 14:39:47.000"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_login</arg>
+</arguments>
+<msg timestamp="20180424 14:39:52.534" level="INFO">Clicking element 'com.temanbumil.android:id/btn_login'.</msg>
+<status status="PASS" endtime="20180424 14:39:53.310" starttime="20180424 14:39:52.534"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:39:53.310" starttime="20180424 14:39:18.968"></status>
+</kw>
+<kw name="Question Program Hamil" library="Question_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_content</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:57.143" starttime="20180424 14:39:53.311"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_content</arg>
+<arg>Silakan tambah data anak Mums terlebih dahulu</arg>
+</arguments>
+<msg timestamp="20180424 14:39:57.144" level="INFO">Verifying element 'com.temanbumil.android:id/tv_content' contains exactly text 'Silakan tambah data anak Mums terlebih dahulu'.</msg>
+<status status="PASS" endtime="20180424 14:39:57.237" starttime="20180424 14:39:57.143"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_negative</arg>
+</arguments>
+<msg timestamp="20180424 14:39:57.238" level="INFO">Clicking element 'com.temanbumil.android:id/btn_negative'.</msg>
+<status status="PASS" endtime="20180424 14:39:58.479" starttime="20180424 14:39:57.237"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_main</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:39:59.801" starttime="20180424 14:39:58.479"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_main</arg>
+<arg>Silakan pilih fitur yang Mums inginkan</arg>
+</arguments>
+<msg timestamp="20180424 14:39:59.801" level="INFO">Verifying element 'com.temanbumil.android:id/tv_q_main' contains exactly text 'Silakan pilih fitur yang Mums inginkan'.</msg>
+<status status="PASS" endtime="20180424 14:40:00.053" starttime="20180424 14:39:59.801"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_q_main_vertillity</arg>
+</arguments>
+<msg timestamp="20180424 14:40:00.053" level="INFO">Clicking element 'com.temanbumil.android:id/btn_q_main_vertillity'.</msg>
+<status status="PASS" endtime="20180424 14:40:01.373" starttime="20180424 14:40:00.053"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:02.553" starttime="20180424 14:40:01.374"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+<arg>Apakah Mums yakin ingin menggunakan fitur Program Hamil?</arg>
+</arguments>
+<msg timestamp="20180424 14:40:02.553" level="INFO">Verifying element 'com.temanbumil.android:id/tvDescription' contains exactly text 'Apakah Mums yakin ingin menggunakan fitur Program Hamil?'.</msg>
+<status status="PASS" endtime="20180424 14:40:02.583" starttime="20180424 14:40:02.553"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/txt_negative</arg>
+</arguments>
+<msg timestamp="20180424 14:40:02.583" level="INFO">Clicking element 'com.temanbumil.android:id/txt_negative'.</msg>
+<status status="PASS" endtime="20180424 14:40:09.237" starttime="20180424 14:40:02.583"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_q_main_vertillity</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:09.312" starttime="20180424 14:40:09.237"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_q_main_vertillity</arg>
+</arguments>
+<msg timestamp="20180424 14:40:09.313" level="INFO">Clicking element 'com.temanbumil.android:id/btn_q_main_vertillity'.</msg>
+<status status="PASS" endtime="20180424 14:40:09.830" starttime="20180424 14:40:09.312"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:10.437" starttime="20180424 14:40:09.831"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+<arg>Apakah Mums yakin ingin menggunakan fitur Program Hamil?</arg>
+</arguments>
+<msg timestamp="20180424 14:40:10.437" level="INFO">Verifying element 'com.temanbumil.android:id/tvDescription' contains exactly text 'Apakah Mums yakin ingin menggunakan fitur Program Hamil?'.</msg>
+<status status="PASS" endtime="20180424 14:40:10.486" starttime="20180424 14:40:10.437"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/txt_positive</arg>
+</arguments>
+<msg timestamp="20180424 14:40:10.486" level="INFO">Clicking element 'com.temanbumil.android:id/txt_positive'.</msg>
+<status status="PASS" endtime="20180424 14:40:11.611" starttime="20180424 14:40:10.486"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:18.318" starttime="20180424 14:40:11.611"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>Teman Bumil</arg>
+</arguments>
+<msg timestamp="20180424 14:40:18.319" level="INFO">Verifying element 'com.temanbumil.android:id/tv_title' contains exactly text 'Teman Bumil'.</msg>
+<status status="PASS" endtime="20180424 14:40:18.345" starttime="20180424 14:40:18.319"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:40:18.345" starttime="20180424 14:39:53.310"></status>
+</kw>
+<kw name="Coachmark Got It" library="Coachmark_Splash_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:18.400" starttime="20180424 14:40:18.346"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<msg timestamp="20180424 14:40:18.400" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='GOT IT']'.</msg>
+<status status="PASS" endtime="20180424 14:40:19.229" starttime="20180424 14:40:18.400"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:40:19.230" starttime="20180424 14:40:18.345"></status>
+</kw>
+<kw name="Homepage Program Hamil Artikel Slider 1" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.ImageView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:20.310" starttime="20180424 14:40:19.231"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]</arg>
+</arguments>
+<msg timestamp="20180424 14:40:20.310" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]'.</msg>
+<status status="PASS" endtime="20180424 14:40:21.692" starttime="20180424 14:40:20.310"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:27.329" starttime="20180424 14:40:21.692"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:27.405" starttime="20180424 14:40:27.330"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:31.215" starttime="20180424 14:40:27.405"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:34.793" starttime="20180424 14:40:31.215"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:38.493" starttime="20180424 14:40:34.793"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:42.114" starttime="20180424 14:40:38.494"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:45.664" starttime="20180424 14:40:42.114"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:49.464" starttime="20180424 14:40:45.664"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:53.166" starttime="20180424 14:40:49.464"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:55.213" starttime="20180424 14:40:53.166"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:55.669" starttime="20180424 14:40:55.213"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:40:57.670" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:40:57.670" starttime="20180424 14:40:55.669"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:40:57.763" starttime="20180424 14:40:57.670"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<msg timestamp="20180424 14:40:57.763" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView'.</msg>
+<status status="PASS" endtime="20180424 14:40:58.676" starttime="20180424 14:40:57.763"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:01.672" starttime="20180424 14:40:58.676"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:01.863" starttime="20180424 14:41:01.672"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:41:01.863" starttime="20180424 14:40:19.230"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Artikel 1.png</arg>
+</arguments>
+<msg timestamp="20180424 14:41:09.986" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Artikel%201.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Artikel%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:41:09.986" starttime="20180424 14:41:01.864"></status>
+</kw>
+<kw name="Kembali ke Homepage Dari Artikel Slider" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:10.172" starttime="20180424 14:41:09.987"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:41:10.173" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:41:16.814" starttime="20180424 14:41:10.173"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:16.915" starttime="20180424 14:41:16.814"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:41:16.915" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:41:17.666" starttime="20180424 14:41:16.915"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:18.822" starttime="20180424 14:41:17.666"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:41:18.823" starttime="20180424 14:41:09.986"></status>
+</kw>
+<kw name="Homepage Program Hamil Artikel Slider 2" library="Homepage_Resource">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>1020</arg>
+<arg>530</arg>
+<arg>160</arg>
+<arg>540</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:20.062" starttime="20180424 14:41:18.823"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ImageView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:21.717" starttime="20180424 14:41:20.063"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]</arg>
+</arguments>
+<msg timestamp="20180424 14:41:21.717" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[2]'.</msg>
+<status status="PASS" endtime="20180424 14:41:22.664" starttime="20180424 14:41:21.717"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:30.013" starttime="20180424 14:41:22.664"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:30.063" starttime="20180424 14:41:30.013"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:37.126" starttime="20180424 14:41:30.063"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:44.517" starttime="20180424 14:41:37.126"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:51.818" starttime="20180424 14:41:44.517"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:41:59.517" starttime="20180424 14:41:51.818"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:07.072" starttime="20180424 14:41:59.517"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:14.174" starttime="20180424 14:42:07.072"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:21.615" starttime="20180424 14:42:14.175"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:30.368" starttime="20180424 14:42:21.615"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:36.918" starttime="20180424 14:42:30.368"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:44.066" starttime="20180424 14:42:36.918"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:50.663" starttime="20180424 14:42:44.066"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:42:56.975" starttime="20180424 14:42:50.663"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:03.519" starttime="20180424 14:42:56.975"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:09.826" starttime="20180424 14:43:03.519"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:16.367" starttime="20180424 14:43:09.826"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:21.521" starttime="20180424 14:43:16.368"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:22.020" starttime="20180424 14:43:21.522"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:22.516" starttime="20180424 14:43:22.021"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:23.064" starttime="20180424 14:43:22.516"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:23.520" starttime="20180424 14:43:23.064"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:24.022" starttime="20180424 14:43:23.520"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:24.515" starttime="20180424 14:43:24.023"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:25.023" starttime="20180424 14:43:24.515"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:25.564" starttime="20180424 14:43:25.023"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:26.064" starttime="20180424 14:43:25.564"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:43:28.065" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:43:28.066" starttime="20180424 14:43:26.065"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:28.214" starttime="20180424 14:43:28.066"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<msg timestamp="20180424 14:43:28.215" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView'.</msg>
+<status status="PASS" endtime="20180424 14:43:30.975" starttime="20180424 14:43:28.215"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:31.964" starttime="20180424 14:43:30.975"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:32.025" starttime="20180424 14:43:31.965"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:43:32.025" starttime="20180424 14:41:18.823"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Artikel 2.png</arg>
+</arguments>
+<msg timestamp="20180424 14:43:39.238" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Artikel%202.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Artikel%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:43:39.238" starttime="20180424 14:43:32.026"></status>
+</kw>
+<kw name="Kembali ke Homepage Dari Artikel Slider" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:39.416" starttime="20180424 14:43:39.239"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:43:39.417" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:43:46.265" starttime="20180424 14:43:39.416"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:46.468" starttime="20180424 14:43:46.265"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:43:46.469" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:43:46.914" starttime="20180424 14:43:46.469"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:48.067" starttime="20180424 14:43:46.915"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:43:48.067" starttime="20180424 14:43:39.239"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:43:48.067" critical="yes" starttime="20180424 14:39:18.966"></status>
+</test>
+<test id="s1-t2" name="Homepage Program Hamil Checklist">
+<kw name="Homepage Program Hamil Checklist" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.ImageView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:48.319" starttime="20180424 14:43:48.069"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>210</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:49.425" starttime="20180424 14:43:48.319"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:43:51.425" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:43:51.426" starttime="20180424 14:43:49.425"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_see_more</arg>
+</arguments>
+<msg timestamp="20180424 14:43:51.426" level="INFO">Clicking element 'com.temanbumil.android:id/btn_see_more'.</msg>
+<status status="PASS" endtime="20180424 14:43:52.567" starttime="20180424 14:43:51.426"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/txt_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:43:54.366" starttime="20180424 14:43:52.567"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.CheckBox</arg>
+</arguments>
+<msg timestamp="20180424 14:43:54.367" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.CheckBox'.</msg>
+<status status="PASS" endtime="20180424 14:43:55.116" starttime="20180424 14:43:54.367"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox</arg>
+</arguments>
+<msg timestamp="20180424 14:43:55.116" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox'.</msg>
+<status status="PASS" endtime="20180424 14:43:56.476" starttime="20180424 14:43:55.116"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.CheckBox</arg>
+</arguments>
+<msg timestamp="20180424 14:43:56.478" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.CheckBox'.</msg>
+<status status="PASS" endtime="20180424 14:43:57.872" starttime="20180424 14:43:56.477"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox</arg>
+</arguments>
+<msg timestamp="20180424 14:43:57.872" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox'.</msg>
+<status status="PASS" endtime="20180424 14:43:59.467" starttime="20180424 14:43:57.872"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:43:59.467" starttime="20180424 14:43:48.069"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Checklist.png</arg>
+</arguments>
+<msg timestamp="20180424 14:44:02.730" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Checklist.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Checklist.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:44:02.730" starttime="20180424 14:43:59.468"></status>
+</kw>
+<kw name="Kembali ke Homepage Dari Checklist" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:02.897" starttime="20180424 14:44:02.732"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:44:02.898" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:44:03.301" starttime="20180424 14:44:02.897"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:07.994" starttime="20180424 14:44:03.301"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:07.995" starttime="20180424 14:44:02.731"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:07.995" critical="yes" starttime="20180424 14:43:48.068"></status>
+</test>
+<test id="s1-t3" name="Homepage Program Hamil Tips">
+<kw name="Homepage Program Hamil Tips" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:08.084" starttime="20180424 14:44:07.997"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:08.178" starttime="20180424 14:44:08.084"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>135</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:09.393" starttime="20180424 14:44:08.178"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:44:11.397" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:44:11.397" starttime="20180424 14:44:09.394"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:11.492" starttime="20180424 14:44:11.397"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout</arg>
+</arguments>
+<msg timestamp="20180424 14:44:11.493" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout'.</msg>
+<status status="PASS" endtime="20180424 14:44:12.301" starttime="20180424 14:44:11.493"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/iv_author</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:17.053" starttime="20180424 14:44:12.302"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:17.247" starttime="20180424 14:44:17.053"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:20.040" starttime="20180424 14:44:17.247"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:22.142" starttime="20180424 14:44:20.040"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:24.308" starttime="20180424 14:44:22.142"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:26.463" starttime="20180424 14:44:24.308"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>150</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:27.840" starttime="20180424 14:44:26.463"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:44:29.840" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:44:29.841" starttime="20180424 14:44:27.840"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout</arg>
+</arguments>
+<msg timestamp="20180424 14:44:29.841" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout'.</msg>
+<status status="PASS" endtime="20180424 14:44:30.482" starttime="20180424 14:44:29.841"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/iv_author</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:32.063" starttime="20180424 14:44:30.483"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:32.583" starttime="20180424 14:44:32.063"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:32.584" starttime="20180424 14:44:07.996"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Tips.png</arg>
+</arguments>
+<msg timestamp="20180424 14:44:34.624" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Tips.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Tips.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:44:34.624" starttime="20180424 14:44:32.584"></status>
+</kw>
+<kw name="Kembali ke Homepage Dari Tips" library="Homepage_Resource">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:44:34.625" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:44:41.595" starttime="20180424 14:44:34.625"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:41.756" starttime="20180424 14:44:41.596"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:44:41.757" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:44:42.366" starttime="20180424 14:44:41.756"></status>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/title_tips</arg>
+</arguments>
+<msg timestamp="20180424 14:44:43.979" level="INFO">Current page contains element 'com.temanbumil.android:id/title_tips'.</msg>
+<status status="PASS" endtime="20180424 14:44:43.979" starttime="20180424 14:44:42.367"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:43.979" starttime="20180424 14:44:34.625"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:43.979" critical="yes" starttime="20180424 14:44:07.996"></status>
+</test>
+<test id="s1-t4" name="Homepage Program Hamil Artikel Terkait">
+<kw name="Homepage Program Hamil Artikel" library="Homepage_Resource">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${APP}:id/title_tips</arg>
+</arguments>
+<msg timestamp="20180424 14:44:44.050" level="INFO">Current page contains element 'com.temanbumil.android:id/title_tips'.</msg>
+<status status="PASS" endtime="20180424 14:44:44.050" starttime="20180424 14:44:43.981"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>1350</arg>
+<arg>406</arg>
+<arg>135</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:45.118" starttime="20180424 14:44:44.050"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:47.290" starttime="20180424 14:44:45.118"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<msg timestamp="20180424 14:44:47.290" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView'.</msg>
+<status status="PASS" endtime="20180424 14:44:48.853" starttime="20180424 14:44:47.290"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:52.055" starttime="20180424 14:44:48.853"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${APP}:id/progress_bar</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:52.084" starttime="20180424 14:44:52.055"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:52.182" starttime="20180424 14:44:52.084"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:44:52.182" starttime="20180424 14:44:43.980"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Artikel.png</arg>
+</arguments>
+<msg timestamp="20180424 14:44:54.958" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Artikel.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Artikel.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:44:54.959" starttime="20180424 14:44:52.183"></status>
+</kw>
+<kw name="Kembali ke Homepage Dari Artikel Terkait" library="Homepage_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:55.030" starttime="20180424 14:44:54.959"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_actionbar_back</arg>
+</arguments>
+<msg timestamp="20180424 14:44:55.031" level="INFO">Clicking element 'com.temanbumil.android:id/btn_actionbar_back'.</msg>
+<status status="PASS" endtime="20180424 14:44:55.505" starttime="20180424 14:44:55.031"></status>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView</arg>
+</arguments>
+<msg timestamp="20180424 14:44:56.574" level="INFO">Current page contains element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView'.</msg>
+<status status="PASS" endtime="20180424 14:44:56.574" starttime="20180424 14:44:55.506"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:44:58.575" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:44:58.576" starttime="20180424 14:44:56.574"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>250</arg>
+<arg>406</arg>
+<arg>1350</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:44:59.670" starttime="20180424 14:44:58.576"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>250</arg>
+<arg>406</arg>
+<arg>1350</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:00.721" starttime="20180424 14:44:59.671"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>250</arg>
+<arg>406</arg>
+<arg>1350</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:01.767" starttime="20180424 14:45:00.721"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>406</arg>
+<arg>250</arg>
+<arg>406</arg>
+<arg>1350</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:02.425" starttime="20180424 14:45:01.767"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:45:04.427" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:45:04.427" starttime="20180424 14:45:02.426"></status>
+</kw>
+<kw name="Element Name Should Be" library="AppiumLibrary">
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+<arg>Jika Mums sudah hamil klik di sini</arg>
+</arguments>
+<msg timestamp="20180424 14:45:04.565" level="INFO">Element 'com.temanbumil.android:id/txt_mother' name is 'Jika Mums sudah hamil klik di sini' </msg>
+<status status="PASS" endtime="20180424 14:45:04.565" starttime="20180424 14:45:04.427"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:45:04.566" starttime="20180424 14:44:54.959"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:45:04.566" critical="yes" starttime="20180424 14:44:43.980"></status>
+</test>
+<test id="s1-t5" name="Homepage Program Hamil Ubah Status Hamil">
+<kw name="Homepage Program Hamil Ubah Status Hamil" library="Homepage_Resource">
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:04.716" starttime="20180424 14:45:04.567"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/txt_mother</arg>
+</arguments>
+<msg timestamp="20180424 14:45:04.717" level="INFO">Clicking element 'com.temanbumil.android:id/txt_mother'.</msg>
+<status status="PASS" endtime="20180424 14:45:05.265" starttime="20180424 14:45:04.716"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:06.367" starttime="20180424 14:45:05.266"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tvDescription</arg>
+<arg>Selamat atas Kehamilan Mums, silakan klik Ya untuk melanjutkan</arg>
+</arguments>
+<msg timestamp="20180424 14:45:06.368" level="INFO">Verifying element 'com.temanbumil.android:id/tvDescription' contains exactly text 'Selamat atas Kehamilan Mums, silakan klik Ya untuk melanjutkan'.</msg>
+<status status="PASS" endtime="20180424 14:45:06.526" starttime="20180424 14:45:06.367"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/txt_positive</arg>
+</arguments>
+<msg timestamp="20180424 14:45:06.527" level="INFO">Clicking element 'com.temanbumil.android:id/txt_positive'.</msg>
+<status status="PASS" endtime="20180424 14:45:08.118" starttime="20180424 14:45:06.527"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_main</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:09.117" starttime="20180424 14:45:08.118"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_main</arg>
+<arg>Apakah Mums sudah dinyatakan hamil oleh dokter?</arg>
+</arguments>
+<msg timestamp="20180424 14:45:09.117" level="INFO">Verifying element 'com.temanbumil.android:id/tv_q_main' contains exactly text 'Apakah Mums sudah dinyatakan hamil oleh dokter?'.</msg>
+<status status="PASS" endtime="20180424 14:45:09.266" starttime="20180424 14:45:09.117"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_q_main_done</arg>
+</arguments>
+<msg timestamp="20180424 14:45:09.266" level="INFO">Clicking element 'com.temanbumil.android:id/btn_q_main_done'.</msg>
+<status status="PASS" endtime="20180424 14:45:10.070" starttime="20180424 14:45:09.266"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_date</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:11.430" starttime="20180424 14:45:10.070"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_q_date</arg>
+<arg>Isi perkiraan due date Mums</arg>
+</arguments>
+<msg timestamp="20180424 14:45:11.430" level="INFO">Verifying element 'com.temanbumil.android:id/tv_q_date' contains exactly text 'Isi perkiraan due date Mums'.</msg>
+<status status="PASS" endtime="20180424 14:45:11.666" starttime="20180424 14:45:11.430"></status>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<doc>Long press the element</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[3]/android.widget.EditText</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:13.166" starttime="20180424 14:45:11.666"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${2}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:13.919" starttime="20180424 14:45:13.166"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${0}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:14.468" starttime="20180424 14:45:13.920"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${1}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:14.966" starttime="20180424 14:45:14.468"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${8}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:15.529" starttime="20180424 14:45:14.966"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${enter}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:16.066" starttime="20180424 14:45:15.529"></status>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<doc>Long press the element</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.EditText</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:18.108" starttime="20180424 14:45:16.066"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${O}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:18.123" starttime="20180424 14:45:18.108"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${K}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:18.707" starttime="20180424 14:45:18.123"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${T}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:19.225" starttime="20180424 14:45:18.707"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${enter}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:19.813" starttime="20180424 14:45:19.225"></status>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<doc>Long press the element</doc>
+<arguments>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[1]/android.widget.EditText</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:30.318" starttime="20180424 14:45:19.813"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${1}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:30.797" starttime="20180424 14:45:30.319"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${4}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:31.250" starttime="20180424 14:45:30.797"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>${enter}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:31.776" starttime="20180424 14:45:31.250"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180424 14:45:33.777" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180424 14:45:33.777" starttime="20180424 14:45:31.777"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_q_date_choose</arg>
+</arguments>
+<msg timestamp="20180424 14:45:33.778" level="INFO">Clicking element 'com.temanbumil.android:id/btn_q_date_choose'.</msg>
+<status status="PASS" endtime="20180424 14:45:33.907" starttime="20180424 14:45:33.777"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${APP}:id/btn_negative</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:38.571" starttime="20180424 14:45:33.907"></status>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<arguments>
+<arg>${APP}:id/tv_title</arg>
+<arg>Selamat atas kehamilan Mums!</arg>
+</arguments>
+<msg timestamp="20180424 14:45:38.572" level="INFO">Verifying element 'com.temanbumil.android:id/tv_title' contains exactly text 'Selamat atas kehamilan Mums!'.</msg>
+<status status="PASS" endtime="20180424 14:45:39.025" starttime="20180424 14:45:38.572"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${APP}:id/btn_negative</arg>
+</arguments>
+<msg timestamp="20180424 14:45:39.025" level="INFO">Clicking element 'com.temanbumil.android:id/btn_negative'.</msg>
+<status status="PASS" endtime="20180424 14:45:45.929" starttime="20180424 14:45:39.025"></status>
+</kw>
+<kw name="Coachmark Got It" library="Coachmark_Splash_Resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+<arg>100s</arg>
+</arguments>
+<status status="PASS" endtime="20180424 14:45:46.161" starttime="20180424 14:45:45.930"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='GOT IT']</arg>
+</arguments>
+<msg timestamp="20180424 14:45:46.161" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='GOT IT']'.</msg>
+<status status="PASS" endtime="20180424 14:45:46.902" starttime="20180424 14:45:46.161"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:45:46.902" starttime="20180424 14:45:45.929"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:45:46.903" starttime="20180424 14:45:04.567"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=Homepage Program Hamil Ubah Status Hamil.png</arg>
+</arguments>
+<msg timestamp="20180424 14:45:50.075" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Homepage%20Program%20Hamil%20Ubah%20Status%20Hamil.png"&gt;&lt;img src="Homepage%20Program%20Hamil%20Ubah%20Status%20Hamil.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180424 14:45:50.075" starttime="20180424 14:45:46.903"></status>
+</kw>
+<status status="PASS" endtime="20180424 14:45:50.075" critical="yes" starttime="20180424 14:45:04.566"></status>
+</test>
+<status status="PASS" endtime="20180424 14:45:50.078" starttime="20180424 14:39:18.705"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Homepage" pass="5">Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

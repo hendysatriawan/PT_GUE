@@ -5,8 +5,8 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 3.0.2 (Python 2.7.10 on darwin)" name="Generator">
-<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
+<meta content="Robot Framework 3.0.4 (Python 2.7.15 on darwin)" name="Generator">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
 body {
@@ -27,6 +27,11 @@ th, td {
 }
 br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
+}
+hr {
+    background: #ccc;
+    height: 1px;
+    border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
@@ -1545,20 +1550,30 @@ function stopPropagation(event) {
 <script type="text/javascript">
 storage = function () {
     var prefix = 'robot-framework-';
+    var storage;
     function init(user) {
         prefix += user + '-';
+        storage = getStorage();
+    }
+    function getStorage() {
+        // Use localStorage if it's accessible, normal object otherwise.
+        // Inspired by https://stackoverflow.com/questions/11214404
+        try {
+            localStorage.setItem(prefix, prefix);
+            localStorage.removeItem(prefix);
+            return localStorage;
+        } catch (exception) {
+            return {};
+        }
     }
     function get(name, defaultValue) {
-        if (!localStorage)
-            return defaultValue;
-        var value = localStorage[prefix + name];
+        var value = storage[prefix + name];
         if (typeof value === 'undefined')
             return defaultValue;
         return value;
     }
     function set(name, value) {
-        if (localStorage)
-            localStorage[prefix + name] = value;
+        storage[prefix + name] = value;
     }
     return {init: init, get: get, set: set};
 }();
@@ -1567,22 +1582,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,128747],[],[[4,0,1,0,[],[1,451,75916],[]],[5,0,1,0,[],[1,76368,52378],[]]],[],[2,2,2,2]];
+window.output["suite"] = [1,2,3,0,[],[0,0,1673190],[],[[4,0,1,0,[],[1,1014,88528],[]],[5,0,1,0,[],[1,89542,1],[]],[6,0,1,0,[],[1,89544,39247],[]],[7,0,1,0,[],[1,128792,29950],[]],[8,0,1,0,[],[1,158742,151989],[]],[9,0,1,0,[],[1,310731,42725],[]],[10,0,1,0,[],[1,353456,35048],[]],[11,0,1,0,[],[1,388505,78373],[]],[12,0,1,0,[],[1,466878,70825],[]],[13,0,1,0,[],[1,537703,22044],[]],[14,0,1,0,[],[1,559747,39711],[]],[15,0,1,0,[],[1,599459,61644],[]],[16,0,1,0,[],[1,661104,1],[]],[17,0,1,0,[],[1,661105,28664],[]],[18,0,1,0,[],[1,689770,110098],[]],[19,0,1,0,[],[1,799868,104484],[]],[20,0,1,0,[],[0,904352,123022,21],[]],[22,0,1,0,[],[1,1027375,192714],[]],[23,0,1,0,[],[1,1220089,78080],[]],[24,0,1,0,[],[1,1298170,135794],[]],[25,0,1,0,[],[1,1433965,168296],[]],[26,0,1,0,[],[1,1602262,70913],[]]],[],[22,21,22,21]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Smoketest","*/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_7_J5_Prod/SmokeTest_prod/smoketest.robot","*smoketest.robot","*16.Program Hamil Homepage","*28i.Resep New Born"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Smoketest","*/Users/hendy.satriawan_gue/Documents/Automation_TB/Teman_Bumil/Android_7_J5_Prod/SmokeTest_prod/smoketest.robot","*smoketest.robot","*16.Program Hamil Homepage","*27.New Born Homepage","*27a.Homepage New Born Foto Baby","*27b.Homepage New Born Add Record","*27c.Homepage New Born Add Album","*27d.Homepage New Born Info Tumbuh Kembang","*27e.Homepage New Born checklist","*27f.Homepage New Born Tips","*27g.Homepage New Born Tips Slide","*27h.Homepage New Born Artikel Terkait","*27i.Homepage New Born Checklist Notifikasi","*27j.Homepage Newborn Minggu Ini","*28.New Born Drawer Menu","*28a.New Born Menu Checklist","*28b.New Born Menu Agenda","*28c.New Born Grafik Anak","*28d.New Born Menu Album","*Text 'Daftar Album' did not appear in 5 seconds","*28e.New Born Menu Artikel","*28f.New Born Menu Tips","*28g.New Born Tambah Anak","*28h.Forum","*28i.Resep New Born"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:02:08","fail":0,"label":"Critical Tests","pass":2},{"elapsed":"00:02:08","fail":0,"label":"All Tests","pass":2}],[],[{"elapsed":"00:02:09","fail":0,"id":"s1","label":"Smoketest","name":"Smoketest","pass":2}]];
+window.output["stats"] = [[{"elapsed":"00:27:52","fail":1,"label":"Critical Tests","pass":21},{"elapsed":"00:27:52","fail":1,"label":"All Tests","pass":21}],[],[{"elapsed":"00:27:53","fail":1,"id":"s1","label":"Smoketest","name":"Smoketest","pass":21}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1538537247417;
+window.output["baseMillis"] = 1544175560568;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 128783;
+window.output["generated"] = 1673819;
 </script>
 <script type="text/javascript">
 window.settings = {"background":{"fail":"#f66","nonCriticalFail":"#9e9","pass":"#9e9"},"logURL":"log.html","title":""};

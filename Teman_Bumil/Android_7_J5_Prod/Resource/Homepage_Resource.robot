@@ -11,38 +11,58 @@ Resource    ../Resource/Question_Resource.robot
 
 ${fertil_home_artikel_1}  Ini Pertanda Masa Subur
 ${fertil_home_artikel_2}
+
 *** Keywords ***
 Kembali ke Homepage Dari Artikel Slider
   #klik back untuk kembali ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   # Click Element    ${APP}:id/btn_actionbar_back
   # Wait Until Page Contains Element    //android.widget.LinearLayout[contains(@instance,'14')]    100s
-  Click Element    ${APP}:id/btn_actionbar_back
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@instance,'2')]    100s
 
 Kembali ke Homepage Dari Artikel Slider 2
   #klik back untuk kembali ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@instance,'3')]    100s
 
 Kembali ke Homepage Dari Checklist
   #kembali ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@instance,'2')]    100s
 
 Kembali ke Homepage Dari Tips
   #back to homepage
-  Click Element    ${APP}:id/btn_actionbar_back
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/title_tips')]
 
 Kembali ke Homepage Dari Artikel Terkait
   #back ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ARTIKEL TERKAIT')]
   ${lebarx}    Get Window Width
   ${tinggiy}   Get Window Height
@@ -70,31 +90,48 @@ Kembali ke Homepage Dari Artikel Terkait
 
 Kembali ke Homepage Sedang Hamil Dari Info Janin
   #kembali ke homepage
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/img_fetus')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'KEHAMILAN MUMS')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'1 Mgg')][@selected='true']
 
 Kembali ke Homepage Sedang Hamil Dari Baby Ideal
   #back ke homepage
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/img_fetus')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'KEHAMILAN MUMS')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'1 Mgg')][@selected='true']
 
 Kembali ke Homepage Sedang Hamil Dari Info Mums
   #back ke homepage
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/img_fetus')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'KEHAMILAN MUMS')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'1 Mgg')][@selected='true']
 
 Kembali ke Homepage Sedang Hamil Dari Checklist
   #back ke homepage
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/img_fetus')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'KEHAMILAN MUMS')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'1 Mgg')][@selected='true']
@@ -102,15 +139,23 @@ Kembali ke Homepage Sedang Hamil Dari Checklist
 
 Kembali ke Homepage Sedang Hamil Dari Tips
   #kembali ke homepage
-  Wait Until Element Is Visible    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]     100s
-  Click Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    '${back}' == 'False'   Exit For Loop
+  \    Click Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/title_tips')]
   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout
 
 Kembali ke Homepage Sedang Hamil Dari Artikel Terkait
   #back ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ARTIKEL TERKAIT')]
   ${lebarx}    Get Window Width
   ${tinggiy}   Get Window Height
@@ -147,7 +192,6 @@ Kembali ke Homepage Newborn Minggu Ini
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   Page Should Not Contain Element    //android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/this_week_indicator')]
 
 Kembali ke Homepage Sedang Hamil Minggu Ini
@@ -161,8 +205,12 @@ Kembali ke Homepage Sedang Hamil Minggu Ini
 
 Kembali ke Homepage Newborn dari Add Record
   #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
@@ -172,12 +220,15 @@ Kembali ke Homepage Newborn dari Add Record
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD RECORD')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
-  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']
 
 Kembali ke Homepage Newborn dari Add Album
   #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
@@ -187,12 +238,15 @@ Kembali ke Homepage Newborn dari Add Album
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD RECORD')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
-  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']
 
 Kembali ke Homepage Newborn dari info tumbuh kembang
   #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
@@ -202,13 +256,15 @@ Kembali ke Homepage Newborn dari info tumbuh kembang
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD RECORD')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
-  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']
-
 
 Kembali ke Homepage Newborn Dari Checklist
   #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
@@ -218,12 +274,15 @@ Kembali ke Homepage Newborn Dari Checklist
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD RECORD')]
   Page Should Contain Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
-  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']
 
 Kembali ke Homepage Newborn Dari Tips
-  #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  #kembali ke homepage
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    '${back}' == 'False'   Exit For Loop
+  \    Click Element    //android.widget.ImageButton[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage - langsung show tips
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/title_tips')]   100s
@@ -232,8 +291,12 @@ Kembali ke Homepage Newborn Dari Tips
 
 Kembali ke Homepage Newborn Dari Artikel Terkait
   #kembali ke homepage new born
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]   100s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]      5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   #cek halaman homepage - langsung show artikel yang dipilih
   Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_category')][@text='Menyusui']   100s
@@ -251,29 +314,45 @@ Kembali ke Homepage Tumbuh Kembang Dari Grafik
 
 Kembali ke Homepage Tumbuh Kembang Dari Album
   #kembali ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     10s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    10s
   Wait Until Element Is Visible    ${APP}:id/image_baby   10s
 
 Kembali ke Homepage Tumbuh Kembang Dari Info Baby
   #kembali ke homepage
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     10s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    10s
   Wait Until Element Is Visible    ${APP}:id/image_baby   10s
 
 Kembali ke Homepage Tumbuh Kembang Dari Tips
   #back to homepage
-  Click Element    ${APP}:id/btn_actionbar_back
-  Wait Until Element Is Visible    ${APP}:id/btn_actionbar_back     100s
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
   # Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[2]   100s
 
 Kembali ke Homepage Tumbuh Kembang Dari Artikel
   #back to homepage
-  Click Element    ${APP}:id/btn_actionbar_back
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${back}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${APP}:id/btn_actionbar_back     5s
+  \    Run Keyword If    ${back}    Exit For Loop
+  \    Click Element    ${APP}:id/btn_actionbar_back
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    2s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView   100s
   #swipe kembali ke homepage atas
@@ -511,6 +590,7 @@ Homepage Program Hamil Artikel
   Wait Until page contains element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView
 
 Program Hamil Ubah Status Sedang Hamil
+  Program Hamil Menu Home
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_mother')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_mother')]
   #pilih ya untuk melanjutkan
@@ -580,12 +660,6 @@ Sedang Hamil Homepage Janin 3D
 
 
 Sedang Hamil Homepage Info
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_info')]    100s
-  Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_info')]
-  #masuk ke halaman perkembangan janin
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_title')][@text='BIJI PISANG']    100s
-  Page Should Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_cover')]
-  #swipe kebawah
   #ambil panjang swipe berdasarkan device
   ${lebarx}    Get Window Width
   ${tinggiy}   Get Window Height
@@ -597,6 +671,18 @@ Sedang Hamil Homepage Info
   ${x2-info}   Convert To String    ${lebars}
   ${y1-info}   Convert To String    ${tinggis}
   ${y2-info}   Evaluate    ${tinggis} - 500
+  #cari info
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${el}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='BABY IDEAL']
+  \    Run Keyword If    ${el}    Exit For Loop
+  \    Swipe    ${x1-info}    ${y1-info}    ${x2-info}    ${y2-info}
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    1s
+  Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_info')]
+  #masuk ke halaman perkembangan janin
+  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_title')][@text='BIJI PISANG']    100s
+  Page Should Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_cover')]
+  #swipe kebawah
   #swipe halaman tips sampai halaman bawah
   : FOR    ${loopCount}    IN RANGE    0    20
   \    ${el}    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_title')][@text='BIJI PISANG']
@@ -882,48 +968,6 @@ Sedang Hamil Homepage Minggu Ini
   Page Should Contain Element    //android.widget.TextView[contains(@text,'15 Mgg')][@selected='true']
   Page Should Contain Element    //android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/this_week_indicator')]
 
-# Homepage Program Hamil Ubah Status Hamil
-#   Element Should Be Visible    ${APP}:id/txt_mother
-#   Click Element    ${APP}:id/txt_mother
-#   #ubah status menjadi hamil
-#   Wait Until Element Is Visible    ${APP}:id/tvDescription    100s
-#   Element Text Should Be    ${APP}:id/tvDescription    Selamat atas Kehamilan Mums, silakan klik Ya untuk melanjutkan
-#   #pilih Yes
-#   Click Element    ${APP}:id/txt_positive
-#   #pilih Kehamilan
-#   Wait Until Element Is Visible    ${APP}:id/tv_q_main    100s
-#   Element Text Should Be    ${APP}:id/tv_q_main    Apakah Mums sudah dinyatakan hamil oleh dokter?
-#   #pilih sudah
-#   Click Element    ${APP}:id/btn_q_main_done
-#   Wait Until Element Is Visible    ${APP}:id/tv_q_date    100s
-#   Element Text Should Be    ${APP}:id/tv_q_date    Isi perkiraan due date Mums
-#   #pilih tanggal due date
-#   #input tahun
-#   Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[3]/android.widget.EditText
-#   Press Keycode    ${2}
-#   Press Keycode    ${0}
-#   Press Keycode    ${1}
-#   Press Keycode    ${8}
-#   Press Keycode    ${enter}
-#   #input bulan
-#   Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.EditText
-#   Press Keycode    ${O}
-#   Press Keycode    ${K}
-#   Press Keycode    ${T}
-#   Press Keycode    ${enter}
-#   #input tanggal
-#   Long Press    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[1]/android.widget.EditText
-#   Press Keycode    ${1}
-#   Press Keycode    ${4}
-#   Press Keycode    ${enter}
-#   Sleep    2s
-#   Click Element    ${APP}:id/btn_q_date_choose
-#   #tunggu homepage hamil
-#   Wait Until Element Is Visible    ${APP}:id/btn_negative   100s
-#   Element Text Should Be    ${APP}:id/tv_title    Selamat atas kehamilan Mums!
-#   Click Element    ${APP}:id/btn_negative
-#   Coachmark Got It
-
 Homepage New Born Foto Baby
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
   Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]
@@ -939,7 +983,7 @@ Homepage New Born Foto Baby
   Press Keycode    27       #capture
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Uploading Image...')]   100s
+  # Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Uploading Image...')]   100s
   # Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'android:id/progress')]    100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
   #cek homepage newborn
@@ -948,7 +992,6 @@ Homepage New Born Foto Baby
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
 
 Homepage New Born Add Record
   Click Element    //android.widget.FrameLayout[contains(@resource-id,'com.temanbumil.android:id/btnAddRecord')]
@@ -1070,7 +1113,6 @@ Homepage New Born Info Tumbuh Kembang
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   #ambil panjang swipe berdasarkan device
   ${lebarx}    Get Window Width
   ${tinggiy}   Get Window Height
@@ -1109,7 +1151,6 @@ Homepage newborn Checklist
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   #swipe kebawah
   #ambil panjang swipe berdasarkan device
   ${lebarx}    Get Window Width
@@ -1146,7 +1187,6 @@ Homepage Newborn Tips
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   #cek homepage newborn
   ${lebarx}    Get Window Width
   ${tinggiy}   Get Window Height
@@ -1324,217 +1364,27 @@ Homepage Newborn Minggu Ini
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   Page Should Contain Element    //android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/this_week_indicator')]
-# Homepage Tumbuh Kembang Add Record
-#   Click Element    ${APP}:id/btnAddRecord
-#   #input berat badan
-#   Wait Until Element Is Visible    ${APP}:id/wheel_view   30s
-#   Page Should Contain Text    Berat badan si kecil?
-#   #swipe untuk input Berat
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Click Element    ${APP}:id/btn_next
-#   #input tinggi bedan sikecil
-#   Wait Until Element Is Visible    ${APP}:id/wheel_view   30s
-#   Page Should Contain Text    Tinggi badan si kecil?
-#   #swipe untuk input tinggi badan
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Click Element    ${APP}:id/btn_next
-#   #input lingkar kepala sikecil
-#   Wait Until Element Is Visible    ${APP}:id/wheel_view   30s
-#   Page Should Contain Text    Lingkar kepala si kecil?
-#   #swipe untuk input lingkar kepala
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Swipe    660    870    50    870
-#   Click Element    ${APP}:id/btn_next
-#   #hasil save ke grafik
-#   Wait Until Element Is Visible    ${APP}:id/edit_text_date   100s
-#   Click Element    ${APP}:id/btn_save
-#   #muncul pesan informasi berhasil
-#   Wait Until Element Is Visible    android:id/message   100s
-#   Page Should Contain Text    Proses berhasil!
-#   Click Element    android:id/button1
-#   Sleep    2s
-#
-# Homepage Tumbuh Kembang Add Album
-#   Click Element    ${APP}:id/btnAddAlbum
-#   #input album
-#   Wait Until Element Is Visible    ${APP}:id/btn_add_album    100s
-#   Page Should Contain Text    Simpan foto-foto Mums
-#   #tambah album
-#   Click Element    ${APP}:id/btn_add_album
-#   Wait Until Element Is Visible    ${APP}:id/et_album_name    100s
-#   Tap    ${APP}:id/et_album_name
-#   Input Text    ${APP}:id/et_album_name    Album Tumbuh Kembang Homepage
-#   Hide Keyboard
-#   Click Element    ${APP}:id/action_save
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   #buat album sukses, kembali ke halaman album
-#   Wait Until Element Is Visible    ${APP}:id/layout_upload_photo    100s
-#   Page Should Contain Text    Album Tumbuh Kembang Homepage
-#   #ambil foto/gambar
-#   Click Element    ${APP}:id/layout_upload_photo
-#   Permission_Confirm    #pilih confirm saat tampil message konfirmasi
-#   Permission_Camera     #allow permission camera
-#   Permission_Gallery    #allow permission Galery
-#   Wait Until Element Is Visible    ${APP}:id/alertTitle   100s      #tampil message allert ambil gambar
-#   Page Should Contain Text    CAMERA
-#   Click Text    CAMERA
-#   #back to edit album
-#   Sleep    3s
-#   Press Keycode    ${back}
-#   Sleep    5s
-#   #Click Text    Album Tumbuh Kembang Homepage
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[1]
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Page Should Contain Text    Daftar Album
-#   #tambah foto di detail album
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Click Element    ${APP}:id/layout_inner_container
-#   Wait Until Element Is Visible    ${APP}:id/alertTitle   100s      #tampil message allert ambil gambar
-#   Page Should Contain Text    CAMERA
-#   Click Text    CAMERA
-#   Sleep    3s
-#   Press Keycode    ${back}
-#   #edit album
-#   Click Element    accessibility_id=Opsi lainnya
-#   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]
-#   Wait Until Element Is Visible    ${APP}:id/et_album_name
-#   #open camera
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Click Element    ${APP}:id/layout_inner_container
-#   Wait Until Element Is Visible    ${APP}:id/alertTitle   100s      #tampil message allert ambil gambar
-#   Page Should Contain Text    CAMERA
-#   Click Text    CAMERA
-#   Sleep    3s
-#   Press Keycode    ${back}
-#   #edit nama album
-#   Tap    ${APP}:id/et_album_name
-#   Clear Text    ${APP}:id/et_album_name
-#   Input Text    ${APP}:id/et_album_name    Album Tumbuh Kembang Homepage-edit
-#   Hide Keyboard
-#   Click Element    ${APP}:id/btn_save
-#   Wait Until Page Contains    Daftar Album
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Page Should Contain Text    Album Tumbuh Kembang Homepage-edit
-#   #hapus album
-#   Click Element    accessibility_id=Opsi lainnya
-#   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]
-#   Wait Until Page Contains    Apakah anda yakin ingin menghapus Album?
-#   Click Element    android:id/button1
-#   #kembali ke halaman album
-#   Wait Until Element Is Visible    ${APP}:id/btn_add_album
-#   Page Should Contain Text    Simpan foto-foto Mums
-#
-# Homepage Tumbuh Kembang Info Baby
-#   Swipe    320    1180    320    1000
-#   Sleep    2s
-#   Page Should Contain Element    ${APP}:id/txt_ideal
-#   Click Element    ${APP}:id/txt_ideal
-#   #masuk halaman info baby
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Wait Until Element Is Visible    ${APP}:id/btn_indicator_3
-#   Page Should Contain Text    Tumbuh Kembang
-#   #swipe info janin
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#   Swipe    330    1200    330    400
-#
-# Homepage Tumbuh Kembang Checklist
-#   Swipe    320    1180    320    200      #swipe sampai dapat tombol see more
-#   Sleep    2s
-#   #pilih halaman checklist
-#   Click Element    ${APP}:id/btn_see_more
-#   Wait Until Element Is Visible    ${APP}:id/txt_title    100s
-#   #check
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.CheckBox
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.CheckBox
-#   #uncheck
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.CheckBox
-#
-# Homepage Tumbuh Kembang Tips
-#   #swipe sampai dapat tips
-#   Swipe    330    1200    330    560
-#   Swipe    330    1200    330    560
-#   Swipe    330    1200    330    560
-#   Sleep    2s
-#   #pilih halaman tips
-#   Click A Point   x=170   y=485
-#   # Click Element    xpath=xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView
-#   #tunggu sampai masuk halaman tips & terload sempurna
-#   Wait Until Element Is Visible    ${APP}:id/iv_author    100s
-#   Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView    100s
-#   #swipe halaman tips sampai halaman bawah
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Sleep    2s
-#   #pilih tips terkait
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout
-#   #tunggu tips terkait sampai terbuka & terload sempurna
-#   Wait Until Element Is Visible    ${APP}:id/iv_author    100s
-#   Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView    100s
-#
-# Homepage Tumbuh Kembang Tips Slide
-#   Sleep    2s
-#   Swipe    320    1180    320    980
-#   Swipe    600    1150    28    1150          #swipe ke kanan
-#   Swipe    600    1150    28    1150          #swipe ke kanan
-#   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView    100s
-#   #pilih halaman tips
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView
-#   #tunggu sampai masuk halaman tips & terload sempurna
-#   Wait Until Element Is Visible    ${APP}:id/iv_author    100s
-#   Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView    100s
-#   #swipe halaman tips sampai halaman bawah
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Sleep    2s
-#   #pilih tips terkait
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
-#   #tunggu tips terkait sampai terbuka & terload sempurna
-#   Wait Until Element Is Visible    ${APP}:id/iv_author    100s
-#   Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView    100s
-#
-# Homepage Tumbuh Kembang Artikel
-#   Page Should Contain Element    ${APP}:id/title_tips
-#   Swipe    335    1160    335    250          #swipe sampai dapat artikel terkait
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   #pilih artikel terkait
-#   Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
-#   #tunggu sampai artikel terload sempurna
-#   Wait Until Element Is Visible    ${APP}:id/tv_title   100s
-#   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-#   Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView
-#   #swipe artikel kebawah
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Swipe    335    1160    335    250
-#   Sleep    2s
+
+Mulai Polling
+  ${poling}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'POLLING')]
+  Run Keyword If    ${poling}    Run Keywords    loop mulai poling
+  ...   AND     mulai poling
+  ...   ELSE    [Documentation]  Tidak ada poling
+
+loop mulai poling
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_start_pool')][@text='MULAI POLLING >>']
+  \    Run Keyword If    ${el}    Exit For Loop
+  \    Swipe    ${subsx}    ${subsy}    ${subsx2}    ${subsy}
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+
+mulai poling
+  Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_start_pool')][@text='MULAI POLLING >>']
+  Sleep    1s
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${isipoling}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-di,'com.temanbumil.android:id/tvTitlePolling')]
+  \    Run Keyword If    ${isipoling}    Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txtAnswer')][@text='Ya']
+  \    Run Keyword If    ${isipoling}    Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/btnSubmit')][@text='SUBMIT']
+  \    Run Keyword If    '${isipoling}' == 'false'    Exit For Loop
+  \    ${loopCount}    Set Variable    ${loopCount}+1

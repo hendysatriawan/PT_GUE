@@ -42,3 +42,11 @@ Force_Update
   ...   AND   Close Application
     # ${pesan}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'android:id/message')]
   # Run Keyword If    ${pesan}    Click Element    //android.widget.Button[contains(@resource-id,'android:id/button2')]
+
+Recent Aplikasi
+  Sleep    2s
+  Press Keycode    3   #home
+  Sleep    1s
+  Press Keycode    187  #recent apps
+  Sleep    1s
+  Press Keycode    187  #recent apps

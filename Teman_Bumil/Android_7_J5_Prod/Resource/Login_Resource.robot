@@ -1,6 +1,7 @@
 *** Setting ***
 Library    AppiumLibrary
 Library    BuiltIn
+
 Resource    ../Resource/Capability_Device_Resource.robot
 Resource    ../Resource/Permission_Resource.robot
 Resource    ../Resource/Coachmark_Splash_Resource.robot
@@ -9,7 +10,7 @@ Resource    ../Resource/Coachmark_Splash_Resource.robot
 ${EMAIL_LOGIN_VALID}   aniula@yopmail.com
 ${PASSWORD_LOGIN_VALID}   1234567
 #Data Invalid
-${EMAIL_LOGIN_INVALID}    aniul1@yopmail.com
+${EMAIL_LOGIN_INVALID}    aniul2@yopmail.com
 ${PASSWORD_LOGIN_INVALID}    123456
 #Email Forgot Password
 ${EMAIL_FORGOT_VALID}   aniula@yopmail.com
@@ -50,6 +51,7 @@ Login Valid
   #cek berhasil Login & ke question page
   # Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_content')]   100s
   # Element Text Should Be    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_content')]    Silakan tambah data anak Mums terlebih dahulu
+  Instagram Handle
   Promo_handle
 
 Login Invalid Email
@@ -207,7 +209,6 @@ Login After Reset Password
   #cek homepage
   Wait Until Element Is Visible    //android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_notification')]   100s
 
-
 Promo_handle
   ${cekpromo}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.RelativeLayout[contains(@resource-id,'com.temanbumil.android:id/LL')]
   Run Keyword If    '${cekpromo}' == 'False'    Wait Until Element Is Visible    xpath=//android.widget.Button[@text='GOT IT']
@@ -221,3 +222,7 @@ Promo_handle
   ...   AND   Press Keycode    187  #recent apps
   ...   AND   Press Keycode    187  #recent apps
   ...   AND   Sleep    1s
+
+Instagram Handle
+  ${cekIG}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/imgSosMed')]
+  Run Keyword If    ${cekIG}    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/close')]

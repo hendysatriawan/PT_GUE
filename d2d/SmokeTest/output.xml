@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181119 17:11:02.812" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
+<suite source="/Users/hendy.satriawan_gue/Documents/Automation_TB/d2d/SmokeTest/smoketest.robot" id="s1" name="Smoketest">
+<test id="s1-t1" name="6.Feeds - Guideline">
+<kw name="Buka Apps D2D Real Device" library="Capability_Device_Resource">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_REAL}</arg>
+<arg>deviceName=${DEVICE_NAME_REAL}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY_SPLASH}</arg>
+<arg>noReset=False</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:25.196" starttime="20181119 17:11:03.146"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:25.196" starttime="20181119 17:11:03.145"></status>
+</kw>
+<kw name="Force Update" library="Permission_Resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'Update D2D application ?')]</arg>
+<arg>20s</arg>
+</arguments>
+<assign>
+<var>${Update}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Update D2D application ?')]</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:30.566" starttime="20181119 17:11:25.197"></status>
+</kw>
+<msg timestamp="20181119 17:11:30.566" level="INFO">${Update} = True</msg>
+<status status="PASS" endtime="20181119 17:11:30.566" starttime="20181119 17:11:25.197"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Update}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@text,'Later')]</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Tidak ada Update</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Later')]</arg>
+</arguments>
+<msg timestamp="20181119 17:11:30.567" level="INFO">Clicking element '//android.widget.TextView[contains(@text,'Later')]'.</msg>
+<status status="PASS" endtime="20181119 17:11:31.260" starttime="20181119 17:11:30.567"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:31.260" starttime="20181119 17:11:30.567"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:31.260" starttime="20181119 17:11:25.196"></status>
+</kw>
+<kw name="Login D2D" library="Login_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Welcome!')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:31.983" starttime="20181119 17:11:31.261"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:32.119" starttime="20181119 17:11:31.983"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@text,'e-mail')]</arg>
+<arg>${email_login}</arg>
+</arguments>
+<msg timestamp="20181119 17:11:32.120" level="INFO">Typing text 'ptgue.devbravo@gmail.com' into text field '//android.widget.EditText[contains(@text,'e-mail')]'</msg>
+<status status="PASS" endtime="20181119 17:11:39.308" starttime="20181119 17:11:32.120"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20181119 17:11:39.898" starttime="20181119 17:11:39.309"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:40.511" starttime="20181119 17:11:39.898"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181119 17:11:41.514" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181119 17:11:41.514" starttime="20181119 17:11:40.511"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[contains(@text,'password')]</arg>
+<arg>${pass_login}</arg>
+</arguments>
+<msg timestamp="20181119 17:11:41.515" level="INFO">Typing text 'guecuti' into text field '//android.widget.EditText[contains(@text,'password')]'</msg>
+<status status="PASS" endtime="20181119 17:11:53.710" starttime="20181119 17:11:41.515"></status>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press</doc>
+<status status="PASS" endtime="20181119 17:11:54.330" starttime="20181119 17:11:53.711"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:54.956" starttime="20181119 17:11:54.330"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181119 17:11:56.957" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181119 17:11:56.957" starttime="20181119 17:11:54.956"></status>
+</kw>
+<kw type="for" name="${loopCount} IN RANGE [ 0 | 20 ]">
+<kw type="foritem" name="${loopCount} = 0">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:57.160" starttime="20181119 17:11:56.958"></status>
+</kw>
+<msg timestamp="20181119 17:11:57.160" level="INFO">${el} = True</msg>
+<status status="PASS" endtime="20181119 17:11:57.160" starttime="20181119 17:11:56.958"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<msg timestamp="20181119 17:11:57.161" level="INFO">Clicking element '//android.widget.TextView[contains(@text,'LOGIN')]'.</msg>
+<status status="PASS" endtime="20181119 17:11:57.531" starttime="20181119 17:11:57.161"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:57.532" starttime="20181119 17:11:57.160"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${el}' == 'False'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:57.532" starttime="20181119 17:11:57.532"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:11:57.533" level="INFO">${loopCount} = 0+1</msg>
+<status status="PASS" endtime="20181119 17:11:57.533" starttime="20181119 17:11:57.532"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:57.533" starttime="20181119 17:11:56.957"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 1">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:58.133" starttime="20181119 17:11:57.534"></status>
+</kw>
+<msg timestamp="20181119 17:11:58.133" level="INFO">${el} = True</msg>
+<status status="PASS" endtime="20181119 17:11:58.133" starttime="20181119 17:11:57.533"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<msg timestamp="20181119 17:11:58.134" level="INFO">Clicking element '//android.widget.TextView[contains(@text,'LOGIN')]'.</msg>
+<status status="PASS" endtime="20181119 17:11:58.914" starttime="20181119 17:11:58.134"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:58.914" starttime="20181119 17:11:58.133"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${el}' == 'False'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:11:58.915" starttime="20181119 17:11:58.914"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:11:58.916" level="INFO">${loopCount} = 1+1</msg>
+<status status="PASS" endtime="20181119 17:11:58.916" starttime="20181119 17:11:58.915"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:11:58.916" starttime="20181119 17:11:57.533"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 2">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:12:05.539" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:12:05.539" starttime="20181119 17:12:04.271"></status>
+</kw>
+<msg timestamp="20181119 17:12:05.540" level="FAIL">Element '//android.widget.TextView[contains(@text,'LOGIN')]' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:12:05.540" starttime="20181119 17:11:58.917"></status>
+</kw>
+<msg timestamp="20181119 17:12:05.540" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:12:05.540" starttime="20181119 17:11:58.916"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@text,'LOGIN')]</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:12:05.540" starttime="20181119 17:12:05.540"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${el}' == 'False'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181119 17:12:05.541" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181119 17:12:05.541" starttime="20181119 17:12:05.541"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:12:05.541" starttime="20181119 17:12:05.541"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:12:05.541" starttime="20181119 17:11:58.916"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:12:05.541" starttime="20181119 17:11:56.957"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Feeds')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:12:26.379" starttime="20181119 17:12:05.541"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:12:26.379" starttime="20181119 17:11:31.260"></status>
+</kw>
+<kw name="Feeds View Guideline" library="Feeds_Resource">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Feeds')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:12:47.216" starttime="20181119 17:12:26.380"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.view.ViewGroup[contains(@content-desc,'buttonFeeds')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:12:57.521" starttime="20181119 17:12:47.216"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.view.ViewGroup[contains(@content-desc,'buttonQRScan')]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:07.926" starttime="20181119 17:12:57.522"></status>
+</kw>
+<kw name="Get Window Width" library="AppiumLibrary">
+<doc>Get current device width.</doc>
+<assign>
+<var>${lebarx}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.133" level="INFO">${lebarx} = 720</msg>
+<status status="PASS" endtime="20181119 17:13:08.133" starttime="20181119 17:13:07.926"></status>
+</kw>
+<kw name="Get Window Height" library="AppiumLibrary">
+<doc>Get current device height.</doc>
+<assign>
+<var>${tinggiy}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.156" level="INFO">${tinggiy} = 1280</msg>
+<status status="PASS" endtime="20181119 17:13:08.156" starttime="20181119 17:13:08.133"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${lebarx}</arg>
+</arguments>
+<assign>
+<var>${lebarx}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.157" level="INFO">${lebarx} = 720</msg>
+<status status="PASS" endtime="20181119 17:13:08.157" starttime="20181119 17:13:08.157"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${tinggiy}</arg>
+</arguments>
+<assign>
+<var>${tinggiy}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.158" level="INFO">${tinggiy} = 1280</msg>
+<status status="PASS" endtime="20181119 17:13:08.158" starttime="20181119 17:13:08.157"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${lebarx}/2</arg>
+</arguments>
+<assign>
+<var>${lebars}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.158" level="INFO">${lebars} = 360</msg>
+<status status="PASS" endtime="20181119 17:13:08.158" starttime="20181119 17:13:08.158"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${tinggiy} - 200</arg>
+</arguments>
+<assign>
+<var>${tinggis}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.159" level="INFO">${tinggis} = 1080</msg>
+<status status="PASS" endtime="20181119 17:13:08.159" starttime="20181119 17:13:08.159"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${lebars}</arg>
+</arguments>
+<assign>
+<var>${x1-feed}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.160" level="INFO">${x1-feed} = 360</msg>
+<status status="PASS" endtime="20181119 17:13:08.160" starttime="20181119 17:13:08.159"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${lebars}</arg>
+</arguments>
+<assign>
+<var>${x2-feed}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.160" level="INFO">${x2-feed} = 360</msg>
+<status status="PASS" endtime="20181119 17:13:08.160" starttime="20181119 17:13:08.160"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${tinggis}</arg>
+</arguments>
+<assign>
+<var>${y1-feed}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.161" level="INFO">${y1-feed} = 1080</msg>
+<status status="PASS" endtime="20181119 17:13:08.161" starttime="20181119 17:13:08.161"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${tinggis} - 500</arg>
+</arguments>
+<assign>
+<var>${y2-feed}</var>
+</assign>
+<msg timestamp="20181119 17:13:08.162" level="INFO">${y2-feed} = 580</msg>
+<status status="PASS" endtime="20181119 17:13:08.162" starttime="20181119 17:13:08.162"></status>
+</kw>
+<kw type="for" name="${loopCount} IN RANGE [ 0 | 20 ]">
+<kw type="foritem" name="${loopCount} = 0">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:15.990" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:15.991" starttime="20181119 17:13:13.470"></status>
+</kw>
+<msg timestamp="20181119 17:13:15.991" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:15.991" starttime="20181119 17:13:08.163"></status>
+</kw>
+<msg timestamp="20181119 17:13:15.991" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:15.991" starttime="20181119 17:13:08.162"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:15.992" starttime="20181119 17:13:15.992"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:16.811" starttime="20181119 17:13:15.993"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:16.811" level="INFO">${loopCount} = 0+1</msg>
+<status status="PASS" endtime="20181119 17:13:16.812" starttime="20181119 17:13:16.811"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:16.812" starttime="20181119 17:13:08.162"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 1">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:23.800" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:23.801" starttime="20181119 17:13:22.253"></status>
+</kw>
+<msg timestamp="20181119 17:13:23.801" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:23.801" starttime="20181119 17:13:16.812"></status>
+</kw>
+<msg timestamp="20181119 17:13:23.801" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:23.801" starttime="20181119 17:13:16.812"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:23.802" starttime="20181119 17:13:23.802"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:24.438" starttime="20181119 17:13:23.802"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:24.438" level="INFO">${loopCount} = 1+1</msg>
+<status status="PASS" endtime="20181119 17:13:24.438" starttime="20181119 17:13:24.438"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:24.438" starttime="20181119 17:13:16.812"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 2">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:31.308" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:31.308" starttime="20181119 17:13:29.943"></status>
+</kw>
+<msg timestamp="20181119 17:13:31.308" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:31.308" starttime="20181119 17:13:24.439"></status>
+</kw>
+<msg timestamp="20181119 17:13:31.308" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:31.308" starttime="20181119 17:13:24.439"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:31.309" starttime="20181119 17:13:31.308"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:31.966" starttime="20181119 17:13:31.309"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:31.967" level="INFO">${loopCount} = 2+1</msg>
+<status status="PASS" endtime="20181119 17:13:31.967" starttime="20181119 17:13:31.967"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:31.967" starttime="20181119 17:13:24.439"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 3">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:39.025" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:39.025" starttime="20181119 17:13:37.005"></status>
+</kw>
+<msg timestamp="20181119 17:13:39.025" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:39.025" starttime="20181119 17:13:31.968"></status>
+</kw>
+<msg timestamp="20181119 17:13:39.025" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:39.025" starttime="20181119 17:13:31.967"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:39.026" starttime="20181119 17:13:39.026"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:39.593" starttime="20181119 17:13:39.026"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:39.594" level="INFO">${loopCount} = 3+1</msg>
+<status status="PASS" endtime="20181119 17:13:39.594" starttime="20181119 17:13:39.593"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:39.594" starttime="20181119 17:13:31.967"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 4">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:46.777" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:46.777" starttime="20181119 17:13:44.993"></status>
+</kw>
+<msg timestamp="20181119 17:13:46.778" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:46.778" starttime="20181119 17:13:39.594"></status>
+</kw>
+<msg timestamp="20181119 17:13:46.778" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:46.778" starttime="20181119 17:13:39.594"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:46.779" starttime="20181119 17:13:46.778"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:47.386" starttime="20181119 17:13:46.779"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:47.387" level="INFO">${loopCount} = 4+1</msg>
+<status status="PASS" endtime="20181119 17:13:47.387" starttime="20181119 17:13:47.387"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:47.387" starttime="20181119 17:13:39.594"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 5">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:13:54.146" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:13:54.146" starttime="20181119 17:13:52.892"></status>
+</kw>
+<msg timestamp="20181119 17:13:54.146" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:13:54.146" starttime="20181119 17:13:47.388"></status>
+</kw>
+<msg timestamp="20181119 17:13:54.146" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:13:54.146" starttime="20181119 17:13:47.388"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:54.147" starttime="20181119 17:13:54.147"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:13:54.905" starttime="20181119 17:13:54.147"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:13:54.906" level="INFO">${loopCount} = 5+1</msg>
+<status status="PASS" endtime="20181119 17:13:54.906" starttime="20181119 17:13:54.905"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:13:54.906" starttime="20181119 17:13:47.388"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 6">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:01.213" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:01.214" starttime="20181119 17:14:00.006"></status>
+</kw>
+<msg timestamp="20181119 17:14:01.214" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:01.214" starttime="20181119 17:13:54.907"></status>
+</kw>
+<msg timestamp="20181119 17:14:01.214" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:01.215" starttime="20181119 17:13:54.906"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:01.215" starttime="20181119 17:14:01.215"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:01.996" starttime="20181119 17:14:01.215"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:01.998" level="INFO">${loopCount} = 6+1</msg>
+<status status="PASS" endtime="20181119 17:14:01.998" starttime="20181119 17:14:01.996"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:01.998" starttime="20181119 17:13:54.906"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 7">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:09.013" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:09.014" starttime="20181119 17:14:07.043"></status>
+</kw>
+<msg timestamp="20181119 17:14:09.014" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:09.014" starttime="20181119 17:14:01.999"></status>
+</kw>
+<msg timestamp="20181119 17:14:09.014" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:09.014" starttime="20181119 17:14:01.998"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:09.015" starttime="20181119 17:14:09.014"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:09.858" starttime="20181119 17:14:09.015"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:09.859" level="INFO">${loopCount} = 7+1</msg>
+<status status="PASS" endtime="20181119 17:14:09.859" starttime="20181119 17:14:09.858"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:09.859" starttime="20181119 17:14:01.998"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 8">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:17.437" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:17.437" starttime="20181119 17:14:15.570"></status>
+</kw>
+<msg timestamp="20181119 17:14:17.438" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:17.438" starttime="20181119 17:14:09.860"></status>
+</kw>
+<msg timestamp="20181119 17:14:17.438" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:17.438" starttime="20181119 17:14:09.860"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:17.439" starttime="20181119 17:14:17.438"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:18.080" starttime="20181119 17:14:17.439"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:18.081" level="INFO">${loopCount} = 8+1</msg>
+<status status="PASS" endtime="20181119 17:14:18.081" starttime="20181119 17:14:18.081"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:18.081" starttime="20181119 17:14:09.859"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 9">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:24.616" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:24.616" starttime="20181119 17:14:23.269"></status>
+</kw>
+<msg timestamp="20181119 17:14:24.616" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:24.616" starttime="20181119 17:14:18.082"></status>
+</kw>
+<msg timestamp="20181119 17:14:24.617" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:24.617" starttime="20181119 17:14:18.082"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:24.617" starttime="20181119 17:14:24.617"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:25.311" starttime="20181119 17:14:24.617"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:25.311" level="INFO">${loopCount} = 9+1</msg>
+<status status="PASS" endtime="20181119 17:14:25.312" starttime="20181119 17:14:25.311"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:25.312" starttime="20181119 17:14:18.081"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 10">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:31.703" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-12.png"&gt;&lt;img src="appium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:31.703" starttime="20181119 17:14:30.406"></status>
+</kw>
+<msg timestamp="20181119 17:14:31.703" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:31.703" starttime="20181119 17:14:25.312"></status>
+</kw>
+<msg timestamp="20181119 17:14:31.704" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:31.704" starttime="20181119 17:14:25.312"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:31.704" starttime="20181119 17:14:31.704"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:32.387" starttime="20181119 17:14:31.705"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:32.388" level="INFO">${loopCount} = 10+1</msg>
+<status status="PASS" endtime="20181119 17:14:32.388" starttime="20181119 17:14:32.387"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:32.388" starttime="20181119 17:14:25.312"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 11">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:39.042" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-13.png"&gt;&lt;img src="appium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:39.042" starttime="20181119 17:14:37.872"></status>
+</kw>
+<msg timestamp="20181119 17:14:39.042" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:39.042" starttime="20181119 17:14:32.388"></status>
+</kw>
+<msg timestamp="20181119 17:14:39.042" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:39.042" starttime="20181119 17:14:32.388"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:39.043" starttime="20181119 17:14:39.043"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:39.660" starttime="20181119 17:14:39.043"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:39.661" level="INFO">${loopCount} = 11+1</msg>
+<status status="PASS" endtime="20181119 17:14:39.661" starttime="20181119 17:14:39.661"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:39.661" starttime="20181119 17:14:32.388"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 12">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:47.746" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-14.png"&gt;&lt;img src="appium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:47.746" starttime="20181119 17:14:45.501"></status>
+</kw>
+<msg timestamp="20181119 17:14:47.746" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:47.746" starttime="20181119 17:14:39.662"></status>
+</kw>
+<msg timestamp="20181119 17:14:47.746" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:47.746" starttime="20181119 17:14:39.662"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:47.747" starttime="20181119 17:14:47.746"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:48.973" starttime="20181119 17:14:47.747"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:48.974" level="INFO">${loopCount} = 12+1</msg>
+<status status="PASS" endtime="20181119 17:14:48.974" starttime="20181119 17:14:48.974"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:48.974" starttime="20181119 17:14:39.661"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:14:56.531" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-15.png"&gt;&lt;img src="appium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:14:56.532" starttime="20181119 17:14:54.149"></status>
+</kw>
+<msg timestamp="20181119 17:14:56.532" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:14:56.532" starttime="20181119 17:14:48.975"></status>
+</kw>
+<msg timestamp="20181119 17:14:56.532" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:14:56.532" starttime="20181119 17:14:48.975"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:56.533" starttime="20181119 17:14:56.533"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:14:57.475" starttime="20181119 17:14:56.533"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:14:57.477" level="INFO">${loopCount} = 13+1</msg>
+<status status="PASS" endtime="20181119 17:14:57.477" starttime="20181119 17:14:57.476"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:14:57.477" starttime="20181119 17:14:48.975"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 14">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:06.154" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-16.png"&gt;&lt;img src="appium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:06.154" starttime="20181119 17:15:03.137"></status>
+</kw>
+<msg timestamp="20181119 17:15:06.155" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:06.155" starttime="20181119 17:14:57.478"></status>
+</kw>
+<msg timestamp="20181119 17:15:06.155" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:06.155" starttime="20181119 17:14:57.477"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:06.156" starttime="20181119 17:15:06.155"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:07.081" starttime="20181119 17:15:06.156"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:07.082" level="INFO">${loopCount} = 14+1</msg>
+<status status="PASS" endtime="20181119 17:15:07.082" starttime="20181119 17:15:07.082"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:07.082" starttime="20181119 17:14:57.477"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 15">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:16.066" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-17.png"&gt;&lt;img src="appium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:16.067" starttime="20181119 17:15:12.638"></status>
+</kw>
+<msg timestamp="20181119 17:15:16.067" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:16.067" starttime="20181119 17:15:07.083"></status>
+</kw>
+<msg timestamp="20181119 17:15:16.067" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:16.068" starttime="20181119 17:15:07.083"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:16.068" starttime="20181119 17:15:16.068"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:16.932" starttime="20181119 17:15:16.068"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:16.933" level="INFO">${loopCount} = 15+1</msg>
+<status status="PASS" endtime="20181119 17:15:16.933" starttime="20181119 17:15:16.932"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:16.933" starttime="20181119 17:15:07.083"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 16">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:25.072" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-18.png"&gt;&lt;img src="appium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:25.072" starttime="20181119 17:15:22.888"></status>
+</kw>
+<msg timestamp="20181119 17:15:25.072" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:25.072" starttime="20181119 17:15:16.934"></status>
+</kw>
+<msg timestamp="20181119 17:15:25.072" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:25.073" starttime="20181119 17:15:16.933"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:25.073" starttime="20181119 17:15:25.073"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:26.344" starttime="20181119 17:15:25.073"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:26.344" level="INFO">${loopCount} = 16+1</msg>
+<status status="PASS" endtime="20181119 17:15:26.345" starttime="20181119 17:15:26.344"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:26.345" starttime="20181119 17:15:16.933"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 17">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:33.706" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-19.png"&gt;&lt;img src="appium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:33.706" starttime="20181119 17:15:31.686"></status>
+</kw>
+<msg timestamp="20181119 17:15:33.707" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:33.707" starttime="20181119 17:15:26.345"></status>
+</kw>
+<msg timestamp="20181119 17:15:33.707" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:33.707" starttime="20181119 17:15:26.345"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:33.708" starttime="20181119 17:15:33.707"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:34.646" starttime="20181119 17:15:33.708"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:34.646" level="INFO">${loopCount} = 17+1</msg>
+<status status="PASS" endtime="20181119 17:15:34.646" starttime="20181119 17:15:34.646"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:34.646" starttime="20181119 17:15:26.345"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 18">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:42.695" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-20.png"&gt;&lt;img src="appium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:42.695" starttime="20181119 17:15:39.742"></status>
+</kw>
+<msg timestamp="20181119 17:15:42.695" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:42.695" starttime="20181119 17:15:34.647"></status>
+</kw>
+<msg timestamp="20181119 17:15:42.695" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:42.696" starttime="20181119 17:15:34.647"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:42.696" starttime="20181119 17:15:42.696"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:43.662" starttime="20181119 17:15:42.696"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:43.663" level="INFO">${loopCount} = 18+1</msg>
+<status status="PASS" endtime="20181119 17:15:43.663" starttime="20181119 17:15:43.663"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:43.663" starttime="20181119 17:15:34.646"></status>
+</kw>
+<kw type="foritem" name="${loopCount} = 19">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:50.440" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-21.png"&gt;&lt;img src="appium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:50.440" starttime="20181119 17:15:49.138"></status>
+</kw>
+<msg timestamp="20181119 17:15:50.440" level="FAIL">Element locator '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:50.440" starttime="20181119 17:15:43.664"></status>
+</kw>
+<msg timestamp="20181119 17:15:50.441" level="INFO">${el} = False</msg>
+<status status="PASS" endtime="20181119 17:15:50.441" starttime="20181119 17:15:43.663"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${el}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:50.441" starttime="20181119 17:15:50.441"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${x1-feed}</arg>
+<arg>${y1-feed}</arg>
+<arg>${x2-feed}</arg>
+<arg>${y2-feed}</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:51.109" starttime="20181119 17:15:50.441"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loopCount}+1</arg>
+</arguments>
+<assign>
+<var>${loopCount}</var>
+</assign>
+<msg timestamp="20181119 17:15:51.110" level="INFO">${loopCount} = 19+1</msg>
+<status status="PASS" endtime="20181119 17:15:51.110" starttime="20181119 17:15:51.110"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:51.110" starttime="20181119 17:15:43.663"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:51.110" starttime="20181119 17:13:08.162"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181119 17:15:52.112" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181119 17:15:52.113" starttime="20181119 17:15:51.110"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:52.113" starttime="20181119 17:12:26.379"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<assign>
+<var>${guide}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'${judul_feed_Guideline}')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181119 17:15:59.466" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-22.png"&gt;&lt;img src="appium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181119 17:15:59.466" starttime="20181119 17:15:57.433"></status>
+</kw>
+<msg timestamp="20181119 17:15:59.466" level="FAIL">Element '//android.widget.TextView[contains(@text,'Pediatric Heart Failure')]' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20181119 17:15:59.466" starttime="20181119 17:15:52.114"></status>
+</kw>
+<msg timestamp="20181119 17:15:59.467" level="INFO">${guide} = False</msg>
+<status status="PASS" endtime="20181119 17:15:59.467" starttime="20181119 17:15:52.114"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${guide}' == 'True'</arg>
+<arg>Run Keywords</arg>
+<arg>Feeds View Guideline Detail</arg>
+<arg>AND</arg>
+<arg>Kembali Dari Detail Guideline ke List Feed</arg>
+<arg>AND</arg>
+<arg>Bookmark Feed List Guideline</arg>
+<arg>AND</arg>
+<arg>Unbookmark Feed List Guideline</arg>
+</arguments>
+<status status="PASS" endtime="20181119 17:15:59.467" starttime="20181119 17:15:59.467"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${guide}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Tidak ada Guideline di Feeds</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Tidak ada Guideline di Feeds</arg>
+</arguments>
+<msg timestamp="20181119 17:15:59.469" level="INFO">Tidak ada Guideline di Feeds</msg>
+<status status="PASS" endtime="20181119 17:15:59.469" starttime="20181119 17:15:59.468"></status>
+</kw>
+<status status="PASS" endtime="20181119 17:15:59.469" starttime="20181119 17:15:59.468"></status>
+</kw>
+<doc>Buka Feeds &amp; Detail Feeds Guideline</doc>
+<status status="PASS" endtime="20181119 17:15:59.469" critical="yes" starttime="20181119 17:11:03.145"></status>
+</test>
+<status status="PASS" endtime="20181119 17:15:59.471" starttime="20181119 17:11:02.815"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Smoketest" pass="1">Smoketest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -121,6 +121,9 @@ Kembali ke Menu Resep
 Kembali ke Resep Dari Filter
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
   Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_back')]
+  # Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   10s
+  ${homeresep}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   5s
+  Run Keyword If    '${homeresep}' == 'False'    Recent Aplikasi
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']
@@ -360,6 +363,9 @@ Program Hamil Menu Album
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
+  # Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_close')]   100s
+  # Wait Until Page Does Not Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_close')]   100s
+  # Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
   Sleep    2s
   #Ke Edit Album
   Click Element    //android.widget.TextView[contains(@text,'Album Program Hamil')]
@@ -400,7 +406,10 @@ Program Hamil Menu Album
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
   Sleep    2s
-  Wait Until Page Contains Element    //android.widget.RelativeLayout[contains(@index,'2')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_close')]   100s
+  # Wait Until Page Contains Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  # Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Tambah foto')]    100s
   #edit nama album
   Tap    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]
   Clear Text    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]
@@ -450,12 +459,12 @@ Program Hamil Menu Artikel
   ${y2-artikel}   Evaluate    ${tinggis} - 700
   #Scroll artikel sampai bawah (sampai dapat artikel berikutnya)
   : FOR    ${loopCount}    IN RANGE    0    20
-  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Apa Arti Warna Darah Haid Kamu?')]
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Mengenal Infeksi Rahim Penyebab Infertilitas')]
   \    Run Keyword If    ${el}    Exit For Loop
   \    Swipe    ${x1-artikel}    ${y1-artikel}    ${x2-artikel}    ${y2-artikel}
   \    ${loopCount}    Set Variable    ${loopCount}+1
   Sleep    1s
-  Click Element    //android.widget.TextView[contains(@text,'Apa Arti Warna Darah Haid Kamu?')]
+  Click Element    //android.widget.TextView[contains(@text,'Mengenal Infeksi Rahim Penyebab Infertilitas')]
   #pilih artikel selanjutnya
   Wait Until Element Is Visible    ${APP}:id/tv_title   100s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
@@ -665,12 +674,13 @@ Program Hamil Tambah Anak
   #klik tombol submit
   Run Keyword If    ${pilihtema}    Click Element    //android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_q_theme_choose')]
   ...   ELSE    Log    Tidak Pilih Tema, Tema Sudah Dipilih Sebelumnya
+
 Cek Data Program Hamil Tambah Anak & Hapus Data Tambah Anak
     #cek homepage newborn
     Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
     Page Should Contain Element    //android.widget.TextView[contains(@text,'New Born')]
     # Page Should Contain Element    //android.widget.TextView[contains(@text,'${nama-tambah-anak-program-hamil}')]
-    Page Should Contain Element    //android.widget.TextView[contains(@text,'TUMBUH KEMBANG ANAK')]
+    Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
     #cek data di side menu
     Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]
     Coachmark Got It
@@ -683,7 +693,7 @@ Cek Data Program Hamil Tambah Anak & Hapus Data Tambah Anak
     Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Jika Mums sudah hamil klik di sini')]   30s
     Hapus Data Tambah Anak Program Hamil
-    Program Hamil Menu Home
+
 
 
 Sedang Hamil Menu Checklist
@@ -1043,10 +1053,12 @@ Sedang Hamil Grafik Baby
   #masuk ke halaman detak jantung janin
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Detak jantung Janin?')]  100s
   : FOR    ${loopCount}    IN RANGE    0    20
-  \    ${el}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_heart_rate')][@text='91']
+  \    ${el}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_value')][@text='91']
   \    Run Keyword If    ${el}    Exit For Loop
   \    Click A Point   ${sampingbar}    ${tinggibar}
   \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    1s
+  Click Element    //android.widget.Button[contains(@resource-id,'com.temanbumil.android:id/btn_next')]
   #masuk ke baby result
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Baby • Result')]   100s
   Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/status_weight')]    100s
@@ -1136,7 +1148,7 @@ Sedang Hamil Grafik Baby
   #masuk ke halaman detak jantung janin
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Detak jantung Janin?')]  100s
   : FOR    ${loopCount}    IN RANGE    0    20
-  \    ${el}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_heart_rate')][@text='91']
+  \    ${el}    Run Keyword And Return Status    Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/txt_value')][@text='91']
   \    Run Keyword If    ${el}    Exit For Loop
   \    Click A Point   ${sampingbar}    ${tinggibar}
   \    ${loopCount}    Set Variable    ${loopCount}+1
@@ -1381,7 +1393,10 @@ Sedang Hamil Menu Album
   Press Keycode    27       #capture
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
-  Wait Until Page Contains Element    //android.widget.RelativeLayout[contains(@index,'1')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
+  Wait Until Page Contains Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
   #edit nama album
   Tap    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]
   Clear Text    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]
@@ -1642,7 +1657,7 @@ Cek Data Sedang Hamil Tambah Anak & Hapus Data Tambah Anak
     Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
     Page Should Contain Element    //android.widget.TextView[contains(@text,'New Born')]
     # Page Should Contain Element    //android.widget.TextView[contains(@text,'${nama-tambah-anak-program-hamil}')]
-    Page Should Contain Element    //android.widget.TextView[contains(@text,'TUMBUH KEMBANG ANAK')]
+    Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
     #cek data di side menu
     Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]    10s
     Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]
@@ -1983,6 +1998,9 @@ New Born Menu Album
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
+  # Wait Until Page Contains Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  # Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
   Sleep    2s
   #Ke Edit Album
   Click Element    //android.widget.TextView[contains(@text,'Album Tumbuh Kembang')]
@@ -2017,15 +2035,19 @@ New Born Menu Album
   Press Keycode    27       #capture
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.sec.android.app.camera:id/okay')]
-  Wait Until Page Contains Element    //android.widget.RelativeLayout[contains(@index,'1')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
+  # Wait Until Page Contains Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  # Wait Until Page Does Not Contain Element    //android.widget.ProgressBar[contains(@resource-id,'com.temanbumil.android:id/pb_upload_progress')]   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/iv_photo')]   100s
   #edit nama album
   Clear Text    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]
+  Sleep    1s
   Input Text    //android.widget.EditText[contains(@resource-id,'com.temanbumil.android:id/et_album_name')]    Album Tumbuh Kembang-edit
   Hide Keyboard
   Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/btn_save')]
   Wait Until Page Contains    Daftar Album
   Page Should Contain Element    //android.widget.TextView[contains(@text,'Daftar Album')]
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Album Tumbuh Kembang-edit')]
+  Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Album Tumbuh Kembang-edit')]    20s
   #hapus album
   Click Element    //android.widget.ImageView[contains(@content-desc,'Opsi lainnya')]
   Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Hapus')]    100s
@@ -2037,6 +2059,16 @@ New Born Menu Album
   Page Should Contain Text    Simpan foto-foto Mums
 
 New Born Menu Artikel
+  ${lebarx}    Get Window Width
+  ${tinggiy}   Get Window Height
+  ${lebarx}   Convert To Integer    ${lebarx}
+  ${tinggiy}  Convert To Integer    ${tinggiy}
+  ${lebars}   Evaluate    ${lebarx}/2
+  ${tinggis}    Evaluate    ${tinggiy} - 200
+  ${x1-artikel}   Convert To String    ${lebars}
+  ${x2-artikel}   Convert To String    ${lebars}
+  ${y1-artikel}   Convert To String    ${tinggis}
+  ${y2-artikel}   Evaluate    ${tinggis} - 700
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]   100s
   Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]
   Coachmark Got It
@@ -2045,10 +2077,16 @@ New Born Menu Artikel
   Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_article')]
   Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_article')]
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
-  Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'10 Pertanyaan Seputar Pemberian ASI')]     100s      #wait sampai tampil artikel
   Page Should Contain Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_search')]     #ada tombol cari
   #pilih Artikel
-  Click Element    //android.widget.TextView[contains(@text,'10 Pertanyaan Seputar Pemberian ASI')]
+  #Scroll artikel sampai bawah (sampai dapat artikel berikutnya)
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Perawatan Bayi di NICU')]
+  \    Run Keyword If    ${el}    Exit For Loop
+  \    Swipe    ${x1-artikel}    ${y1-artikel}    ${x2-artikel}    ${y2-artikel}
+  \    ${loopCount}    Set Variable    ${loopCount}+1
+  Sleep    1s
+  Click Element    //android.widget.TextView[contains(@text,'Perawatan Bayi di NICU')]
   Wait Until Element Is Visible    ${APP}:id/tv_title   100s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
   #scroll artikel sampai bawah
@@ -2066,12 +2104,12 @@ New Born Menu Artikel
   ${y2-artikel}   Evaluate    ${tinggis} - 700
   #Scroll artikel sampai bawah (sampai dapat artikel berikutnya)
   : FOR    ${loopCount}    IN RANGE    0    20
-  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Senangnya Jadi Ibu')]
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_category')][@text='Menyusui']
   \    Run Keyword If    ${el}    Exit For Loop
   \    Swipe    ${x1-artikel}    ${y1-artikel}    ${x2-artikel}    ${y2-artikel}
   \    ${loopCount}    Set Variable    ${loopCount}+1
   Sleep    1s
-  Click Element    //android.widget.TextView[contains(@text,'Senangnya Jadi Ibu')]
+  Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_category')][@text='Menyusui']
   #pilih artikel selanjutnya
   Wait Until Element Is Visible    ${APP}:id/tv_title   100s
   Wait Until Page Does Not Contain Element    ${APP}:id/progress_bar    100s
@@ -2213,7 +2251,6 @@ New Born Menu Home
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
 
 New Born Tambah Anak
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]     100s
@@ -2278,7 +2315,7 @@ Cek Data New Born Tambah Anak & Hapus Data Tambah Anak
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_baby')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@text,'New Born')]
   # Page Should Contain Element    //android.widget.TextView[contains(@text,'${nama-tambah-anak-program-hamil}')]
-  Page Should Contain Element    //android.widget.TextView[contains(@text,'TUMBUH KEMBANG ANAK')]
+  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']
   #cek data di side menu
   Wait Until Element Is Visible    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]    10s
   Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]
@@ -2296,7 +2333,6 @@ Cek Data New Born Tambah Anak & Hapus Data Tambah Anak
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD RECORD')]   100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'ADD ALBUM')]    100s
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textLastRecord')][@text='RECORD TERBARU']    100s
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/textIdeal')][@text='TUMBUH KEMBANG ANAK']    100s
   Hapus Data Tambah Anak Newborn
   New Born Menu Home
 
@@ -2446,6 +2482,7 @@ Forum Thread Cari
   \    Swipe    ${x1-book}    ${y1-book}    ${x2-book}    ${y2-book}
   \    ${loopCount}    Set Variable    ${loopCount}+1
   Sleep    2s
+  Wait Until Page Contains Element    //android.widget.LinearLayout[contains(@resource-id,'com.temanbumil.android:id/btnReply')]
   Click Element    //android.widget.LinearLayout[contains(@resource-id,'com.temanbumil.android:id/btnReply')]
   #masuk ke reply quote
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title_toolbar')][@text='Reply']   100s
@@ -2586,12 +2623,15 @@ Resep
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_receipt')]    100s
   Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_nav_receipt')]
   #masuk ke menu resep
+  ${homeresep}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   5s
+  Run Keyword If    '${homeresep}' == 'False'    Recent Aplikasi
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   100s
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]   100s
   Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']
   #filter resep
+  # Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Filter Resep']    100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_filter')]
   Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_filter')]
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Filter Resep']    100s
   Wait Until Page Contains Element    //android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}']
   #pilih 8-10 bulan
   Click Element    //android.widget.CheckedTextView[contains(@resource-id,'com.temanbumil.android:id/text_view_checked')][@text='${filterresep}']
@@ -2607,9 +2647,12 @@ Buka Resep
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]   20s
   Wait Until Page Contains Element    //android.widget.ScrollView[contains(@resource-id,'com.temanbumil.android:id/nestedScrollView')]    20s
   #bookmark resep - via detil resep
-  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_bookmarked')]   20s
-  Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_bookmarked')]
-  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/snackbar_text')][@text='Resep berhasil dibookmark']
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_bookmarked')]   10s
+  : FOR    ${loopCount}    IN RANGE    0    20
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_bookmarked')]
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/snackbar_text')][@text='Resep berhasil dibookmark']
+  \    Run Keyword If    ${el}    Exit For Loop
+  \    ${loopCount}    Set Variable    ${loopCount}+1
 
 Search Resep
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_actionbar_search')]
@@ -2626,3 +2669,18 @@ Search Resep
   Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='${cariresep}']
   Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/btn_navigation')]   20s
   Wait Until Page Contains Element    //android.widget.ScrollView[contains(@resource-id,'com.temanbumil.android:id/nestedScrollView')]    20s
+
+Unbookmark Resep
+  ${homeresep}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   5s
+  Run Keyword If    '${homeresep}' == 'False'    Recent Aplikasi
+  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_title')][@text='Resep']   100s
+  Wait Until Page Contains Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]   100s
+  Page Should Contain Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='All'][@selected='true']
+  #pilih tab bookmark
+  Click Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='Bookmark'][@selected='false']
+  Wait Until Page Contains Element    //android.widget.TextView[contains(@resource-id,'com.temanbumil.android:id/tv_tab')][@text='Bookmark'][@selected='true']    10s
+  : FOR    ${loopCount}    IN RANGE    0    999
+  \    ${el}    Run Keyword And Return Status    Wait Until Element Is Visible    //android.widget.TextView[contains(@text,'Bookmark Mums masih kosong')]
+  \    Run Keyword If    ${el}    Exit For Loop
+  \    Click Element    //android.widget.ImageView[contains(@resource-id,'com.temanbumil.android:id/image_bookmark')]
+  \    ${loopCount}    Set Variable    ${loopCount}+1
